@@ -1,0 +1,1546 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rodrigo Huaycho — Portafolio</title>
+<meta name="description" content="Portafolio digital de Rodrigo Huaycho: comunicador audiovisual, presentador, guionista y editor de video. Disponible en español, inglés y portugués.">
+<meta name="theme-color" content="#F3EEE6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%230D0D0D'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-weight='900' font-size='28' text-anchor='middle' fill='%23F1EBE1'%3Erh%3C/text%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'TT';src:url('assets/fonts/tiktok-sans.woff2') format('woff2');font-weight:300 900;font-stretch:75% 150%;font-display:swap}
+:root{
+  --ui:'TT','Helvetica Neue',Helvetica,Arial,system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.56,.64,1);
+  --bg:#F3EEE6;--fg:#0D0D0D;--mut:#6A655C;--line:#DCD4C6;--soft:#E7E0D3;--blue:#014BAA;--red:#E0243A;--card:#FBF8F2;
+  --grad:conic-gradient(from 200deg,#0D0D0D,#014BAA,#7F011F,#EC5E27,#064734,#0D0D0D);
+  --lv:0;color-scheme:light;
+}
+[data-theme=dark]{--bg:#0B0B0A;--fg:#F1EBE1;--mut:#A8A296;--line:#2A2824;--soft:#1B1A17;--blue:#7FA8FF;--card:#141311;color-scheme:dark}
+html{font-size:16px}
+@media(min-width:900px){html{font-size:clamp(15px,calc(.5vw + 10px),26px)}}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:var(--ui);background:var(--bg);color:var(--fg);overflow:hidden;-webkit-font-smoothing:antialiased;font-synthesis:none;transition:background-color .3s}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:inherit}
+a{color:inherit;text-decoration:none}
+svg{display:block;flex:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:.4rem}
+.ic{width:1.75rem;height:1.75rem;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ic.f{fill:currentColor}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.logo{font-weight:850;font-stretch:108%;letter-spacing:-.04em;display:inline-block;transform:skewX(-9deg);font-size:1.7rem;line-height:1}
+
+/* ===== LAYOUT ===== */
+.app{display:flex;height:100dvh;width:100%}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;position:relative}
+.top{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;border-bottom:1px solid var(--line);background:var(--bg);z-index:6}
+.top .r{display:flex;gap:.9rem;align-items:center}
+.top button{padding:.25rem;position:relative}
+.views{position:relative;flex:1;min-height:0}
+.view{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;display:none;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.view.on{display:block}
+.tab{display:flex;justify-content:space-around;border-top:1px solid var(--line);padding:.35rem 0 calc(.35rem + env(safe-area-inset-bottom));background:var(--bg);z-index:6}
+.tab button{padding:.55rem 1rem;position:relative;color:var(--mut);transition:color .2s,transform .2s var(--spring)}
+.tab button.on{color:var(--fg)}
+.tab button:active{transform:scale(.88)}
+.tab .ic{width:1.8rem;height:1.8rem}
+.tab button.on .ic{stroke-width:2.5}
+.dotn{position:absolute;top:.35rem;right:.7rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--red);border:2px solid var(--bg)}
+.side,.right{display:none}
+.wrap{width:100%;margin:0 auto}
+
+/* ===== STORIES ===== */
+.stories{display:flex;gap:.9rem;overflow-x:auto;padding:1rem 1rem .6rem;scrollbar-width:none;scroll-snap-type:x proximity}
+.stories::-webkit-scrollbar{display:none}
+.st{flex:none;width:5.6rem;text-align:center;scroll-snap-align:start;transition:transform .25s var(--spring)}
+.st:active{transform:scale(.92)}
+.st .rg{width:5.4rem;height:5.4rem;border-radius:50%;padding:3px;background:var(--grad);display:grid;place-items:center;margin:0 auto;transition:transform .3s var(--spring)}
+.st:hover .rg{transform:scale(1.06)}
+.st.seen .rg{background:var(--line)}
+.st .gl{width:100%;height:100%;border-radius:50%;border:3px solid var(--bg);display:grid;place-items:center;font-weight:850;font-stretch:112%;font-size:1.25rem;letter-spacing:-.04em;overflow:hidden;position:relative}
+.st .gl::after{content:"";position:absolute;width:70%;height:70%;border-radius:50%;background:var(--ac);opacity:.28;right:-22%;bottom:-22%}
+.st b{display:block;margin-top:.4rem;font-size:.95rem;font-weight:600;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== POST ===== */
+.feed{padding-bottom:2rem}
+.post{border-bottom:1px solid var(--line);padding-bottom:.5rem;margin-bottom:.4rem}
+.ph{display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem}
+.av{width:2.9rem;height:2.9rem;border-radius:50%;padding:2.5px;background:var(--grad);display:grid;place-items:center;flex:none}
+.av.seen{background:var(--line)}
+.av i{font-style:normal;width:100%;height:100%;border-radius:50%;border:2.5px solid var(--bg);display:grid;place-items:center;font-weight:850;font-size:.85rem;letter-spacing:-.03em;color:#fff;background:var(--c1)}
+.who{min-width:0;flex:1}
+.who b{display:flex;align-items:center;gap:.35rem;font-size:1.05rem;font-weight:700}
+.who small{display:block;font-size:.92rem;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.vf{width:1.1rem;height:1.1rem;fill:var(--blue)}
+.fbtn{font-weight:700;color:var(--blue);font-size:1rem;padding:.3rem .5rem}
+.fbtn.on{color:var(--mut)}
+.car{position:relative;aspect-ratio:4/5;background:#000;overflow:hidden;user-select:none}
+.trk{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.trk::-webkit-scrollbar{display:none}
+.cnt{position:absolute;top:.8rem;right:.8rem;background:rgba(0,0,0,.62);color:#fff;font-weight:700;font-size:.9rem;padding:.25rem .65rem;border-radius:2rem;z-index:5;backdrop-filter:blur(6px)}
+.snd{position:absolute;right:.8rem;bottom:.8rem;width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(0,0,0,.62);color:#fff;display:grid;place-items:center;z-index:5;backdrop-filter:blur(6px);transition:transform .2s var(--spring)}
+.snd:active{transform:scale(.88)}
+.snd .ic{width:1.3rem;height:1.3rem}
+.mus{position:absolute;left:.8rem;bottom:.8rem;max-width:calc(100% - 4.8rem);display:flex;align-items:center;gap:.5rem;background:rgba(0,0,0,.62);color:#fff;font-weight:600;font-size:.92rem;padding:.4rem .8rem .4rem .65rem;border-radius:2rem;z-index:5;backdrop-filter:blur(6px);overflow:hidden;white-space:nowrap}
+.mus span{overflow:hidden;text-overflow:ellipsis}
+.eq{display:inline-flex;gap:2px;align-items:flex-end;height:.95rem;flex:none}
+.eq i{width:3px;background:currentColor;border-radius:2px;height:35%}
+.playing .eq i{animation:eq .8s ease-in-out infinite alternate}
+.playing .eq i:nth-child(2){animation-delay:-.3s}.playing .eq i:nth-child(3){animation-delay:-.6s}.playing .eq i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{from{height:25%}to{height:100%}}
+.ar{position:absolute;top:50%;transform:translateY(-50%);width:2.4rem;height:2.4rem;border-radius:50%;background:rgba(255,255,255,.9);color:#111;display:none;place-items:center;z-index:5;opacity:0;transition:opacity .2s,transform .2s var(--spring);box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.ar.l{left:.7rem}.ar.r{right:.7rem}
+.ar .ic{width:1.3rem;height:1.3rem;stroke-width:2.6}
+@media(hover:hover){.car:hover .ar{opacity:1}.ar{display:grid}.ar:hover{transform:translateY(-50%) scale(1.1)}}
+.bh{position:absolute;left:50%;top:50%;width:7rem;height:7rem;margin:-3.5rem;pointer-events:none;z-index:6;color:#fff;opacity:0;filter:drop-shadow(0 4px 18px rgba(0,0,0,.45))}
+.bh svg{width:100%;height:100%;fill:currentColor;stroke:none}
+.bh.go{animation:bh .9s var(--ease)}
+@keyframes bh{0%{opacity:0;transform:scale(.3)}25%{opacity:1;transform:scale(1.15)}60%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.25) translateY(-1.5rem)}}
+.acts{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem .2rem;position:relative}
+.acts .l{display:flex;gap:1rem;align-items:center}
+.acts button{padding:.15rem;transition:transform .2s var(--spring),color .2s}
+.acts button:active{transform:scale(.8)}
+.acts .ic{width:1.9rem;height:1.9rem}
+.like.on{color:var(--red)}.like.on .ic{fill:currentColor;animation:pop .45s var(--spring)}
+.save.on .ic{fill:currentColor}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.3)}100%{transform:scale(1)}}
+.dots{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:.3rem;align-items:center}
+.dots i{width:.45rem;height:.45rem;border-radius:50%;background:var(--line);transition:all .25s var(--ease)}
+.dots i.on{background:var(--blue);transform:scale(1.2)}
+.meta{padding:.25rem 1rem .4rem}
+.lk{font-weight:500;font-size:1.02rem}.lk b{font-weight:800}
+.cap{font-size:1.05rem;line-height:1.4;margin-top:.3rem}
+.cap b{font-weight:700}
+.cap.cl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cap .tg{color:var(--blue)}
+.more{color:var(--mut);font-size:1rem;font-weight:500}
+.vc{display:block;color:var(--mut);font-size:1rem;margin-top:.35rem;font-weight:500}
+.when{display:block;color:var(--mut);font-size:.85rem;margin-top:.3rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
+
+/* ===== SLIDES ===== */
+.sl{position:relative;overflow:hidden;background:var(--bg);color:var(--fg);flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;container-type:size;display:flex;font-family:var(--ui)}
+.sl .deco{position:absolute;inset:0;pointer-events:none;z-index:0}
+.sl .deco::before{content:"";position:absolute;width:86cqmin;height:86cqmin;border-radius:50%;background:var(--tn);right:-30cqmin;bottom:-32cqmin;transition:transform 1.4s var(--ease)}
+.sl .deco::after{content:"";position:absolute;width:26cqmin;height:26cqmin;border-radius:50%;border:1.3cqmin solid var(--fg);opacity:.22;left:-9cqmin;top:-9cqmin}
+.sl.d1 .deco::before{border-radius:12cqmin;transform:rotate(18deg);right:-34cqmin;bottom:-24cqmin;top:auto}
+.sl.d1 .deco::after{border-radius:50%;left:auto;right:9cqmin;top:7cqmin;width:11cqmin;height:11cqmin;background:var(--ac);border:0;opacity:1}
+.sl.d2 .deco::before{width:100cqmin;height:100cqmin;right:auto;left:-42cqmin;bottom:-50cqmin;background:repeating-linear-gradient(135deg,var(--tn) 0 3cqmin,transparent 3cqmin 6cqmin);border-radius:50%}
+.sl.d2 .deco::after{left:auto;right:-10cqmin;top:-10cqmin;border-radius:3cqmin;transform:rotate(25deg)}
+.sl.on .deco::before{transform:scale(1.06) rotate(3deg)}
+.sl .in{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;padding:9cqmin 8.5cqmin;gap:3.4cqmin;min-width:0}
+.a{opacity:0}
+.sl.on .a{animation:rise .8s var(--ease) both;animation-delay:calc(var(--d,0)*75ms + 60ms)}
+@keyframes rise{from{opacity:0;transform:translateY(6cqmin)}to{opacity:1;transform:none}}
+.k{font-weight:750;font-size:3.9cqmin;line-height:1.1;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:2cqmin}
+.k::before{content:"";width:6cqmin;height:.9cqmin;background:var(--ac);border-radius:1cqmin}
+.h1{font-weight:900;font-stretch:112%;letter-spacing:-.05em;line-height:.9;font-size:16cqmin}
+.h1.xl{font-size:19cqmin}.h1.l{font-size:15cqmin}.h1.m{font-size:12.5cqmin}.h1.s{font-size:10.2cqmin}
+.h2{font-weight:850;font-stretch:108%;letter-spacing:-.04em;line-height:1;font-size:10.5cqmin}
+.ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.ln>span{display:block;transform:translateY(110%)}
+.sl.on .ln>span{animation:up 1s var(--ease) both;animation-delay:calc(var(--d,0)*75ms + var(--j,0)*100ms + 80ms)}
+@keyframes up{to{transform:none}}
+.p{font-weight:500;font-size:5.4cqmin;line-height:1.26;letter-spacing:-.01em;max-width:34em}
+.p mark{background:none;color:var(--ac);font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:2cqmin}
+.chips span{font-weight:750;font-size:4.2cqmin;padding:1.7cqmin 3.6cqmin;border-radius:10cqmin;background:var(--fg);color:var(--bg)}
+.chips.o span{background:none;border:.5cqmin solid var(--fg);color:var(--fg);font-weight:650}
+.handle{font-weight:750;font-size:4.8cqmin;color:var(--ac)}
+.num{font-weight:900;font-stretch:112%;letter-spacing:-.06em;line-height:.85;font-size:36cqmin;color:var(--ac)}
+.num sup{font-size:.4em;vertical-align:top;letter-spacing:0;margin-left:.04em;line-height:1.5;position:relative;top:.1em}
+.sg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3cqmin}
+.sg>div{background:var(--tn);border-radius:4cqmin;padding:4cqmin 4.2cqmin}
+.sg b{display:block;font-weight:900;font-stretch:110%;font-size:12.5cqmin;letter-spacing:-.05em;line-height:.9;color:var(--ac)}
+.sg b sup{font-size:.5em;vertical-align:top;letter-spacing:0}
+.sg small{display:block;font-size:4cqmin;font-weight:600;margin-top:1.5cqmin;line-height:1.15;opacity:.92}
+.stp{display:flex;flex-direction:column;gap:2.6cqmin}
+.stp>div{display:flex;align-items:center;gap:4cqmin;background:var(--tn);border-radius:4cqmin;padding:3.6cqmin 4.2cqmin}
+.stp i{font-style:normal;font-weight:900;font-size:7cqmin;color:var(--ac);width:9cqmin;flex:none;letter-spacing:-.04em}
+.stp b{display:block;font-weight:800;font-size:5.6cqmin;line-height:1.05;letter-spacing:-.02em}
+.stp small{display:block;font-size:4cqmin;font-weight:550;line-height:1.2;margin-top:.8cqmin;opacity:.9}
+.bars{display:flex;flex-direction:column;gap:3.4cqmin}
+.bars>div b{display:flex;justify-content:space-between;font-weight:800;font-size:5.8cqmin;letter-spacing:-.02em}
+.bars>div b em{font-style:normal;font-weight:650;font-size:4.4cqmin;opacity:.85}
+.bars .tr{height:3.4cqmin;border-radius:3cqmin;background:var(--tn);margin-top:1.6cqmin;overflow:hidden}
+.bars .tr i{display:block;height:100%;width:0;border-radius:3cqmin;background:var(--ac);transition:width 1.4s var(--ease) .3s}
+.sl.on .bars .tr i{width:var(--w)}
+.chart{height:30cqmin;position:relative;margin:1cqmin 0}
+.chart svg{width:100%;height:100%;overflow:visible}
+.chart .ar2{fill:var(--tn);opacity:0;transition:opacity 1s .8s}
+.sl.on .chart .ar2{opacity:1}
+.chart .ln2{fill:none;stroke:var(--ac);stroke-width:1.1cqmin;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;vector-effect:non-scaling-stroke}
+.sl.on .chart .ln2{animation:dr 1.6s var(--ease) .3s both}
+@keyframes dr{to{stroke-dashoffset:0}}
+.cn{font-weight:900;font-size:8cqmin;color:var(--ac);letter-spacing:-.04em}
+.tl{background:var(--tn);border-radius:4cqmin;padding:3cqmin;display:flex;flex-direction:column;gap:2cqmin}
+.tl .row{display:flex;align-items:center;gap:2cqmin}
+.tl .row b{font-size:3.6cqmin;font-weight:800;width:6cqmin;opacity:.8}
+.tl .lane{position:relative;flex:1;height:8cqmin;background:color-mix(in srgb,var(--fg) 8%,transparent);border-radius:1.6cqmin;overflow:hidden}
+.tl .clip{position:absolute;top:1cqmin;bottom:1cqmin;border-radius:1.2cqmin;background:var(--ac);color:var(--bg);font-weight:800;font-size:3.5cqmin;display:flex;align-items:center;padding:0 1.8cqmin;white-space:nowrap;overflow:hidden;transform:scaleX(0);transform-origin:left}
+.tl .clip.al{background:var(--fg)}
+.sl.on .tl .clip{animation:grow .9s var(--ease) both;animation-delay:calc(var(--d,0)*100ms + .5s)}
+@keyframes grow{to{transform:none}}
+.tl .wv{display:flex;align-items:center;gap:.6cqmin;height:100%;padding:0 1cqmin}
+.tl .wv i{flex:1;background:var(--ac);border-radius:1cqmin;height:calc(14% + var(--h)*70%);opacity:.85}
+.ph2{position:absolute;top:0;bottom:0;left:0;width:.7cqmin;background:var(--fg);z-index:3;border-radius:1cqmin}
+.sl.on .ph2{animation:scan 5s linear infinite}
+@keyframes scan{from{left:0}to{left:100%}}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4cqmin}
+.clips div{aspect-ratio:9/12;border-radius:3cqmin;background:var(--tn);display:flex;flex-direction:column;justify-content:flex-end;padding:2.4cqmin;font-weight:850;font-size:5cqmin;position:relative;overflow:hidden;letter-spacing:-.03em}
+.clips div::before{content:"";position:absolute;top:2.4cqmin;left:2.4cqmin;width:0;height:0;border-left:3.6cqmin solid var(--ac);border-top:2.2cqmin solid transparent;border-bottom:2.2cqmin solid transparent}
+.clips div:nth-child(odd){background:color-mix(in srgb,var(--ac) 30%,var(--bg))}
+.books{display:flex;gap:2.6cqmin;align-items:flex-end;height:36cqmin}
+.books div{flex:1;border-radius:2cqmin 3cqmin 3cqmin 2cqmin;padding:2.6cqmin;display:flex;flex-direction:column;justify-content:space-between;font-weight:900;font-size:5.6cqmin;line-height:.95;letter-spacing:-.04em;background:var(--ac);color:var(--bg);height:84%;box-shadow:inset 1.4cqmin 0 0 rgba(0,0,0,.18);transform:translateY(6cqmin) rotate(-3deg);opacity:0}
+.books div:nth-child(2){height:100%;background:var(--fg);transform:translateY(6cqmin) rotate(0)}
+.books div:nth-child(3){transform:translateY(6cqmin) rotate(3deg)}
+.sl.on .books div{animation:bk .9s var(--spring) both;animation-delay:calc(var(--d,0)*75ms + .1s + var(--i)*110ms)}
+@keyframes bk{to{opacity:1;transform:rotate(var(--r,0deg))}}
+.books small{font-size:3cqmin;letter-spacing:.14em;font-weight:700;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:2cqmin;font-weight:800;font-size:4.8cqmin;padding:3cqmin 6cqmin;border-radius:10cqmin;background:var(--ac);color:var(--bg);transition:transform .2s var(--spring);letter-spacing:-.01em;cursor:pointer}
+.btn:active{transform:scale(.94)}
+.btn.o{background:none;color:var(--fg);border:.6cqmin solid var(--fg)}
+.btn.w{background:var(--fg);color:var(--bg)}
+.btn .ic{width:5.4cqmin;height:5.4cqmin;stroke-width:2.4}
+.btns{display:flex;gap:2.4cqmin;flex-wrap:wrap}
+.mail{display:flex;flex-direction:column;align-items:flex-start;gap:2.4cqmin;background:var(--fg);color:var(--bg);border-radius:4cqmin;padding:4cqmin 4.6cqmin;font-weight:800;font-size:4.9cqmin;letter-spacing:-.02em;cursor:pointer;text-align:left}.mail span{overflow-wrap:anywhere}
+.mail i{font-style:normal;font-size:3.4cqmin;letter-spacing:.12em;background:var(--ac);color:var(--bg);border-radius:6cqmin;padding:1.2cqmin 2.6cqmin;flex:none}
+.rows>div{display:flex;justify-content:space-between;gap:3cqmin;padding:3.2cqmin 0;border-bottom:.5cqmin solid color-mix(in srgb,var(--fg) 22%,transparent);align-items:baseline}
+.rows b{font-weight:700;font-size:4cqmin;letter-spacing:.1em;text-transform:uppercase;opacity:.8;flex:none}
+.rows span{font-weight:750;font-size:5.2cqmin;text-align:right;line-height:1.15;letter-spacing:-.02em}
+.lyr{font-weight:850;font-stretch:106%;font-size:7.6cqmin;line-height:1.08;letter-spacing:-.04em}
+.lyr .w{opacity:.18;transition:opacity .4s calc(var(--i)*60ms + .2s),color .4s calc(var(--i)*60ms + .2s)}
+.sl.on .lyr .w{opacity:1}
+.lyr em{font-style:normal;color:var(--ac)}
+.seal{align-self:flex-start;font-weight:850;font-size:3.8cqmin;letter-spacing:.14em;border:.7cqmin solid var(--ac);color:var(--ac);padding:1.4cqmin 2.8cqmin;border-radius:10cqmin;transform:rotate(-3deg)}
+.yr{font-weight:900;font-size:11cqmin;letter-spacing:-.05em;line-height:.9;color:var(--ac)}
+.h3{font-weight:850;font-size:8.6cqmin;line-height:1.02;letter-spacing:-.04em}
+.big0{font-weight:900;font-size:11cqmin;letter-spacing:-.05em;line-height:.95;color:var(--ac)}
+.mx{font-size:40cqmin;font-weight:900;position:absolute;right:2cqmin;top:-1cqmin;line-height:.8;letter-spacing:-.08em;color:var(--tn);z-index:-1;font-stretch:112%;opacity:.8}
+.tile .k,.tile .p,.tile .chips,.tile .handle{display:none}
+.tile .sl .in{padding:7cqmin}
+.tile .a,.tile .ln>span{opacity:1;transform:none;animation:none!important}
+
+/* ===== EXPLORE ===== */
+.sbar{position:sticky;top:0;z-index:4;background:var(--bg);padding:.8rem 1rem .5rem}
+.sin{display:flex;align-items:center;gap:.7rem;background:var(--soft);border-radius:.9rem;padding:.8rem 1rem;font-size:1.1rem}
+.sin input{flex:1;border:0;background:none;color:var(--fg);font:inherit;outline:0;min-width:0}
+.sin .ic{width:1.4rem;height:1.4rem;color:var(--mut)}
+.cats{display:flex;gap:.55rem;overflow-x:auto;padding:.7rem 0 .2rem;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cats button{flex:none;padding:.55rem 1.1rem;border-radius:.7rem;background:var(--soft);font-weight:650;font-size:1rem;transition:all .2s}
+.cats button.on{background:var(--fg);color:var(--bg)}
+.mos{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;grid-auto-flow:dense;padding:3px 0 2rem}
+.tile{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;background:var(--soft)}
+.tile:nth-child(10n+3){grid-column:span 2;grid-row:span 2}
+.tile .sl{position:absolute;inset:0;flex:none;transition:transform .5s var(--ease)}
+.tile:hover .sl{transform:scale(1.06)}
+.tile .ov{position:absolute;inset:0;background:rgba(0,0,0,.52);color:#fff;display:flex;align-items:flex-end;padding:.8rem;font-weight:750;font-size:1rem;line-height:1.1;opacity:0;transition:opacity .25s;z-index:3}
+.tile:hover .ov,.tile:focus-visible .ov{opacity:1}
+.tile .mi{position:absolute;top:.6rem;right:.6rem;width:1.5rem;height:1.5rem;color:#fff;z-index:3;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+.empty{text-align:center;padding:4rem 1.5rem;color:var(--mut);font-size:1.15rem;line-height:1.4}
+.empty b{display:block;color:var(--fg);font-size:1.5rem;margin-bottom:.4rem}
+
+/* ===== REELS ===== */
+#v-reels{overflow-y:auto;scroll-snap-type:y mandatory;background:#000}
+.reel{height:100%;scroll-snap-align:start;scroll-snap-stop:always;display:grid;place-items:center;position:relative}
+.rw{position:relative;width:100%;height:100%}
+.rbox{position:relative;width:100%;height:100%;overflow:hidden;background:#000}
+.rbox .sl{position:absolute;inset:0;flex:none}
+.rgd{position:absolute;inset:auto 0 0 0;height:62%;background:linear-gradient(transparent,rgba(0,0,0,.86));z-index:3;pointer-events:none}
+.rcap{position:absolute;left:1rem;right:5.5rem;bottom:1.3rem;z-index:4;color:#fff;font-size:1.05rem;line-height:1.35}
+.rcap .h{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.rcap .h b{font-size:1.1rem}
+.rcap .fb{border:1.5px solid #fff;border-radius:.5rem;padding:.2rem .7rem;font-weight:700;font-size:.95rem}
+.rcap .fb.on{background:#fff;color:#000}
+.rcap p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.rcap .m{display:flex;align-items:center;gap:.5rem;margin-top:.6rem;font-weight:650;font-size:.95rem}
+.rail{position:absolute;right:.2rem;bottom:1.3rem;z-index:5;display:flex;flex-direction:column;gap:1.2rem;align-items:center;color:#fff}
+.rail button{width:4.4rem;display:flex;flex-direction:column;align-items:center;gap:.25rem;font-weight:650;font-size:.9rem;transition:transform .2s var(--spring)}
+.rail button:active{transform:scale(.85)}
+.rail .ic{width:2.1rem;height:2.1rem;filter:drop-shadow(0 1px 4px rgba(0,0,0,.4))}
+.rail .like.on{color:var(--red)}.rail .like.on .ic{fill:currentColor}
+.rail .save.on .ic{fill:currentColor}
+.rail .disc{color:#fff;width:2.6rem;height:2.6rem;border-radius:.6rem;background:var(--c1);border:2px solid #fff;display:grid;place-items:center}
+.rail .disc .ic{width:1.3rem;height:1.3rem;filter:none}
+.playing .rail .disc{animation:spin 4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rtop{position:absolute;top:.9rem;left:1rem;right:1rem;z-index:5;display:flex;justify-content:space-between;color:#fff;font-weight:800;font-size:1.4rem;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.rtop .ic{width:1.8rem;height:1.8rem}
+
+/* ===== PROFILE ===== */
+.pf{padding:1.2rem 1rem 0}
+.pt{display:flex;align-items:center;gap:1rem}
+.pav{width:5.4rem;height:5.4rem;border-radius:50%;padding:4px;background:var(--grad);flex:none;cursor:pointer;transition:transform .3s var(--spring)}
+.pav:hover{transform:scale(1.05)}
+.pav i{font-style:normal;width:100%;height:100%;border-radius:50%;border:4px solid var(--bg);display:grid;place-items:center;background:#014BAA;color:#F8F3F0;font-weight:900;font-size:1.9rem;letter-spacing:-.05em}
+.pst{display:flex;flex:1;justify-content:space-around;text-align:center}
+.pst b{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+.pst>div{flex:1;min-width:0}.pst small{font-size:.9rem;color:var(--mut);font-weight:500;white-space:nowrap}
+.bio{margin-top:1rem;font-size:1.05rem;line-height:1.4}
+.bio b{font-size:1.1rem}
+.bio .g{color:var(--mut)}
+.pb{display:flex;gap:.5rem;margin-top:1rem}
+.pb button{flex:1;padding:.7rem .5rem;border-radius:.7rem;background:var(--soft);font-weight:700;font-size:1.02rem;text-align:center;transition:transform .2s var(--spring)}
+.pb button:active{transform:scale(.95)}
+.pb button.pr{background:var(--blue);color:#fff}
+.hl{display:flex;gap:1.1rem;overflow-x:auto;padding:1.3rem 0 .4rem;scrollbar-width:none}
+.hl::-webkit-scrollbar{display:none}
+.hl button{flex:none;width:5.2rem;text-align:center}
+.hl .c{width:4.9rem;height:4.9rem;border-radius:50%;border:2px solid var(--line);padding:3px;margin:0 auto;display:grid;transition:transform .3s var(--spring)}
+.hl button:hover .c{transform:scale(1.07)}
+.hl .c i{border-radius:50%;display:grid;place-items:center;background:var(--c1);color:var(--c2)}
+.hl .c .ic{width:1.9rem;height:1.9rem}
+.hl b{display:block;margin-top:.4rem;font-size:.95rem;font-weight:650}
+.ptabs{display:flex;border-top:1px solid var(--line);margin-top:.9rem}
+.ptabs button{flex:1;padding:.9rem 0;display:grid;place-items:center;color:var(--mut);border-top:2px solid transparent;margin-top:-1px;transition:color .2s}
+.ptabs button.on{color:var(--fg);border-top-color:var(--fg)}
+.ptabs .ic{width:1.6rem;height:1.6rem}
+
+/* ===== ACTIVITY ===== */
+.vh{padding:1.2rem 1rem .6rem;font-size:1.6rem;font-weight:800;letter-spacing:-.03em}
+.vs{padding:.9rem 1rem .4rem;font-weight:700;font-size:1.1rem}
+.act{display:flex;align-items:center;gap:.9rem;width:100%;padding:.8rem 1rem;transition:background .2s}
+.act:hover{background:var(--soft)}
+.act .ai{width:3.1rem;height:3.1rem;border-radius:50%;background:var(--c1);color:var(--c2);display:grid;place-items:center;flex:none}
+.act .ai .ic{width:1.5rem;height:1.5rem}
+.act p{flex:1;font-size:1.02rem;line-height:1.3}
+.act p b{font-weight:700}
+.act p small{display:block;color:var(--mut);font-size:.9rem;margin-top:.15rem}
+.act .go{font-weight:700;color:var(--blue);font-size:1rem;flex:none}
+
+/* ===== DM ===== */
+.dm{display:flex;flex-direction:column;height:100%}
+.dh{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;border-bottom:1px solid var(--line)}
+.dh .av{width:2.8rem;height:2.8rem}
+.dh b{font-size:1.1rem;display:flex;align-items:center;gap:.35rem}
+.dh small{display:block;color:var(--mut);font-size:.92rem}
+.th{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.55rem}
+.msg{max-width:84%;padding:.75rem 1.05rem;border-radius:1.4rem;font-size:1.08rem;line-height:1.35;animation:rise2 .45s var(--ease) both;word-break:break-word}
+.msg.in{background:var(--soft);align-self:flex-start;border-bottom-left-radius:.4rem}
+.msg.out{background:linear-gradient(135deg,#7a3cff,#c13584 60%,#f77737);color:#fff;align-self:flex-end;border-bottom-right-radius:.4rem}
+.msg .cb{display:inline-block;margin-top:.5rem;background:var(--blue);color:#fff;padding:.45rem .9rem;border-radius:2rem;font-weight:700;font-size:.98rem}
+@keyframes rise2{from{opacity:0;transform:translateY(.8rem) scale(.96)}to{opacity:1;transform:none}}
+.qr{display:flex;gap:.5rem;flex-wrap:wrap;padding:.3rem 1rem .6rem}
+.qr button{padding:.6rem 1.05rem;border-radius:2rem;border:1.5px solid var(--blue);color:var(--blue);font-weight:650;font-size:1rem;transition:all .2s}
+.qr button:hover{background:var(--blue);color:#fff}
+.cmp{display:flex;align-items:center;gap:.7rem;margin:.5rem 1rem 1rem;border:1.5px solid var(--line);border-radius:2rem;padding:.35rem .5rem .35rem 1.1rem}
+.cmp input{flex:1;border:0;background:none;color:var(--fg);font:inherit;font-size:1.1rem;outline:0;min-width:0;padding:.45rem 0}
+.cmp button{color:var(--blue);font-weight:800;font-size:1.05rem;padding:.5rem .9rem}
+.cmp button[disabled]{opacity:.4}
+
+/* ===== MODAL / SHEET ===== */
+#modal,#sheet{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+#modal.on,#sheet.on{display:flex;animation:fi .25s}
+@keyframes fi{from{opacity:0}}
+.mbox{background:var(--bg);width:100%;height:100%;overflow-y:auto;position:relative}
+.mclose{position:fixed;top:.8rem;right:.8rem;z-index:44;width:2.7rem;height:2.7rem;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center;backdrop-filter:blur(6px)}
+.mclose .ic{width:1.4rem;height:1.4rem;stroke-width:2.5}
+.mside{display:flex;flex-direction:column}
+.mside .ph{border-bottom:1px solid var(--line)}
+.cmts{padding:.4rem 1rem;flex:1;min-height:0;overflow-y:auto}
+.cm{display:flex;gap:.8rem;padding:.7rem 0}
+.cm .av{width:2.6rem;height:2.6rem;padding:2px}
+.cm p{font-size:1.04rem;line-height:1.38}
+.cm p b{font-weight:700}
+.cm small{display:block;color:var(--mut);font-size:.88rem;margin-top:.2rem;font-weight:500}
+.mside .cmp{margin:.4rem 1rem 1rem}
+.sh{background:var(--bg);width:100%;max-width:30rem;border-radius:1.4rem 1.4rem 0 0;padding:1rem 1rem calc(1.2rem + env(safe-area-inset-bottom));align-self:flex-end;animation:su .35s var(--ease)}
+@keyframes su{from{transform:translateY(100%)}}
+.sh .gr{width:3rem;height:.3rem;border-radius:1rem;background:var(--line);margin:0 auto 1rem}
+.sh h3{font-size:1.25rem;text-align:center;margin-bottom:.8rem;font-weight:800}
+.sh button.o{display:flex;align-items:center;gap:1rem;width:100%;padding:.9rem .5rem;font-size:1.12rem;font-weight:600;border-radius:.8rem}
+.sh button.o:hover{background:var(--soft)}
+.sh button.o .ic{width:1.7rem;height:1.7rem}
+@media(min-width:900px){
+ #sheet{align-items:center}.sh{border-radius:1.2rem;align-self:center}
+}
+
+/* ===== STORY VIEWER ===== */
+#sv{position:fixed;inset:0;z-index:50;background:#0a0a0a;display:none;align-items:center;justify-content:center}
+#sv.on{display:flex;animation:fi .25s}
+.sbx{position:relative;width:100%;height:100%;background:#000;overflow:hidden;color:#fff}
+.sbx .sl{position:absolute;inset:0;flex:none}
+.spg{position:absolute;top:.6rem;left:.7rem;right:.7rem;display:flex;gap:.3rem;z-index:6}
+.spg i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.35);overflow:hidden}
+.spg i b{display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left}
+.shd{position:absolute;top:1.3rem;left:.8rem;right:.8rem;display:flex;align-items:center;gap:.7rem;z-index:6;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.shd::before{content:"";position:absolute;inset:-1.3rem -.8rem -1rem;background:linear-gradient(rgba(0,0,0,.45),transparent);z-index:-1}
+.shd .av{width:2.6rem;height:2.6rem;padding:2px}
+.shd b{font-size:1.05rem}.shd small{opacity:.85;font-size:.9rem;margin-left:.3rem}
+.shd .sp{flex:1}
+.shd button{padding:.3rem;color:#fff}
+.shd .ic{width:1.6rem;height:1.6rem;stroke-width:2.3}
+.szn{position:absolute;top:4rem;bottom:5rem;width:34%;z-index:5}
+.szn.p{left:0}.szn.n{right:0;width:66%}
+.sft{position:absolute;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:center;gap:.7rem;padding:.8rem .9rem calc(.9rem + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(0,0,0,.5))}
+.sft .pill{flex:1;border:1.5px solid rgba(255,255,255,.7);border-radius:2rem;padding:.8rem 1.1rem;font-weight:550;font-size:1.05rem;opacity:.95;text-align:left}
+.sft button.ic2{color:#fff;padding:.2rem;transition:transform .2s var(--spring)}
+.sft button.ic2:active{transform:scale(.8)}
+.sft .ic{width:1.9rem;height:1.9rem}
+.sft .like.on{color:var(--red)}.sft .like.on .ic{fill:currentColor}
+.sx{display:none}
+@media(min-width:900px){
+ .sbx{height:min(94dvh,calc(94vw*16/9));width:calc(min(94dvh,calc(94vw*16/9))*9/16);border-radius:1rem}
+ .sx{display:grid;position:absolute;top:50%;width:3rem;height:3rem;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;place-items:center;transform:translateY(-50%);z-index:60;transition:background .2s,transform .2s var(--spring)}
+ .sx:hover{background:rgba(255,255,255,.34);transform:translateY(-50%) scale(1.1)}
+ .sx.l{left:calc(50% - min(94dvh,calc(94vw*16/9))*9/32 - 5rem)}
+ .sx.r{right:calc(50% - min(94dvh,calc(94vw*16/9))*9/32 - 5rem)}
+ .sx .ic{width:1.5rem;height:1.5rem;stroke-width:2.6}
+ .sxc{position:absolute;top:1.2rem;right:1.4rem;z-index:61;color:#fff}
+}
+.sxc{position:absolute;display:none}
+
+/* ===== SPLASH / TOAST ===== */
+#splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;padding:2rem;text-align:center;color:#fff;background:linear-gradient(160deg,#7a3cff,#d62976 45%,#fa7e1e 85%,#feda75);transition:opacity .6s var(--ease),transform .6s var(--ease),visibility .6s}
+#splash.out{opacity:0;transform:scale(1.08);visibility:hidden;pointer-events:none}
+#splash .gl{width:7.5rem;height:7.5rem;border-radius:2rem;border:.5rem solid #fff;display:grid;place-items:center;position:relative;animation:fl 3s ease-in-out infinite}
+#splash .gl::before{content:"";width:3.4rem;height:3.4rem;border-radius:50%;border:.45rem solid #fff}
+#splash .gl::after{content:"";position:absolute;width:.7rem;height:.7rem;border-radius:50%;background:#fff;top:1rem;right:1rem}
+@keyframes fl{50%{transform:translateY(-.6rem) rotate(-3deg)}}
+#splash h1{font-size:3.2rem;font-weight:850;font-stretch:108%;letter-spacing:-.05em;transform:skewX(-9deg);line-height:1}
+#splash p{font-size:1.2rem;font-weight:550;max-width:24rem;line-height:1.35;opacity:.95}
+#splash .bt{display:flex;flex-direction:column;gap:.7rem;width:min(100%,21rem)}
+#splash button{padding:1rem 1.4rem;border-radius:.9rem;font-weight:800;font-size:1.15rem;text-align:center;transition:transform .2s var(--spring)}
+#splash button:active{transform:scale(.95)}
+#splash .b1{background:#fff;color:#8a2a8a;display:flex;align-items:center;justify-content:center;gap:.6rem}
+#splash .b1 .ic{width:1.5rem;height:1.5rem;stroke-width:2.4}
+#splash .b2{background:rgba(255,255,255,.2);color:#fff}
+#toast{position:fixed;left:50%;bottom:5.5rem;transform:translate(-50%,2rem);background:var(--fg);color:var(--bg);padding:.8rem 1.3rem;border-radius:2rem;font-weight:650;font-size:1.02rem;z-index:120;opacity:0;pointer-events:none;transition:all .35s var(--ease);max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:900px){#toast{bottom:2rem}}
+
+/* ===== DESKTOP: PANTALLA GRANDE ===== */
+@media(min-width:900px){
+ :root{--pw:min(calc(100% - 3rem),calc(100dvh - 12.5rem),52rem)}
+ .top,.tab{display:none}
+ .side{display:flex;flex-direction:column;width:5.2rem;border-right:1px solid var(--line);padding:1.4rem .7rem;gap:.3rem;flex:none}
+ .side .logo{padding:.7rem .9rem 1.3rem;font-size:1.6rem;display:none}
+ .side .lg{width:3.4rem;height:3.4rem;display:grid;place-items:center;margin-bottom:1rem;font-weight:900;font-size:1.1rem;background:var(--grad);color:#fff;border-radius:1rem;letter-spacing:-.05em;align-self:center}
+ .side button{display:flex;align-items:center;gap:1.1rem;padding:.9rem 1rem;border-radius:.9rem;font-size:1.15rem;font-weight:500;transition:background .2s,transform .2s var(--spring);position:relative}
+ .side button span{display:none}
+ .side button:hover{background:var(--soft)}
+ .side button:hover .ic{transform:scale(1.1)}
+ .side button:active{transform:scale(.96)}
+ .side button.on{font-weight:800}
+ .side button.on .ic{stroke-width:2.5}
+ .side .ic{width:1.8rem;height:1.8rem;transition:transform .2s var(--spring)}
+ .side .sp{flex:1}
+ .side .dotn{top:.7rem;left:2.1rem;right:auto}
+ .wrap{width:var(--pw)}
+ .stories{padding:1.4rem 0 .8rem;gap:1.3rem}
+ .st{width:6.4rem}.st .rg{width:6.1rem;height:6.1rem}
+ .post{border:0;border-bottom:1px solid var(--line);margin-bottom:1.2rem;padding-bottom:1rem}
+ .post .ph,.post .acts,.post .meta{padding-left:.2rem;padding-right:.2rem}
+ .car{aspect-ratio:1;border-radius:.7rem}
+ .stories{scroll-padding:0}
+ .sbar{padding:1.4rem 0 .5rem;background:var(--bg)}
+ .mos{gap:6px;padding-top:.8rem}
+ .tile{border-radius:.3rem}
+ .reel{padding:1rem 0}
+ .rw{width:auto;aspect-ratio:9/16;height:100%}
+ .rbox{border-radius:1rem}
+ .rail{right:-5.2rem;bottom:0;color:var(--fg)}
+ .rail .ic{filter:none}
+ .rail button{font-size:1rem}
+ .rail .disc{border-color:var(--fg)}
+ #v-reels{background:var(--bg)}
+ .rcap{right:1rem}
+ .rtop{display:none}
+ .pf{padding:2.4rem 0 0}
+ .pav{width:9.5rem;height:9.5rem}
+ .pav i{font-size:3rem}
+ .pt{gap:3.2rem}
+ .pst b{font-size:1.5rem}
+ .mbox{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(23rem,1fr);width:min(96vw,calc(92dvh*1.1 + 30rem),90rem);height:min(92dvh,62rem);border-radius:.9rem;overflow:hidden}
+ .mmedia{height:100%;background:#000;min-width:0}
+ .mmedia .car{height:100%;aspect-ratio:auto;border-radius:0}
+ .mside{min-height:0;height:100%;overflow:hidden}
+ .mside .ph{padding-left:1rem}
+ .mside .acts,.mside .meta{padding-left:1rem;padding-right:1rem}
+ .mclose{position:fixed;top:1.2rem;right:1.4rem}
+ .dm{max-width:44rem;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+ .right{display:flex;flex-direction:column;gap:1.6rem;width:clamp(21rem,25vw,28rem);padding:2.4rem 1.6rem;flex:none;overflow-y:auto}
+ .vh{padding-left:0}.vs{padding-left:0}
+ #v-activity .wrap,#v-explore .wrap{max-width:54rem}
+ .act{border-radius:.8rem}
+}
+@media(min-width:900px) and (max-width:1179px){.right{display:none}}
+@media(min-width:1180px){
+ .side{width:clamp(15rem,17vw,21rem);padding:1.4rem 1rem}
+ .side .logo{display:block}.side .lg{display:none}
+ .side button span{display:inline}
+}
+.rt .me{display:flex;align-items:center;gap:.9rem}
+.rt .me .av{width:3.8rem;height:3.8rem}
+.rt .me b{display:block;font-size:1.1rem}.rt .me small{color:var(--mut);font-size:.98rem}
+.rt .me button{margin-left:auto;color:var(--blue);font-weight:750;font-size:1rem}
+.rt h4{display:flex;justify-content:space-between;color:var(--mut);font-size:1.02rem;font-weight:650;margin-bottom:.7rem}
+.np{border-radius:1.1rem;padding:1.2rem;color:var(--c2);background:var(--c1);position:relative;overflow:hidden;transition:background .8s,color .8s}
+.np::after{content:"";position:absolute;width:11rem;height:11rem;border-radius:50%;right:-3rem;bottom:-5rem;background:var(--c3);opacity:.28;transform:scale(calc(1 + var(--lv)*.35));transition:transform .12s linear}
+.np .nk{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;font-weight:750;opacity:.9;display:flex;gap:.5rem;align-items:center}
+.np b{display:block;font-size:1.3rem;font-weight:850;letter-spacing:-.02em;line-height:1.1;margin-top:.55rem}
+.np small{display:block;font-size:1rem;margin-top:.2rem;opacity:.9;font-weight:550}
+.np #npq{height:2.2rem;gap:4px;margin-top:.9rem}.np #npq i{width:6px;border-radius:3px;height:30%}.np .nk .eq{height:.9rem}
+.np .sw{display:flex;gap:.4rem;margin-top:1rem;position:relative;z-index:2}
+.np .sw span{font-size:.82rem;font-weight:750;padding:.3rem .6rem;border-radius:2rem;border:1.5px solid currentColor}
+.sg2{display:flex;flex-direction:column}
+.sg2 button{display:flex;align-items:center;gap:.9rem;padding:.55rem 0;width:100%}
+.sg2 .av{width:3rem;height:3rem}
+.sg2 b{display:block;font-size:1.02rem;font-weight:700}.sg2 small{color:var(--mut);font-size:.92rem}
+.sg2 em{font-style:normal;color:var(--blue);font-weight:750;font-size:.98rem;margin-left:auto}
+.ft{color:var(--mut);font-size:.9rem;line-height:1.5}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}.a{opacity:1}.ln>span{transform:none}}
+
+.top{display:none}
+body[data-v=home] .top{display:flex}
+@media(min-width:900px){body[data-v=home] .top{display:none}}
+.tg{color:var(--blue)}
+.msg .cb{text-decoration:none}
+
+.rbox .in{padding-right:19cqmin}
+.bio .vf{display:inline-block;vertical-align:-.2rem}
+.stw{position:relative}
+.sar{display:none}
+.gh{position:absolute;right:-3cqmin;bottom:-9cqmin;font-weight:900;font-stretch:115%;font-size:62cqmin;line-height:.8;letter-spacing:-.08em;color:transparent;-webkit-text-stroke:.5cqmin color-mix(in srgb,var(--fg) 30%,transparent);z-index:1;pointer-events:none;white-space:nowrap}
+.tile .gh{display:none}
+.tile .books{height:28cqmin}
+.tile .books small{display:none}
+@media(min-width:900px){
+ .rbox .in{padding-right:8.5cqmin}
+ .stw{width:min(100% - 3rem,60rem);margin:0 auto}
+ .sar{display:grid;position:absolute;top:3.4rem;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--bg);color:var(--fg);box-shadow:0 1px 10px rgba(0,0,0,.28);place-items:center;z-index:3;transition:transform .2s var(--spring)}
+ .sar:hover{transform:scale(1.12)}
+ .sar.l{left:-1.2rem}.sar.r{right:-1.2rem}
+ .sar .ic{width:1.3rem;height:1.3rem;stroke-width:2.6}
+ .pav{width:9.5rem;height:9.5rem}
+ .pt{gap:3.2rem}
+}
+.car .in{padding-bottom:13cqmin}
+@container (min-aspect-ratio:9/10){
+ .in{padding-top:10cqmin;padding-bottom:13.5cqmin;gap:2.6cqmin}
+ .h2{font-size:9cqmin}.h3{font-size:7.6cqmin}.p{font-size:4.8cqmin}
+ .chart{height:16cqmin;margin:0}.cn{font-size:7cqmin}
+ .stp{gap:2cqmin}.stp>div{padding:2.2cqmin 4cqmin}.stp b{font-size:5cqmin}.stp small{font-size:3.7cqmin}.stp i{font-size:6cqmin}
+ .clips{gap:2cqmin}.clips div{aspect-ratio:1/.6;font-size:4.4cqmin}
+ .sg{gap:2.2cqmin}.sg b{font-size:11cqmin}.sg>div{padding:2.8cqmin 4cqmin}.sg small{font-size:3.7cqmin}
+ .rows>div{padding:2.2cqmin 0}.rows span{font-size:4.8cqmin}
+ .lyr{font-size:6.6cqmin}
+ .chips span{font-size:3.9cqmin;padding:1.4cqmin 3.2cqmin}
+ .num{font-size:30cqmin}
+ .books{height:30cqmin}
+ .bars{gap:2.6cqmin}
+ .tl .lane{height:7cqmin}
+ .h1.xl{font-size:17cqmin}.h1.l{font-size:13.5cqmin}.h1{font-size:14cqmin}
+}
+
+/* ===== V4: BONE THEME, COVER, I18N, MEDIA ===== */
+.msg.out{background:var(--fg);color:var(--bg)}
+.msg.out a,.msg.out .cb{color:#fff}
+.logo{transform:none;font-weight:400;letter-spacing:-.045em;font-size:1.55rem;font-stretch:105%}
+.logo b{font-weight:900}
+.st .gl{padding:0}
+.st .gl img,.av i img,.pav i img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.st .gl::after{display:none}
+.av i{overflow:hidden;background:var(--c1)}
+.badge{font-size:.78rem;font-weight:750;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .65rem;border-radius:2rem;border:1.5px solid var(--fg);white-space:nowrap}
+.rl{font-size:1rem;line-height:1.35;margin-top:.25rem}
+.rl b{font-weight:800}
+.bl{color:var(--blue);font-weight:600}
+.tile .timg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.tile:hover .timg{transform:scale(1.06)}
+.lp{display:inline-flex;border:1.5px solid var(--fg);border-radius:2rem;overflow:hidden;flex:none}
+.lp button{font-weight:800;font-size:.85rem;padding:.35rem .6rem;letter-spacing:.04em;transition:background .2s,color .2s}
+.lp button.on{background:var(--fg);color:var(--bg)}
+.top .lp button{padding:.3rem .5rem;font-size:.8rem}
+.side .lp{margin:.4rem 1rem .6rem;align-self:flex-start}
+.side .lp button{font-size:.9rem;padding:.4rem .75rem}
+@media(min-width:900px) and (max-width:1179px){.side .lp{flex-direction:column;margin:.4rem auto}.side .lp button{padding:.35rem .5rem}}
+.presb{background:var(--fg)!important;color:var(--bg)!important;margin-top:.6rem}
+.presb:hover{opacity:.9}
+.presc{display:flex;align-items:center;gap:1rem;width:100%;padding:1rem 1.1rem;border-radius:1.1rem;background:var(--fg);color:var(--bg);text-align:left;transition:transform .2s var(--spring)}
+.presc:hover{transform:translateY(-2px)}
+.presc .ic{width:2.2rem;height:2.2rem}
+.presc b{display:block;font-size:1.15rem}.presc small{font-size:.9rem;opacity:.8}
+.soc{display:flex;gap:.6rem}
+.soc a{width:2.8rem;height:2.8rem;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;transition:transform .2s var(--spring)}
+.soc a:hover{transform:scale(1.1)}
+.si{width:1.35rem;height:1.35rem}
+.np #npq{height:2.2rem;gap:4px;margin-top:.9rem}.np #npq i{width:6px;border-radius:3px;height:30%}.np .nk .eq{height:.9rem}
+
+/* full-bleed slides */
+.sl.full{background:#0d0d0d}
+.fimg,.sl video.vd{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.sl video.vd{background:#000}
+.fgrad{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.05) 35%,rgba(0,0,0,.78) 100%);pointer-events:none}
+.sl .in.ov{position:absolute;inset:auto 0 0 0;justify-content:flex-end;color:#fff;padding:8cqmin 7cqmin 14cqmin}
+.car .sl .in.ov{padding-bottom:15cqmin}
+.sl .in.ov .k::before{background:#fff}
+.sl .in.ov .h2.big{font-size:12cqmin;line-height:.95;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.sl .in.ov .p{text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.chips.w span{background:#fff;color:#0d0d0d}
+.vcap .k{color:#fff}
+.vcap .p{font-size:4.8cqmin;font-weight:650;max-width:85%}
+.vsnd{position:absolute;top:4cqmin;left:4cqmin;z-index:4;display:flex;align-items:center;gap:.45rem;background:rgba(0,0,0,.6);color:#fff;font-weight:700;font-size:.9rem;padding:.45rem .8rem .45rem .6rem;border-radius:2rem;backdrop-filter:blur(6px);transition:background .2s}
+.vsnd .ic{width:1.2rem;height:1.2rem}
+.vsnd.on{background:#fff;color:#0d0d0d}
+.vplay{position:absolute;left:50%;top:45%;width:16cqmin;height:16cqmin;margin:-8cqmin;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;z-index:2;opacity:1;transition:opacity .4s;pointer-events:none}
+.vplay .ic{width:7cqmin;height:7cqmin}
+.sl.on .vplay{opacity:0}
+.sbx .vsnd{display:none}
+
+/* logo tile on covers */
+.lgw{display:block;width:22cqmin;height:22cqmin;border-radius:5cqmin;background:#fff;padding:2.2cqmin;box-shadow:0 2cqmin 6cqmin rgba(0,0,0,.18);align-self:flex-start}
+.lgw img{width:100%;height:100%;object-fit:contain;border-radius:3cqmin}
+
+/* framed images */
+.frm{position:relative;align-self:center;max-width:100%;min-height:0}
+.frm img{display:block;max-width:100%;max-height:58cqh;object-fit:contain}
+.frm.laptop{background:#111;padding:1.6cqmin 1.6cqmin 2.4cqmin;border-radius:2.4cqmin 2.4cqmin .8cqmin .8cqmin;box-shadow:0 3cqmin 8cqmin rgba(0,0,0,.28)}
+.frm.laptop::after{content:"";position:absolute;left:-6%;right:-6%;bottom:-2.6cqmin;height:2.6cqmin;background:linear-gradient(#c9c4bb,#9a958d);border-radius:0 0 3cqmin 3cqmin}
+.frm.laptop img{border-radius:.8cqmin;max-height:46cqh}
+.frm.paper{background:#fff;padding:2cqmin;border-radius:1.6cqmin;box-shadow:0 3cqmin 8cqmin rgba(0,0,0,.22);transform:rotate(-1.2deg)}
+.frm.paper img{max-height:54cqh}
+.gal{display:flex;gap:3cqmin;align-items:center;justify-content:center;min-height:0}
+.gal img{flex:1;min-width:0;max-height:50cqh;object-fit:contain;border-radius:2cqmin;box-shadow:0 3cqmin 7cqmin rgba(0,0,0,.25)}
+.gal.n2 img:first-child{transform:rotate(-3deg)}.gal.n2 img:last-child{transform:rotate(3deg)}
+.gal.n3 img{max-height:44cqh}
+.shots{display:flex;gap:3cqmin;justify-content:center;align-items:flex-end;min-height:0}
+.shots figure{flex:1;min-width:0;max-width:30cqmin;text-align:center}
+.shots.n2 figure{max-width:38cqmin}
+.shots img{width:100%;max-height:50cqh;object-fit:contain;border-radius:2.4cqmin;box-shadow:0 3cqmin 7cqmin rgba(0,0,0,.25);background:#fff}
+.shots figcaption b{display:block;font-weight:900;font-size:7cqmin;letter-spacing:-.04em;color:var(--ac);margin-top:1.4cqmin;line-height:1}
+.shots figcaption small{font-size:3.4cqmin;font-weight:600;opacity:.85}
+.lgs{display:grid;grid-template-columns:repeat(4,1fr);gap:3cqmin}
+.lgs figure{text-align:center}
+.lgs img{width:100%;aspect-ratio:1;object-fit:contain;border-radius:3.2cqmin;background:#fff;padding:1.4cqmin;box-shadow:0 1.4cqmin 4cqmin rgba(0,0,0,.14)}
+.lgs figcaption{font-size:3.4cqmin;font-weight:700;margin-top:1.4cqmin;line-height:1.1}
+.t-logos .lgs:only-of-type{margin-top:1cqmin}
+.mail.ph{background:color-mix(in srgb,var(--fg) 12%,transparent);color:var(--fg)}
+.btn .si{width:5cqmin;height:5cqmin}
+a.btn{text-decoration:none}
+.t-contact .in{gap:2.6cqmin}
+
+@container (min-aspect-ratio:9/10){
+ .frm img{max-height:50cqh}.frm.laptop img{max-height:40cqh}.frm.paper img{max-height:48cqh}
+ .gal img{max-height:44cqh}.gal.n3 img{max-height:40cqh}
+ .shots img{max-height:42cqh}
+ .lgs{grid-template-columns:repeat(4,1fr);gap:2.4cqmin}.lgs img{padding:1cqmin}
+ .sl .in.ov .h2.big{font-size:10cqmin}
+}
+
+/* ===== COVER (PORTADA) ===== */
+#cover{position:fixed;inset:0;z-index:100;background:#F1EBE1;color:#0D0D0D;overflow-y:auto;transition:opacity .6s var(--ease),transform .6s var(--ease),visibility .6s;font-family:var(--ui)}
+#cover.out{opacity:0;transform:scale(1.04);visibility:hidden;pointer-events:none}
+#cover::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cv{position:relative;min-height:100%;display:flex;flex-direction:column;padding:1.2rem 1.2rem 1.4rem;max-width:84rem;margin:0 auto}
+.cv-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:750;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase}
+.cv-top i{flex:1;height:2px;background:#0D0D0D;opacity:.85}
+.cv-main{flex:1;display:grid;gap:1.6rem;align-items:center;padding:1.6rem 0}
+.cv-photo{justify-self:center;width:min(58vw,15rem);aspect-ratio:4/5;border-radius:999px 999px 1.4rem 1.4rem;overflow:hidden;border:3px solid #0D0D0D;position:relative;animation:cvp 1.1s var(--ease) both}
+.cv-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;filter:grayscale(.15) contrast(1.03)}
+@keyframes cvp{from{opacity:0;transform:translateY(1.2rem) scale(.96)}}
+.cv-txt{display:flex;flex-direction:column;gap:1.25rem;align-items:center;text-align:center}
+.cv-t{font-weight:900;font-stretch:112%;letter-spacing:-.065em;line-height:.8;font-size:clamp(3.8rem,17vw,11rem);text-transform:lowercase}
+.cv-t span{display:block;animation:cvt 1s var(--ease) both}
+.cv-t span:nth-child(2){animation-delay:.12s}
+.cv-t em{font-style:normal;color:rgba(13,13,13,.26)}
+@keyframes cvt{from{opacity:0;transform:translateY(.4em)}}
+.cv-sub{font-size:1.15rem;line-height:1.35;font-weight:550;max-width:28rem}
+.cv-soc{display:flex;gap:.7rem}
+.cv-soc a{width:3.1rem;height:3.1rem;border-radius:50%;background:#0D0D0D;color:#F1EBE1;display:grid;place-items:center;transition:transform .25s var(--spring)}
+.cv-soc a:hover{transform:translateY(-3px) rotate(-6deg)}
+.cv-soc .si{width:1.45rem;height:1.45rem}
+.cv-box{width:100%;max-width:34rem;display:flex;flex-direction:column;gap:.75rem}
+.cv-l{font-size:.85rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase}
+#cvLang{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+#cvLang button{border:2px solid #0D0D0D;border-radius:1.1rem;padding:.85rem .8rem;text-align:left;transition:background .25s,color .25s,transform .25s var(--spring);background:transparent;color:#0D0D0D;position:relative;overflow:hidden}
+#cvLang button:hover{transform:translateY(-2px)}
+#cvLang button b{display:block;font-size:1.55rem;font-weight:900;letter-spacing:-.04em;line-height:1}
+#cvLang button small{display:block;font-size:.8rem;font-weight:650;letter-spacing:.08em;text-transform:uppercase;margin-top:.35rem;opacity:.75}
+#cvLang button.on{background:#0D0D0D;color:#F1EBE1}
+#cvLang button.on::after{content:"✓";position:absolute;top:.5rem;right:.7rem;font-weight:900}
+.cv-go{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.cv-go button{padding:1rem .9rem;border-radius:999px;font-weight:800;font-size:1.02rem;display:flex;align-items:center;justify-content:center;gap:.5rem;border:2px solid #0D0D0D;transition:transform .2s var(--spring)}
+.cv-go button:active{transform:scale(.96)}
+#cvIn{background:#0D0D0D;color:#F1EBE1}
+#cvIn .ic{width:1.3rem;height:1.3rem;stroke-width:2.3}
+#cvOut{background:transparent;color:#0D0D0D}
+.cv-eq{display:inline-flex;gap:3px;align-items:flex-end;height:1rem}
+.cv-eq i{width:3px;background:currentColor;border-radius:2px;animation:eq .8s ease-in-out infinite alternate}
+.cv-eq i:nth-child(2){animation-delay:-.3s}.cv-eq i:nth-child(3){animation-delay:-.55s}
+#cvFt{font-size:.85rem;opacity:.62;text-align:center;line-height:1.4;padding-top:.6rem}
+@media(min-width:900px){
+ .cv{padding:2rem 3rem 1.6rem}
+ .cv-main{grid-template-columns:minmax(14rem,24rem) 1fr;gap:4rem}
+ .cv-photo{width:100%}
+ .cv-txt{align-items:flex-start;text-align:left}
+ .cv-t{font-size:clamp(5rem,10.5vw,12rem)}
+ .cv-sub{font-size:1.3rem}
+ #cvFt{text-align:left}
+}
+@media(max-width:899px){.cv-photo{width:min(46vw,11rem)}}
+@media(max-height:760px) and (max-width:899px){.cv-photo{width:min(34vw,8.5rem)}.cv-main{gap:1rem;padding:1rem 0}.cv-txt{gap:.9rem}}
+
+/* presentation mode */
+#sv.pres .spg i b{transition:none}
+#sv.pres .sft{display:none}
+#sv.pres .sbx{box-shadow:0 0 0 2px rgba(255,255,255,.12)}
+@media(min-width:900px){#sv.pres .sbx{height:min(94dvh,calc(94vw*16/9))}}
+.top .logo{font-size:1.22rem}
+.top .r{gap:.55rem}
+@media(max-width:370px){.top .logo b{display:none}}
+
+.bars.many{gap:2.2cqmin}.bars.many>div b{font-size:5cqmin}.bars.many .tr{height:2.6cqmin;margin-top:1cqmin}
+.rv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+</style>
+</head>
+<body data-v="home">
+<div id="cover" role="dialog" aria-label="Rodrigo Huaycho">
+ <div class="cv">
+  <div class="cv-top"><span id="cvK">Portafolio digital · 2026</span><i></i><span>RH</span></div>
+  <div class="cv-main">
+   <div class="cv-photo"><img src="assets/img/me-blue.jpg" alt="Rodrigo Huaycho"></div>
+   <div class="cv-txt">
+    <h1 class="cv-t"><span>rod<em>rigo</em></span><span>huay<em>cho</em></span></h1>
+    <p class="cv-sub" id="cvSub"></p>
+    <div class="cv-soc" id="cvSoc"></div>
+    <div class="cv-box">
+     <span class="cv-l" id="cvLangL"></span>
+     <div id="cvLang" role="group"></div>
+     <div class="cv-go">
+      <button id="cvIn" data-act="enter" data-arg="1"><span class="cv-eq"><i></i><i></i><i></i></span><span>Entrar con música</span></button>
+      <button id="cvOut" data-act="enter" data-arg="0">Entrar sin música</button>
+     </div>
+    </div>
+    <p id="cvFt"></p>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="app">
+  <aside class="side" id="side" aria-label="Navegación"></aside>
+  <div class="col">
+    <header class="top" id="top"></header>
+    <main class="views">
+      <section class="view on" id="v-home" aria-label="Inicio"><div class="stw"><div class="stories" id="stories" aria-label="Stories"></div><button class="sar l" data-act="sscroll" data-arg="-1" aria-label="←"><svg class="ic" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button><button class="sar r" data-act="sscroll" data-arg="1" aria-label="→"><svg class="ic" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button></div><div class="wrap"><div class="feed" id="feed"></div></div></section>
+      <section class="view" id="v-explore" aria-label="Explorar"></section>
+      <section class="view" id="v-reels" aria-label="Reels"></section>
+      <section class="view" id="v-dm" aria-label="Mensajes"></section>
+      <section class="view" id="v-activity" aria-label="Actividad"></section>
+      <section class="view" id="v-profile" aria-label="Perfil"></section>
+    </main>
+    <nav class="tab" id="tab" aria-label="Principal"></nav>
+  </div>
+  <aside class="right" id="right"></aside>
+</div>
+<div id="sv" aria-label="Stories"></div>
+<div id="modal"></div>
+<div id="sheet"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+'use strict';
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var clamp=function(v,a,b){return Math.min(b,Math.max(a,v))};
+var ENV={"t01": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzqvrzxzzpuzyvsmvolkvqzokjoklkjnkkikkojfhikljiliehghhgdccdddddcccccccbbbbbbbcbdcccbbbcdcbbbbbbccbbbbbcbbbcdbbcbbcbbcbddbbccbbbccbbbbbbbcccccccccbbbbbbbbbcddeededdcbbbbbbbbbbbcdccccccccbbbbbbbbbbbcccccccddedcecceeccdcccdbdddeeeddeccdcdecbddecddccccbcddddeddcbccdcccbcccdceedddcceedccccccdedcbccccddeedcdccccccdeecdedcccdddccccccddddeddeeccccccbccdefggfgfedccbccbccbbcdeeeeedcdeccbbccdddddddeeeddeefgggffheeeeegffdeeeehgffffeeggfeegfeeedeeeeedefefeeeceeeeeeedddegfgecccdeeffefeeedfeefdddddceffffgffddeffdefeeeefehffffeefgfedcdddefddeeedeedddegdbdeefeedddcdedecdddbdeecdeeddccceeeeeefffeeffgiehgegifegfffgfehehghgfggefffggddfgfefedededefggghgfedeffefeddedfeihggfeeghgeeddefghgihhgfhhhhijkhggijkhhfgffghigeedddfggdeefeeeeeefgfgfegedddeeedfghffdefeeeeeecdddeefeggeegeedezzzzzrwszyzzrvzzwtnwpnmwtzplkplnmlnmljmmpmimklnllomgjjlkheeefgghijjjifddeeeffedfgjjgffedeegefeedeggecegihgfeggfhggddccccefffddfigfefhgfffddegeeeeed", "t02": "edefhgfgikiihgehfeefefffefgghjihgikjhgikigfihgghgggfhgfeggffggefggefggfhihjjighghigfhhhhgggfggfeeefeeffeedeeedeegfedeeegffeegefeegggifhighighihheghgfgeffdeeddeeddffddfeeeeffedeeeefeeedefgeefgiggkigjligiijieiiggghihfgfefefeeeeggefgifghihgfgffffdfeeedegfdeggfehggghggiijihjkighghheefffehlkikjkjghjiikmljijkihhhikjjkihfggfhhikjjiljhhiiijjjjjlkjjjkhkmkjiiggeeehihijjljkihhimnkkkjihggfjpljmmmmnmlmlkkkkiihiifghkkhikkijkjikjikliiijgiiihhljgikihikkilkljijhhhhhggeefeedeeehhhfgffeeefgoqqoomnmjklilpnmnmmkkkjijiijiiihhijknnnnmlqoknqmkormnqokooijppmpqnmmmjiihjihhhhhgggghjkihhfeggfflponmljlmmkinmklmpojkonnnosojimtonqrssrnnljlktpooniikjjkjjkkhimllilkmmkhinlkkjiiighegjkjjjhhjgghzzzzzwzyzzzzwzzzzztzvprzxzunoxsroptrprwsvppqoqrrnqpkmllomighhhljjgjjihjjkgjmkhklljkllkklkjjhijhghihgggjgghijhhjjijljjikliijjjihjkhghghiihhihhjjihhjighhhgffgffhhgfggeedddfgefgffffffgghgfgfffeeefefeeeeeeddcddedccd", "t03": "bbbbbbbbbbbcccccccdccdccccddccccddccdeedddedcccccccccdeecddccfgffeddddeedffeuzzzzmrnxsvymqvtrojrljiqnwlihlijihlkjijjmighijkiijjghhhhgfghijkiihhgghhhhijhhfffeehiijjhfghikmlkiijkjihgggghhjkjjhgeffhffggegffggfeeefegeffefgggfeedefgfdeeeffhgeedffhifeffffghghhgghggihgghiiihhhhhgfghhhjhhihihghhiihhhhihijjjjjjjijklmmnnnnohfiljiigghhiiijjjjkkkllkjhjkkjjhgghihhihfhijjhkjhiihgiihgiiggiihhhhhiihijjjklkkkkjjijiiiihijkmjiigkkjjjhjhjiijiklljkjjhhiihiggghgghhgfgfghhhjjjhfgghihhgfgfihhjjjijjigjjhgijkjkjhhhhhghiiiiiijlklllkkkjiihhjjijkjkllljkkjjihhjkijghhgghjljjkkijmnlpnmmlmlmjlmjjjikkljjjiijifgfhgghghghihggihjihjiiikjkiiiimmllkkkkjjjkjjklnnmnljiijhjjhklkmpjimmixzzzzturzvzzsxzzzzwysrousyrqmommmlooonmnpnllnonmnppoomnnmmlnklimnmmnmmlm", "t04": "ihhhiiihghhjlkhhilllnokillmlkkjkkkkkjjjjijijjihijkmkijklkjjikikjjiiikjijmnlklkjjijjjkkiiiiiihiijkjihjjijijkkmnlklkkklmlszzzzqrptprskorqpnlpmkjnkupnmnjkllljkjklmkiiijkjjjihhijjkmkjlkjkijjhhjkllnljhhijhikmlmmklllmlmlmmqrqmpmmlkkjjjkkjkjjkkijjijijiiiiihijijkihhhgijjiqlllljjjjjjiijkkklllmmlnoonlolkkmklknollkklkmlmpponlmmjikjjkkljjlljjkjjopnjjkkjklkjkmlljlmkjmmllpmnnkklkjhhikjjmqplkjjiklmkjlonjnpljnkkkmlmlllllttprnomlnmjkllkkkkiikkljmlkijlkjjljjlljjpoljmmklpnnmmnkjjjiikkiijjhhjjjikmiilkijiihjjkkimmihjkijookjkjikklllkjihjkkikkkjjkjikkjilllkomkjnqmkmmmkpommmljjlljimnlknmkknnlmolljmmlmpsopoljknrpknqnlrrooonnlnnmloplmqqlltqomonkmmmmkmpmmmlnnqqpoqomlrpnmpmllmmkjmmlnnmlmomnmpooopqrqprqqsqqstrsuqollvrxrrppqnolmonmnmqpnpqooswpprrqorqpotsttyzyzzzzxxuvrvtrmqpplsqpquroptqonqwtpqqonrpqpqnmmqsqoonpoxvurtrpquupptrpqqpnrtsrsqqustqsqoomltwvptzwuzzwwzuwwwtsrsxqwpqoppwrtsrnoqrnoopmkquoopmlnrqqnrnklwwusrrrtrqonrqrqqtssrsporrsuqrppoonmpppptwssxzxwzttsuuronppmqnnotpqrspoqspopropppqomnpppqsrqqpppxvvtsqsrpqqonpnmqtqlpqpotzupsqpqosooprooxxusvxwxztuussqpssnproorrsrqtnnnooropolmpnnnonmmqroqonouzzzzwvvzwyzuuxutsoqonmpnslkjl", "t05": "qrssrtrttusxyzzxvyzxzzzzzxxvvtrqpnmmlllllnqqonmnrronnlmnmmrttuuronqptxvvwxvxxvxzxxtollnoonmmljhgfffgfffeeeeddeeeedeeedcddeefeddddddddeeeffhgfffgggeefefgfeddedeefhhgigeeeeefgddedccccdddddggghkigihgjnonkhhkkkhggggkllmnnnliiihijihijjiihgghhgffgjkloomhkmnlovuruxspqrpnlmmlkjijikkiiiihhhhhhijihgfgffegffffgffffghfeeegfggfeffffghgfgggghfffgghggfeefhhgfffgeeghyzzzzpsqyvyyqswwtrptqmlspzpllnmllknklkmlojhjlnolkmljjllnoonlijklknqnnkkllklmnnmmmlmlmloppqopoortuttmmomllknnmjijkkijjkjjkorsonoponlmlkkmlkjkjkjjmnqnnkkklmkiihhhgighhijkmkihiiiijjiggihhijkjhijjsrqonmmlkjkjkijihhgiimkkmmmlmmklmmlkklnlllkjlmkjkknnmpooomkhjjjlmmmnmnllnllljjjljllmllmlnqqnoprqqtwwttppppnkllonljmmlmklmmnpmnmnkkmlljjkjlkillkjjkmmjjlkjk", "t06": "iikikjiiggijklmkllmnlmjjjjkkkjikjkkklzzzzztwtzyzztuzvvtuvqqotqxrnnonlllmnnnmmpnlmknnlqstssrttqqpnppppoqsnppqppppqomlmihiijkkkkjjkmlmntttrtutvvvvststqpsrswsstsqoonnnomlmmllkjlkkmlknonmonnlknnolmoonnqnmnqnmnmnmjkkjkjjlmlnllnmlmlmsppqtrsrvqrqsrvpqoromonmommnllpkljkkmnnmmopooooppnuxuwuvtsvyuttvtuttstsxssttttprsqoqrmrqopsqomptsqvxvuqrrurtuvwvuvzzvvurrqnonpoononompnmlmlnmlmpljlnnmoomnppqpqpoonnononnnnljklkjkkmkjkjjiiihihiihvzzzztwuzxyzstywwtqtloorpxnmmplnmkmnjllmoljkjmljlonmmlnmkmoononmmmmmnpoonnnlkklkijjjiiihhklkjkljlmlnooolnnoklnllkklkkmjjjlmjjjjihijjhkihjkklhjjkiikjjjjiikjljkmkkmlkknmlkkkjijljijkigkjkiijjhjjjkprqppqoomooooqoooplmnmnnpmlmmmonmmmllnmnommmlolmpponpsppnnmknoomnppknqqpoolmopllnnlmlnpnppmlprlpuutttsqrstpqqvspttsmmnolpplmnppnprnnoqolpnmlopopsqrnpqpnoploqommpqonpoooopllqqllmmmnpqonnpooqnnquutorwupsqrsuwtptvpqxxstvtpoqrqpr", "t07": "mlnonnomnjnpknpspprsqoprnnomnkonnmqonoppmlqnjnmlknppllpslmmlknsrqpruqqqnnppmmmqqnnrpprpnnprollpqnmqqontmlosqllqpoqvtoqvtqotsmmrqnotqostqmjtsnmwwnqwsnpusqpwqnsyxrtrsnnnoooloonmqnnnmnlsunooolmoomlqsnoxvuvutpuzvvrroooopmmqnmstuolmllkrwnnprrorrpoomloopnmnonoqtqqnqnnnpomqponnnnqprposqrqrooopnmkopooxsuvuuqszxuqqrqnmpomnnknorsmnmjlqrllnmnkptmllliipqnmookjotnonqnnoqoosnmmnopnpqloqprmmnlnrnnknppqxssuusqszxxsssssuqroppnnssroqponqqrstsqruwsnprlmrutqnppnuvqqpqqoqqpnqqknnqpnooqotwtqrroposqopqpqyutussstzvusrqonttqqonnlptomomloptvqrwxvuyzwyzzwzzzwyqptuxtrprsoopomrtqoornptrontvsqsrqoopmnprptywuvzurqyvtosornospnqpmprrqpoonkqtonvtpuwsrrwttrstrqpprptusrqstotvqpytrusqpqqppopprnoqnprooopqosxvtuztwszxvsrqrqpsnnqoooqqpmomnopsoooonlpwqpsqnorromppmmvvquqrqqrqoonnlmpqnpqsmnrttuquqnooqoqrstxvxvxtqqzywvtwxvtusuuuttvqsuttsrstvussrssurrsuvsutszvqqqvvsswqrsquqswvrtvsqqyrprvwtswsppsqqstsqqxutxztrqxyvwzxuuwurqzyttwwvrwsoowurqxuoowtqtzuqszvqqztorzzzymrosrsrkmrpqnknkkorqsmklkkmjkmmllllnonljkjlkjjkmlllkklkkkkllkmmkknkjjkhijlljmllnjlmlnljliikkonnooopmmrqmoqlknmjkrnkhhkjmnlkjkklnnmklookkkllkkoomonmknqlmookknkjklknmjjkkkkjljlmlkmpnnnmommmnqstsspoqqqqnnmmlkkmmnonlnpljlnmjjlkijlkhh", "t08": "jjiiihijkllmmjlkjkmnkjjkmlloqkkpmpplnkljmknliiiijiiiiiqsrrqqqqpopnnmlllmnmpoommkkkknllmmmjlklnkkjiijljlmkikjjjjjlmkmmkkjjjkijjlkkjhikmpnkklkjijkjjijkqzzzysrrutvuopstrpopmprttyysrspnklnnlprnrzuwxxtqqzwvrsropoqomomknoonmnppmnunlnnjloornnnmlmonnnnmpvwsssqrqqqooppmnrtpottomorqrstmnpppqstprzwwxxyvyzzyrqoqptuvttssrrrqorrqprvsnsusprxuqqsnprsqqsonruyxvvuttvvtsrroprssruutqsuuouusqprpoqusrzvwwvvrszzvvvssqrtrstuoourrqvtoorqppttpquvrstsnnvrsputopwzxyxurswtnqvtpouwqtvrpswzwuzwsrwupqwwrszwxzywsyzzussstotunppnplrupnppnkosqlnrnlssqpnpnmttroppsnswspoopllopoorpllppnlnonrrsprpokllkikkmllmmmmnnoqppmnmnmjlmlmmmlmklkkjijjmlilljgikjiikiijmnjkmpnruvrqnnllnnmoponnpomoonnpsttrtroloonqqnmonnlnrpqsssomnmolmllnnmmlljjklljlomklonknmkklmnlnqooopopwxwtrsqrrrpknqqmqropooonqqnoppoorqnlmomkppmmvqqnsropqpqnonpmnnnkloonpqnorqoqpnnklkjllkjjlllkmomltrtrppooppprqollomlmlonoqqnnmpolnqppnqnnpnmmnpmmxutqonkjkkklmnmjlnkkljgkoomjk", "t09": "rntwqnqsrprrnovuuzzzzztxqzvzznsyxsqmtnmmspzokjnjkjilkkilknkjjjlljjtooijkjhfhgfhjifghhghhhhjhhegfgefgeeghhfghijrmmjropljkiffgfgihhfgggeefgijhhffggffgfgffhghhfeeffhqmmjihgffffefeeefeeffeegihfffhggfgfegggefggefffyzzzzsvqzuxznrxusqlsmkkrpymjimjjkilkjikknkhijspnitoojjijihfgfgghiiigghgiiifefhhgghgffhjjjihjjhhhhrmnmkhgfgigghhfhfghhgegijgfeffffeffeefefhgfeeefgrmnjihfeffffeefefeedfeeiihjiijjkkllmkmmomoqrvspouopmjihhjjggggiiiiiihgghihhggggghgfghhghihggighggghihggffgfgghgfghihiihjmijjkjhhjihggghhgiiiikjkuqqolljkjijjjjjhihhhijikkjjjijhhhhhhhkhhijhjrnomtnpmkjijkhiiihjihjhiiggjlijhghihiijjiijihjjhjkjnvrrnmllkjklijjhgihkjijikonkmkjljklmjjkkjknnmnmkkmplkjlkmnnlklmkkljlkiihknlkmkkjillkkklkmlmnnuqspvqqpmnmlkkklmklklljmmkglmjiijjkiij", "t10": "gfgfgggggffggnkkihhhhhhghhhgihhhhhihkkjjjijlmkgiiijlllkkjljhszzzvrrqusstootsqompmlnpotljlmjkljjkjiijkjihjpokiqmmihiiiigggiihihjihhiikkihhhhghhiiijjghpklhnkkowqqpnnmllmmkkknlllkjllmlollkkjjjjjkjjjkkkjjjqlmnvpnnkikjijiikkkkkjjijkilnljijhhhikjikjhhhiijjigqzzzzuvtwruuuvvtuqnvqnstqvrmnmnmkkljljlllkklkklimyroklkjjjigiijihhhklkjjnonkknpnjkkllkjjjkjkkqnnnvtqnmlkkllkjkmonmmlllnnmomljiiijjjiiiiiklmljnkjjsmnjijhhhhhgghijjkkjjjjkmlljljhionmkmknmmkmkiiirzzzwrppruuvnottrrqtpnorowsokppnmoomlnnmnpoolqssoxrrtrrpnpmnnpnopqqqqrooprqmnlqqnooqoppmmnpopxrprzvutuusrqqnnsqrppqpmoonosrqqonmnoppoqpnorqqpopqoysssprononommnnmlomlnooprqonppnlmpkknronpqnnsrnqxusqsrooonnqqutopponqqoornlonnnmmmmmpromqnlmvutrxtqssupppptrqppqprqnqrppurpnnomlormmrqonutsswuqsyvutttpprqspsqqrrqoostqpsrqqqooqqomoprnorqqssttrxttsrrrppqlnqqopqpporqnqtspruutqtuuqrtsvxutvxutuzzzzzzwzvwtqvvuuuuspputrxqpmqo", "t11": "mononnompvxxryyxtzwvtvsqooopqpqnproqorqqsqopprttqpqpqstsroopnrrqrxzwyurrsrqpprssqrrpppqqrsppsnpqnqrqqppopwurrxyvvxxvvuqopqpnrpqqorqtnponpqortnqtqrrqoqttpqvuqqpnnxzyzvruvpmnpqoqqrqqstuppssrwrvuvvpotqrstyutvzzwuzywwvursuvvrrruvvxxsvzwurqrvuqovqsnsuurswsrqvuurzzxzxtrrssrqoqqtstrtrppqtsstrqrtutsrrssrwtstzxwwwvzytszwwzxuuyywrqoouussvstrqsqprqpqspuprruuvrsszyztpplqoprkmpnmlimjihmkqjihjhihgihhghhjgfgfhhggrlmhgggfeeedfgfeefeeeeefhfecededddcceeeddeehpllhpmmjggfddedeeeedeeecdddghfedddeddeddddddffdcdddfpkligedddddddfedddcdddcfgedddedddddcdddcddddeddpzxzrnokqnoqilpnlkhmigglkqigfhfggfhggfggigefhpmlgqllhgffffeeddedegfedeeefgeffeedddffeffeeeeffgffgplljhfedeeeddedffeefeddgheddddddegfdcdeeeedcdddfpkligfedddcdeddedeecdedfgfefefggghhhghiihjklrnmkqlmjgfedeeeeeeeeeeeffeefheeeedddeeddeeddeeededddddefeeedddddeeeeefefgfegifgggfeeddddefeddfffeffgqmmkigfgffgggggfgfefghhiihggggfffeffegeeffefplljplljgffffffgfhggfgffffeghfffeeeff", "t12": "fffggffggeefgkrnpljhhhghhghhffffgffgfimjhihhihhhighiihijihhhggijihhhhiijihjjiijgggihghkhfgggfhgihgiigihhiiqoomsooljjjiihhjjihgghhgghgijhhghihgfghgfgfffffggfghrmnkihhhiihhhhhjiihihhhlmkkiiljljghjjjkkllkjjjjuzzzvssqustwqputspnrnmoopulkmnlllkkkkjlkkjiilsqmktookjihhihggijhhhhiihiglmjijjlkhghiihgfhsmmjrmmpztsqoonmmmmkllnmmlkkmlmlnlmlkkklkjlkkkllkjkkuopoyrppljkjhiiikkkkkkmmmliloljjjijjjkjijjjiiijjkihqzzzyvwuwsvuuvvturovqostqvrmomlmkjkkkkmlmlllllmjnzurmlkkijjiijkiijijjjijnokjkmmmjklmlnllmolkksqpowsronmlklllkkmlnonmnmkmnpllmljhhjlkijjjikjkkoljkstpnmjhhhighhkkiilklnmmmlmnpnljimpommkkjkjkhjkmtzzzwqprstvxoquwttsurqpsrysnoqonpqpnkmpooonopvystzyvzzvsoqqpoqqqqsqpopqsrssnknqoqrtrsrrpnqqoozvsuywvrttqqqpkqqpnlpoopoqooqtqqnrpmqrrosrorssppoqqqxvvtsqqnpopopommmlmlpoorqqrpoonppnpnponmnponosqqzuvsqrnoqtpqrrrpqrpooqorronnopnmmnnmqpoqqqoozxtrzvtsrrqturqrsppprptrnqrpppqnn", "t13": "klpqnmonnnqppquqnryttstqsqtrqqtprqssqnqpppqqsqrqoopppmrppqsrprqrpquwtsrqpnoppqpqomsnnoqooqrqpprspqsurrtruvvvuqxsuvzyzzxssvswvqrussssrnqqsrvponqppnnoomppoqwzyrzzuuyzusrrspmlonqsmoursqqqoqsqnpqvsponomqrpnmoopusrrxywzvsrqpsunopqpqponqrrrvsmnpruspponqroqwwrrzzxuxzvvuqqruqotrppqrpsqqnpqqprqqqqrqqnnqtrsquqmooooyyxzvqsnprprsnpnonnpusoosqqvqusqsoopqrprvvstzxxuxzwwttqpsssrsrqrortqsttroopqpomoqqoorqpotrqruussyzzyvssrtrqnqqqqorqoqtpotqrptppqrrrstspqvvutzwyvxxxvtsutsvusuuxvstppuwqsytpssuturtrturxswsqqtrrtzyzzmnorrttmtqpomkrrqpqvyoprsomqlonjkmlnnnponpnoppnnoopnmomnmnkhimkikkjihjkikkjhfgfgfgggedeeghgedeffedfefgfefffeffeeefgfehgghiifhjhfggghjmmikjhjsqrooopoqrljlmlkklighjigijhhhhhhhgfegihghhgggfedfffeeegfihihiiigiilijjijhmnjkjjompmlnnkljnnnmmnjtspqprsprwtpspoonppppptmmnmkknpljjlkkkjhijjijkjhhkkjhhhhiijjjliiklkkhjkkkklkmjlmlpnjnomlmpoqnmlkwtvtttusuustsquqsutortvuvstosqttrtsonoqmsmqoqnpmjmlkkkmnonmmklrnpnkllmoinqssmlostpqsortqtyrmlowrrsuptyyqqrvqrpqsrsrrsrunotsqpopnonmlooqnmmlmqqrooqqonomlnnl", "t14": "llllllllmronmnmllmoorrqmosrmorrppsrptvvsptrprtroqsrnonnnnqpnnopmpqoolmqtnnprpoopnllpooonopppopopmpoomnoppqpoqnplmpqqttqqpqoosttsrstnuvtqqtutvvsspuvswtsppotstuqqssussspnpvurttursssrrsttpqqnqpporqoprsppstusqrrrqrsuxvsrtutqrtttuurrwwxuvwtsvxuruytssrruutusvwvuvxurqwttvwwtqurtvwuvwuvuvtqqrwvsvwvtxuvuussvvwrustsqvruruwwvvvrsrvuxusuvyusvtxuuwwwswvwuttwvtvstrturrtwwvtustvupsrsxwxxwyxtqvsuvwvwrxvvrstwxuutxsvtrsruuvwtuvutvsutssporsvsusxtrxwuuvvtuustvtuuvrtrpsvtxvxusuwvuwsqvvvwtussssyqquvwnttuqrrrutsrrqqoostssuyvptupovwwuwuvurttstxssxtssusrrovsqrsssstroqqpttvtrqtspqtrtxvvtuwrrstsrtuvsussrtsuvvvruvttrurpswvstwxuuuvuuwwvtrxutrvqtuxtrvvuttvtstsutwuutxwuvwwuwwwuuyxwyzuvvtwruswstuxztvxusvtxtvvwuvvwsxwutuxutuxtvuwwvzwzwtvvuuxwywxtwwxwwvvwtuxwttsrsstyzwywuvutsvzzsvwvxuxwswxxyxyyssvxuxxwvwtwvuvsvwuwuxzwyxywuwwvtzwwwwvuxxxvuzzuxywvtywvtuyursxvvuvxxvzvtvyyuyyvwyxvvuwutwxvvxxutswvtvusuxxwvrtwvyxtvwwurvvtutwzuytwuvwtvzutvwwwuwvuuvwuvuvtststxwxrrvzuvtuvwwwuvywwxvvvwwuuyzyyvyxzwzuwwvwwyxuuvwutuwwuvxtszxtwwxwxuuvtvvxwvyzzusuvvyvuuuzwtwutsvwwxxywyyvwwwuwyvwutvuqttwvtyyuvuuusttsuv", "t15": "svsstttsrsuvrswwtutwuvyvwuuuvuxwtuvwtrwwuvtvvsyxttzytrzwuzvywsxxtruruvxuwtvwtvvtruwuutvttvsvtuxutvwvrswxruyyutxyssvtsuyxsvuvttsvuyxwrstutsyztvyvtuvxrrutsuxvvswusquurruutuusttvvtsvxtsvttrsstuuwwvuuvttvuvwzuuuvsrwwwwwuwuuvtvuvuxwwtuxvvutuvtvyusuwttxzvtvxutwwtrsvvvuwvxvuttvvstwwttwtsttusuwyuvvvuqsqqrvwuvzyrtsuywvwuuttssvuuywytswxtuvuttwvtuvwtsvvuusuttwvrrwuvvxssssusqtusswxsututrvvuuuytvqwrpuxssyzrssvvtrwuuxvtsswuqxxvuwvuqxtstvtrtwxttsvruuutwuvyustsqwwvuwvvtsusruutrvvuswtrturruvutustussttuxwrssussuwvtxvvuxutrxxvwvutsvwtuuuuuwtrrtuspturswyuuzzuwsrqrvtvuswusywusvyvstwustvttwurrrsrqrwuuvxttvxvtuwwvytusvtpstwtvvutturpvttsuussrvvttuxttwwustwrsuvuuwuuvuuuuysuuvwtuwutvttusuwrtuursxtrswtvuwusvxxvxzxxwxxvxyvvxwxxtuzuuuvvtuwstuvuuvwuvuvuuwvutvwuuzzzvxutwzwznurnnsjrjlnkkylhgijniffjkijhliikhigjihhefefefedddedddcdddcccc", "t16": "gghgifhiihigggffgihjhgknlmllkkjnkkkjkjlkkkmokjjijiikjlihggijjighikfhiigjgikihjmhijhhgjjhiiihgiihhhgfighhliijhgkfffghigjprqppqqnlmmmnljjjjikkhjklljljjhjgijjmiimljlmkjnmnnpjkkijillmllioslggllkjjmlhhkjgjijjlmhijkkkklmlsrqsromoppmmoqlnpoqpnnoqqlmnlllnnmlkllmkjjjjjlkllmmkimnkhijijklihghkihjjiilljikiiiihhiihikkjijjpmlmmlllkmooooppqprpoomlkkkliiikjiiiiiiiijjjlkllkijjkijmnkjhiiijkjkjjijihhgfhjiijiijkjjjlknovurrzzzzzwzyzzzzxzzzzxuzsrrwuztnnsoqpnqnonmornlmnoonmpomnllmolljhijijjiiijhlkhgihhiihiiihikhihiihikhkoppppomnolkjkijkkkkiiighjnmngmpogklmgllhkilflgkkjhjkgfgkhjjjhkhijikgiifgffhghfehehjhffffgfgghhhikkkkkkiihggghhhihhhghgggffefffffffeeffeeeefffffgggffffefeefeeggddeeeeddcdddddddddccddddddeedeeeefgeefffghhhhhhhgggffeeeeedddddeeddddcccddedeedeedddddedeeeddddddeddedddedd", "t17": "cddeededcccdeeeffffezzzzzqvrzyzzpuzywsmwollvqzokjollkinlkjlkokgijlmijljfiiiihfeeeeeffeefeddedddeedeeeefeeeeffefffeeffffgfffgggegfgegffffffgggfgggffggfggggghggggggfgggfhfgfhfgegffggffffffgfgfgggfgggggfggfgggfggffhggfhffegffeffeffffgggghhighhhghihghhhgghggfhggfhfffhefegeeegfefhgfhghfhggghhhghihghigggighghggfhfgghggfgggghhfhhhghhhghhhhhihhhhihgiigghggfifgfgfffhfffgggghigihihijjijikiikjijkijhkijhjiihjhhfjfhfiggfhggfgfffgffghhghhhghhihiiihijihhiihhigigihggiggfhffghgfhhhghhhhiiihhiiihiiihjihhjhhhhhgghggfgefffdfeegefehfhfifigjgihkhjjkjjkkjjkhkhighgighihjhjhkgkjkilkmkmlnkmmmkllkkjljkikijfjfhghghhhhhigigigjhjijikikjjkjjjkjjiiiihhgighfgehefhhfihgihhhjgjjjjkikkjikjikjjjjijijjkhihhfhfgegeghgighhjgjhlikiljlkmkmlmklmmljmlljkijhighfigggihhihiiiikgkjljlkmlllnkllkkklljikjihjghgiegghhgihiijhkhkjljmklkllnklmmllmlmklkmikikgjfifhghhhhhihkhkjlimkmlllnmmnnlnnmnmnmnknlljljjikhjfifhiiihhhjijikhkjljlkmklkmkmlllllnljzzzzzsqyzzzztxxzupmvokovtyohipljkiojlilknihgjkljhlgfhhfjdcbccecccbbcbcbbaaaa"};
+var store={get:function(k,d){try{var v=localStorage.getItem('rh4_'+k);return v?JSON.parse(v):d}catch(e){return d}},set:function(k,v){try{localStorage.setItem('rh4_'+k,JSON.stringify(v))}catch(e){}}};
+/* ---------- DATA ---------- */
+function L(es,en,pt){return {es:es,en:en,pt:pt}}
+var MAIL='rodrigohuaychog@gmail.com',PHONE='+54 9 343 5090 710',LINKEDIN='https://www.linkedin.com/in/rodrigohuaycho';
+var SOC={tiktok:'https://www.tiktok.com/@rodhuay',youtube:'https://www.youtube.com/@rodhuay',facebook:'https://www.facebook.com/rodhuay'};
+var BUY='https://pay.hotmart.com/Q103174509Q?checkoutMode=10&bid=1789009847822';
+var P={royal:['#014BAA','#F8F3F0','ROYAL BLUE','LIGHT CREAM'],wine:['#7F011F','#F5EBD0','WINE RED','LIGHT SAND'],orange:['#EC5E27','#FDFDF1','ORANGE','MILK'],plum:['#381932','#FFF3E6','PLUM','MILK'],indigo:['#282B4A','#EEEBDA','MIDNIGHT INDIGO','VANILLA'],cherry:['#890149','#F3F3E7','CHERRY','ALABASTER'],forest:['#064734','#E0FFC2','FOREST','LEAF'],bone:['#0D0D0D','#F1EBE1','BLACK','BONE WHITE']};
+var ACC={royal:'#E0FFC2',wine:'#EC5E27',orange:'#282B4A',plum:'#EC5E27',indigo:'#E0FFC2',cherry:'#F5EBD0',forest:'#EC5E27',bone:'#EC5E27'};
+var CATS={yo:L('Sobre mí','About me','Sobre mim'),pro:L('Profesional','Professional','Profissional'),aca:L('Académico','Academic','Acadêmico'),own:L('Proyectos propios','My projects','Projetos próprios'),form:L('Formación','Education','Formação'),con:L('Contacto','Contact','Contato')};
+var HLI={yo:'user',pro:'reels',aca:'star',own:'heart',form:'grid',con:'dm'};
+
+var POSTS=[
+/* 1 — MINI BIO */
+{id:'bio',cat:'yo',pal:'bone',inv:true,av:'me-blue',short:L('Mini bio','Mini bio','Mini bio'),t:L('Rodrigo Huaycho','Rodrigo Huaycho','Rodrigo Huaycho'),
+ sub:L('Comunicador audiovisual','Audiovisual communicator','Comunicador audiovisual'),when:L('Portafolio 2026','Portfolio 2026','Portfólio 2026'),
+ role:L('Presentador · Guionista · Editor de video','Presenter · Scriptwriter · Video editor','Apresentador · Roteirista · Editor de vídeo'),
+ cap:L('Hago que el mensaje de la Biblia llegue a la Generación Z en video corto. Si tengo una idea, la construyo.','I help the message of the Bible reach Gen Z through short-form video. If I have an idea, I build it.','Faço a mensagem da Bíblia chegar à Geração Z em vídeo curto. Se tenho uma ideia, eu a construo.'),
+ tags:['portafolio','comunicacion','uap'],
+ sl:[
+  {ty:'photo',img:'me-blue',pos:'50% 20%',k:L('Hola, soy','Hi, I am','Olá, eu sou'),h:L('Rodrigo Huaycho','Rodrigo Huaycho','Rodrigo Huaycho'),chips:[L('Presentador','Presenter','Apresentador'),L('Guionista','Scriptwriter','Roteirista'),L('Editor de video','Video editor','Editor de vídeo')]},
+  {ty:'text',v:1,k:L('Mini bio','Mini bio','Mini bio'),h:L('Hago que la Biblia llegue a la Gen Z.','I bring the Bible to Gen Z.','Levo a Bíblia até a Geração Z.'),p:L('Comunicador audiovisual y estudiante de <mark>Licenciatura en Comunicación</mark> en la Universidad Adventista del Plata (Argentina). Presento, escribo guiones y edito video en formato corto.','Audiovisual communicator and <mark>Communication</mark> student at Universidad Adventista del Plata (Argentina). I present, write scripts and edit short-form video.','Comunicador audiovisual e estudante de <mark>Comunicação</mark> na Universidad Adventista del Plata (Argentina). Apresento, escrevo roteiros e edito vídeo curto.')},
+  {ty:'stats',v:2,k:L('En números','In numbers','Em números'),st:[['300','K+',L('seguidores en mis redes','followers on my channels','seguidores nas minhas redes')],['14','M+',L('me gusta en TikTok','likes on TikTok','curtidas no TikTok')],['1.6','M+',L('audiencia de los medios donde trabajo','audience of the media I work for','público dos meios onde trabalho')],['3','',L('idiomas: ES · EN · PT','languages: ES · EN · PT','idiomas: ES · EN · PT')]]},
+  {ty:'steps',v:0,k:L('Cómo pienso','How I think','Como eu penso'),h:L('Cada pieza tiene que…','Every piece has to…','Cada peça precisa…'),st:[['01',L('Comunicar','Communicate','Comunicar'),L('que el mensaje llegue','the message lands','que a mensagem chegue')],['02',L('Retener','Retain','Reter'),L('que la gente se quede','people stay','que as pessoas fiquem')],['03',L('Funcionar','Work','Funcionar'),L('que cumpla su objetivo','it hits its goal','que cumpra seu objetivo')]]},
+  {ty:'photo',img:'me-sunset',pos:'50% 30%',k:L('Mi lema','My motto','Meu lema'),h:L('Si tengo una idea, la construyo.','If I have an idea, I build it.','Se tenho uma ideia, eu a construo.')},
+  {ty:'cta',v:1,k:L('Y ahora','What\'s next','E agora'),h:L('Mira mi trabajo','See my work','Veja meu trabalho'),btns:[[L('Explorar','Explore','Explorar'),'go','explore',0],[L('Escribirme','Message me','Fale comigo'),'go','dm',1]]}],
+ det:[[L('Quién soy','Who I am','Quem sou'),L('Comunicador audiovisual y estudiante de <b>Licenciatura en Comunicación</b> en la UAP (Argentina). Me gradúo en junio de 2027.','Audiovisual communicator and <b>Communication</b> student at UAP (Argentina). I graduate in June 2027.','Comunicador audiovisual e estudante de <b>Comunicação</b> na UAP (Argentina). Formatura em junho de 2027.')],
+  [L('Mi propuesta de valor','My value','Minha proposta de valor'),L('Pienso en formato, guion y estrategia al mismo tiempo: cada pieza tiene que <b>comunicar, retener y funcionar</b>.','I think about format, script and strategy at once: every piece has to <b>communicate, retain and work</b>.','Penso em formato, roteiro e estratégia ao mesmo tempo: cada peça precisa <b>comunicar, reter e funcionar</b>.')],
+  [L('Mis intereses','My interests','Meus interesses'),L('Comunicación cristiana, video corto, marca personal, innovación y aprender de otros.','Christian communication, short-form video, personal branding, innovation and learning from others.','Comunicação cristã, vídeo curto, marca pessoal, inovação e aprender com outros.')]]},
+
+/* 2 — IGLESIA ADVENTISTA MUNDIAL */
+{id:'iasd',cat:'pro',pal:'royal',av:'l-iasd2',short:L('Iglesia Adventista Mundial','World Adventist Church','Igreja Adventista Mundial'),t:L('Iglesia Adventista Mundial','World Adventist Church','Igreja Adventista Mundial'),
+ sub:L('Presentador y guionista · 2026 — hoy','Presenter & scriptwriter · 2026 — now','Apresentador e roteirista · 2026 — hoje'),when:L('Enero 2026 — hoy','January 2026 — now','Janeiro 2026 — hoje'),
+ role:L('Presentador en cámara, guionista y buscador de ideas','On-camera presenter, scriptwriter and idea finder','Apresentador, roteirista e caçador de ideias'),
+ cap:L('Presento y escribo videos cortos para las cuentas oficiales de la Iglesia Adventista del Séptimo Día en español (Conferencia General). Empecé como voluntario y hoy es mi trabajo.','I present and write short videos for the official Spanish-language accounts of the Seventh-day Adventist Church (General Conference). I started as a volunteer and now it is my job.','Apresento e escrevo vídeos curtos para as contas oficiais em espanhol da Igreja Adventista do Sétimo Dia (Associação Geral). Comecei como voluntário e hoje é meu trabalho.'),
+ tags:['presentador','guionista','videocorto'],
+ sl:[
+  {ty:'cover',logo:'l-iasd2',k:L('Conferencia General · 2026','General Conference · 2026','Associação Geral · 2026'),t:[L('Iglesia','World','Igreja'),L('Adventista','Adventist','Adventista'),L('Mundial','Church','Mundial')],sz:'m',handle:'@iglesiaadventistamundial'},
+  {ty:'video',v:'iasd1',k:L('Oración','Prayer','Oração'),cap:L('La oración es más que una lista de pedidos.','Prayer is more than a list of requests.','A oração é mais que uma lista de pedidos.')},
+  {ty:'video',v:'iasd4',k:L('Fe','Faith','Fé'),cap:L('Si lo sostiene Dios, nunca queda vacío.','If God holds it, it is never empty.','Se Deus o segura, nunca fica vazio.')},
+  {ty:'video',v:'iasd5',k:L('Sábado','Sabbath','Sábado'),cap:L('Mitos sobre el sábado que no están en la Biblia.','Sabbath myths that are not in the Bible.','Mitos sobre o sábado que não estão na Bíblia.')},
+  {ty:'video',v:'iasd2',k:L('Cultura','Culture','Cultura'),cap:L('Jesús vino a expulsar las tinieblas.','Jesus came to drive out darkness.','Jesus veio expulsar as trevas.')},
+  {ty:'video',v:'iasd3',k:'Romanos 15:5',cap:L('El Dios que consuela y une.','The God who comforts and unites.','O Deus que consola e une.')},
+  {ty:'steps',v:1,k:L('Mi recorrido','My path','Meu caminho'),h:L('De voluntario a contratado','From volunteer to hired','De voluntário a contratado'),st:[['01',L('Enero 2026','January 2026','Janeiro 2026'),L('Empecé como voluntario','Started as a volunteer','Comecei como voluntário')],['02',L('Febrero 2026','February 2026','Fevereiro 2026'),L('Me contrataron de forma oficial','Officially hired','Fui contratado oficialmente')],['03',L('Hoy','Today','Hoje'),L('15 videos al mes: virales, de valor y educativos','15 videos a month: viral, value and educational','15 vídeos por mês: virais, de valor e educativos')]]},
+  {ty:'text',v:2,k:L('Creator Summit 2026','Creator Summit 2026','Creator Summit 2026'),h:L('Invitado a la sede mundial.','Invited to world headquarters.','Convidado à sede mundial.'),p:L('La Conferencia General me invitó al <mark>Creator Summit</mark> en Silver Spring, Maryland (20 al 23 de julio de 2026), por mi trabajo en el ministerio digital en español.','The General Conference invited me to the <mark>Creator Summit</mark> in Silver Spring, Maryland (July 20–23, 2026) for my work in the Spanish digital ministry.','A Associação Geral me convidou ao <mark>Creator Summit</mark> em Silver Spring, Maryland (20 a 23 de julho de 2026), pelo meu trabalho no ministério digital em espanhol.')}],
+ det:[[L('Rol','Role','Função'),L('<b>Presentador, guionista y buscador de ideas</b> de video corto para las cuentas Iglesia Adventista Mundial. No edito estos videos: los presento y los escribo.','<b>Presenter, scriptwriter and idea finder</b> for short videos on the World Adventist Church accounts. I don\'t edit these: I present and write them.','<b>Apresentador, roteirista e caçador de ideias</b> de vídeos curtos para as contas Igreja Adventista Mundial. Não edito esses vídeos: apresento e escrevo.')],
+  [L('Relevancia','Why it matters','Relevância'),L('Adapto mensajes doctrinales complejos a formatos accesibles para audiencias digitales de 18 a 34 años, con alcance internacional.','I adapt complex doctrinal messages into accessible formats for digital audiences aged 18–34, with international reach.','Adapto mensagens doutrinárias complexas a formatos acessíveis para públicos digitais de 18 a 34 anos, com alcance internacional.')],
+  [L('Creator Summit','Creator Summit','Creator Summit'),L('Invitado por la Conferencia General al Creator Summit (Silver Spring, Maryland, julio 2026).','Invited by the General Conference to the Creator Summit (Silver Spring, Maryland, July 2026).','Convidado pela Associação Geral ao Creator Summit (Silver Spring, Maryland, julho 2026).')]]},
+
+/* 3 — NESTX */
+{id:'nestx',cat:'pro',pal:'indigo',av:'l-nestxdot',short:'NestX',t:L('NestX · Red de Innovación Adventista','NestX · Adventist Innovation Network','NestX · Rede de Inovação Adventista'),
+ sub:L('Presentador y PM de comunicación · voluntario','Presenter & communication PM · volunteer','Apresentador e PM de comunicação · voluntário'),when:L('Septiembre 2026 — marzo 2027','September 2026 — March 2027','Setembro 2026 — março 2027'),
+ role:L('Presentador y project manager del equipo de comunicación','Presenter and project manager of the communication team','Apresentador e gerente de projeto da equipe de comunicação'),
+ cap:L('NestX une a universidades adventistas para innovar juntas. Soy su presentador y project manager de comunicación, de forma voluntaria, desde septiembre de 2026 hasta marzo de 2027.','NestX connects Adventist universities to innovate together. I am its presenter and communication project manager, as a volunteer, from September 2026 to March 2027.','A NestX une universidades adventistas para inovar juntas. Sou seu apresentador e gerente de projeto de comunicação, como voluntário, de setembro de 2026 a março de 2027.'),
+ tags:['nestx','innovacion','projectmanager'],
+ sl:[
+  {ty:'cover',logo:'l-nestx',k:L('Sep 2026 — Mar 2027 · voluntario','Sep 2026 — Mar 2027 · volunteer','Set 2026 — Mar 2027 · voluntário'),t:['NestX'],sz:'xl',s:L('Adventist Innovation Network','Adventist Innovation Network','Adventist Innovation Network')},
+  {ty:'video',v:'nestx',k:L('Video de lanzamiento','Launch video','Vídeo de lançamento'),cap:L('¿Qué es NestX? Lo presento yo.','What is NestX? I present it.','O que é a NestX? Eu apresento.')},
+  {ty:'img',img:'nxweb0',frame:'laptop',v:1,k:L('Web que diseñé','Website I designed','Site que desenhei'),h:L('Para presidentes de universidades y uniones de Norteamérica','For university and union presidents in North America','Para presidentes de universidades e uniões da América do Norte')},
+  {ty:'img',img:'nxweb3',frame:'laptop',v:2,k:L('Sección «Momentum»','“Momentum” section','Seção “Momentum”'),h:L('14 universidades, 3 divisiones','14 universities, 3 divisions','14 universidades, 3 divisões')},
+  {ty:'stats',v:0,k:L('La red hoy','The network today','A rede hoje'),st:[['14','',L('universidades socias','partner universities','universidades parceiras')],['3','',L('divisiones mundiales','world divisions','divisões mundiais')],['6','',L('en Norteamérica (NAD)','in North America (NAD)','na América do Norte (NAD)')],['3','',L('pilares: académico, tecnología, emprendimiento','pillars: academic, tech, entrepreneurship','pilares: acadêmico, tecnologia, empreendedorismo')]]},
+  {ty:'gallery',v:1,imgs:['nx-foro1','nx-foro2','nx-foro3'],k:L('Foro de Emprendimiento e Innovación','Entrepreneurship & Innovation Forum','Fórum de Empreendedorismo e Inovação'),h:L('Carrusel para el foro del 2 de noviembre','Carousel for the November 2 forum','Carrossel para o fórum de 2 de novembro')},
+  {ty:'rows',v:2,k:L('Lo que hice','What I did','O que fiz'),rows:[[L('Redes','Social','Redes'),L('Creé y optimicé los perfiles','Created & optimized all profiles','Criei e otimizei os perfis')],[L('Usuario','Handle','Usuário'),'@nestx.global'],[L('Equipo','Team','Equipe'),L('Centro de operaciones en Notion','Notion operations center','Central de operações no Notion')],[L('Escenario','Stage','Palco'),L('Presento y escribo los guiones','I present and write the scripts','Apresento e escrevo os roteiros')],[L('Próximo','Next','Próximo'),L('Andrews Innovation Conference · mar 2027','Andrews Innovation Conference · Mar 2027','Andrews Innovation Conference · mar 2027')]]}],
+ det:[[L('Rol','Role','Função'),L('<b>Presentador y project manager de comunicación</b> de NestX, de forma voluntaria (septiembre 2026 — marzo 2027).','<b>Presenter and communication project manager</b> at NestX, as a volunteer (September 2026 — March 2027).','<b>Apresentador e gerente de projeto de comunicação</b> da NestX, como voluntário (setembro 2026 — março 2027).')],
+  [L('Web','Website','Site'),L('Diseñé la web que presenta el proyecto a presidentes de universidades y uniones de Norteamérica.','I designed the website that presents the project to university and union presidents in North America.','Desenhei o site que apresenta o projeto a presidentes de universidades e uniões da América do Norte.')],
+  [L('Redes','Social media','Redes'),L('Creé y optimicé todos los perfiles de NestX en redes sociales (@nestx.global) y grabé el video de lanzamiento.','I created and optimized every NestX social profile (@nestx.global) and recorded the launch video.','Criei e otimizei todos os perfis da NestX nas redes (@nestx.global) e gravei o vídeo de lançamento.')],
+  [L('Relevancia','Why it matters','Relevância'),L('Coordino la comunicación de una red de 14 universidades en 3 divisiones mundiales.','I coordinate communication for a network of 14 universities across 3 world divisions.','Coordeno a comunicação de uma rede de 14 universidades em 3 divisões mundiais.')]]},
+
+/* 4 — EDICIÓN DE VIDEO */
+{id:'edicion',cat:'pro',pal:'orange',av:'me-sunset',short:L('Edición de video','Video editing','Edição de vídeo'),t:L('Edición de video','Video editing','Edição de vídeo'),
+ sub:L('Editor de video · 2026','Video editor · 2026','Editor de vídeo · 2026'),when:L('2026 — hoy','2026 — now','2026 — hoje'),
+ role:L('Editor: ritmo, corte, color y subtítulos','Editor: pacing, cuts, color and subtitles','Editor: ritmo, corte, cor e legendas'),
+ cap:L('Edito para Nuevo Tiempo / Novo Tempo, el Pr. Joel Flores, Laura Siderac y ADRA Argentina. Cada corte tiene que tener una razón.','I edit for Nuevo Tiempo / Novo Tempo, Pastor Joel Flores, Laura Siderac and ADRA Argentina. Every cut needs a reason.','Edito para Nuevo Tiempo / Novo Tempo, o Pr. Joel Flores, Laura Siderac e a ADRA Argentina. Cada corte precisa de um motivo.'),
+ tags:['edicion','premiere','montaje'],
+ sl:[
+  {ty:'cover',k:L('Edición de video · 2026','Video editing · 2026','Edição de vídeo · 2026'),t:[L('Detrás','Behind','Por trás'),L('del corte','the cut','do corte')],sz:'xl'},
+  {ty:'video',v:'bts',k:L('Detrás de cámara','Behind the scenes','Bastidores'),cap:L('Grabando uno de mis propios videos: cámara, luz y audio.','Recording one of my own videos: camera, light and audio.','Gravando um dos meus próprios vídeos: câmera, luz e áudio.')},
+  {ty:'rows',v:1,k:L('Para quién edito','Who I edit for','Para quem edito'),rows:[['Nuevo Tiempo · Novo Tempo',L('may 2026 — hoy','May 2026 — now','mai 2026 — hoje')],['Pr. Joel Flores',L('YouTube · long-form','YouTube · long-form','YouTube · long-form')],['Laura Siderac',L('video corto','short-form','vídeo curto')],['ADRA Argentina',L('abr — jun 2026','Apr — Jun 2026','abr — jun 2026')],['TV Nuevo Tiempo',L('diseño gráfico · may — jul 2026','graphic design · May — Jul 2026','design gráfico · mai — jul 2026')]]},
+  {ty:'stats',v:2,k:L('Resultados','Results','Resultados'),st:[['1.1','M+',L('audiencia de los 4 medios Nuevo Tiempo','audience of the 4 Nuevo Tiempo outlets','público dos 4 meios Nuevo Tiempo')],['100','K+',L('vistas en video corto (L. Siderac)','views on short-form (L. Siderac)','visualizações em vídeo curto (L. Siderac)')],['80','K+',L('vistas en long-form (Pr. J. Flores)','views on long-form (Pr. J. Flores)','visualizações em long-form (Pr. J. Flores)')],['2','',L('idiomas: español y portugués','languages: Spanish & Portuguese','idiomas: espanhol e português')]]},
+  {ty:'tl',v:0,k:L('Línea de tiempo','Timeline','Linha do tempo'),h:L('Ritmo, cortes, subtítulos','Pacing, cuts, subtitles','Ritmo, cortes, legendas')}],
+ det:[[L('Rol','Role','Função'),L('<b>Editor de video</b>: ritmo, corte, color y subtítulos, en formato vertical y horizontal.','<b>Video editor</b>: pacing, cuts, color and subtitles, vertical and horizontal.','<b>Editor de vídeo</b>: ritmo, corte, cor e legendas, em vertical e horizontal.')],
+  [L('Nuevo Tiempo','Nuevo Tiempo','Novo Tempo'),L('Edito para TV Nuevo Tiempo, Radio Nuevo Tiempo, NT Play y TV Novo Tempo (Brasil), con más de 1,1 millones de seguidores en conjunto.','I edit for TV Nuevo Tiempo, Radio Nuevo Tiempo, NT Play and TV Novo Tempo (Brazil), with 1.1M+ combined followers.','Edito para TV Nuevo Tiempo, Rádio Nuevo Tiempo, NT Play e TV Novo Tempo (Brasil), com mais de 1,1 milhão de seguidores somados.')],
+  [L('Otros clientes','Other clients','Outros clientes'),L('Pr. Joel Flores (más de 80 mil vistas), Laura Siderac (más de 100 mil vistas) y ADRA Argentina (campañas institucionales).','Pastor Joel Flores (80K+ views), Laura Siderac (100K+ views) and ADRA Argentina (institutional campaigns).','Pr. Joel Flores (mais de 80 mil visualizações), Laura Siderac (mais de 100 mil) e ADRA Argentina (campanhas institucionais).')],
+  [L('Herramientas','Tools','Ferramentas'),'Adobe Premiere Pro · After Effects · CapCut']]},
+
+/* 5 — FEMUSA */
+{id:'femusa',cat:'pro',pal:'plum',av:'l-femusa',short:'FEMUSA',t:L('FEMUSA · Festival de música sacra','FEMUSA · Sacred music festival','FEMUSA · Festival de música sacra'),
+ sub:L('Presentador invitado · 2024 y 2026','Guest presenter · 2024 & 2026','Apresentador convidado · 2024 e 2026'),when:L('2024 · 2026','2024 · 2026','2024 · 2026'),
+ role:L('Presentador del evento y del streaming en vivo','Host of the event and the live stream','Apresentador do evento e da transmissão ao vivo'),
+ cap:L('Un concierto de música sacra que se hace una vez al año. Me invitaron dos veces: en 2024 presenté el evento y en 2026, el streaming en vivo por YouTube.','A sacred music concert held once a year. I was invited twice: in 2024 I hosted the event and in 2026, the live YouTube stream.','Um concerto de música sacra que acontece uma vez por ano. Fui convidado duas vezes: em 2024 apresentei o evento e, em 2026, a transmissão ao vivo no YouTube.'),
+ tags:['femusa','presentador','envivo'],
+ sl:[
+  {ty:'cover',logo:'l-femusa',k:L('Invitado dos veces','Invited twice','Convidado duas vezes'),t:['FEMUSA'],sz:'xl',s:L('Festival de música sacra','Sacred music festival','Festival de música sacra')},
+  {ty:'photo',img:'femusa26',pos:'50% 40%',k:'2026',h:L('Presentador del streaming en vivo para YouTube','Host of the live YouTube stream','Apresentador da transmissão ao vivo no YouTube')},
+  {ty:'steps',v:1,k:L('Dos ediciones','Two editions','Duas edições'),h:L('Del escenario a la transmisión','From stage to live stream','Do palco à transmissão'),st:[['24',L('2024','2024','2024'),L('Presentador del evento','Event host','Apresentador do evento')],['26',L('2026','2026','2026'),L('Presentador del streaming en vivo (YouTube)','Live stream host (YouTube)','Apresentador da transmissão ao vivo (YouTube)')]]}],
+ det:[[L('Rol','Role','Função'),L('<b>Presentador</b>: en 2024 del evento en vivo y en 2026 del streaming para YouTube.','<b>Host</b>: of the live event in 2024 and of the YouTube stream in 2026.','<b>Apresentador</b>: do evento ao vivo em 2024 e da transmissão no YouTube em 2026.')],
+  [L('Relevancia','Why it matters','Relevância'),L('Conducir en vivo exige improvisar, sostener el ritmo y conectar con el público presente y el de la transmisión.','Hosting live means improvising, keeping the pace and connecting with both the room and the online audience.','Apresentar ao vivo exige improvisar, manter o ritmo e conectar com o público presente e o online.')]]},
+
+/* 6 — UAP */
+{id:'uap',cat:'aca',pal:'indigo',inv:true,av:'l-uap',short:'UAP',t:L('Universidad Adventista del Plata','Universidad Adventista del Plata','Universidad Adventista del Plata'),
+ sub:L('Presentador institucional · voluntario','Institutional presenter · volunteer','Apresentador institucional · voluntário'),when:L('Agosto 2023 — hoy','August 2023 — now','Agosto 2023 — hoje'),
+ role:L('Presentador y productor de contenido institucional','Presenter and producer of institutional content','Apresentador e produtor de conteúdo institucional'),
+ cap:L('Presento las cuentas oficiales de la UAP de forma voluntaria: entrevistas en el campus, datos curiosos por los 125 años y la vida de los estudiantes.','I present the official UAP accounts as a volunteer: campus interviews, fun facts for its 125th anniversary and student life.','Apresento as contas oficiais da UAP como voluntário: entrevistas no campus, curiosidades pelos 125 anos e a vida dos estudantes.'),
+ tags:['uap','presentador','voluntario'],
+ sl:[
+  {ty:'cover',logo:'l-uap',k:L('Desde agosto 2023 · voluntario','Since August 2023 · volunteer','Desde agosto 2023 · voluntário'),t:[L('Universidad','Universidad','Universidad'),L('Adventista','Adventista','Adventista'),L('del Plata','del Plata','del Plata')],sz:'s',handle:'@uapargentina'},
+  {ty:'video',v:'uap4',k:L('Datos UAP','UAP facts','Curiosidades UAP'),cap:L('Una ambulancia real dentro del Centro de Simulación.','A real ambulance inside the Simulation Center.','Uma ambulância real dentro do Centro de Simulação.')},
+  {ty:'video',v:'uap5',k:L('125 años','125 years','125 anos'),cap:L('El pórtico y sus siglas C-A-P.','The gate and its C-A-P letters.','O pórtico e suas siglas C-A-P.')},
+  {ty:'video',v:'uap7',k:L('125 años','125 years','125 anos'),cap:L('Datos de la UAP que no son tan conocidos.','Little-known facts about UAP.','Curiosidades pouco conhecidas da UAP.')},
+  {ty:'video',v:'uap1',k:L('Entrevistas','Interviews','Entrevistas'),cap:L('10 preguntas para los alumnos ingresantes.','10 questions for new students.','10 perguntas para os calouros.')},
+  {ty:'video',v:'uap2',k:L('Campus','Campus','Campus'),cap:L('¿Qué te hubiera gustado saber antes de empezar?','What do you wish you had known before starting?','O que você gostaria de saber antes de começar?')},
+  {ty:'video',v:'uap6',k:L('Vida estudiantil','Student life','Vida estudantil'),cap:L('El último viernes del cuatrimestre.','The last Friday of the semester.','A última sexta do semestre.')},
+  {ty:'video',v:'uap3',k:L('Día del estudiante','Student Day','Dia do estudante'),cap:L('Cobertura del Día del Estudiante 2023.','Student Day 2023 coverage.','Cobertura do Dia do Estudante 2023.')}],
+ det:[[L('Rol','Role','Função'),L('<b>Presentador</b> de las cuentas oficiales de la Universidad Adventista del Plata, de forma voluntaria desde agosto de 2023.','<b>Presenter</b> for the official Universidad Adventista del Plata accounts, as a volunteer since August 2023.','<b>Apresentador</b> das contas oficiais da Universidad Adventista del Plata, como voluntário desde agosto de 2023.')],
+  [L('Relevancia','Why it matters','Relevância'),L('Entrevistas espontáneas en el campus: aprendí a romper el hielo, preguntar y editar el ritmo para redes.','Spontaneous campus interviews: I learned to break the ice, ask and pace edits for social.','Entrevistas espontâneas no campus: aprendi a quebrar o gelo, perguntar e dar ritmo às edições.')],
+  [L('Cuenta','Account','Conta'),'@uapargentina']]},
+
+/* 7 — LIC. COMUNICACIÓN */
+{id:'lic',cat:'aca',pal:'cherry',av:'l-wecom',short:L('Lic. en Comunicación','Communication degree','Lic. em Comunicação'),t:L('Lic. en Comunicación UAP','Communication degree · UAP','Lic. em Comunicação · UAP'),
+ sub:L('Idea, presentación y edición · 2025 — 2026','Idea, hosting and editing · 2025 — 2026','Ideia, apresentação e edição · 2025 — 2026'),when:L('2025 — 2026','2025 — 2026','2025 — 2026'),
+ role:L('Genero la idea, presento y edito','I come up with the idea, host and edit','Crio a ideia, apresento e edito'),
+ cap:L('Videos para mi propia carrera: desde la idea hasta el corte final. Entrevistas que muestran qué es estudiar comunicación.','Videos for my own degree program: from idea to final cut. Interviews that show what studying communication is like.','Vídeos para o meu próprio curso: da ideia ao corte final. Entrevistas que mostram como é estudar comunicação.'),
+ tags:['comunicacion','uap','entrevistas'],
+ sl:[
+  {ty:'cover',logo:'l-wecom',k:L('Mi carrera · 2025 — 2026','My degree · 2025 — 2026','Meu curso · 2025 — 2026'),t:[L('Lic. en','Commun-','Lic. em'),L('Comunicación','ication','Comunicação')],sz:'s',handle:'@lic.comunicacionuap'},
+  {ty:'video',v:'lic',k:L('Entrevistas','Interviews','Entrevistas'),cap:L('¿Tú qué le dirías? Comunicadores en la calle.','What would you tell them? Communicators on the street.','O que você diria? Comunicadores na rua.')},
+  {ty:'steps',v:1,k:L('Lo que hago','What I do','O que faço'),h:L('De la idea al video','From idea to video','Da ideia ao vídeo'),st:[['01',L('Idea','Idea','Ideia'),L('genero el concepto','I create the concept','crio o conceito')],['02',L('Presentación','Hosting','Apresentação'),L('pongo la cara','I\'m on camera','eu apareço')],['03',L('Edición','Editing','Edição'),L('monto el video final','I cut the final video','monto o vídeo final')]]}],
+ det:[[L('Rol','Role','Função'),L('<b>Generación de idea, presentación y edición</b> de videos específicos para la carrera.','<b>Idea, hosting and editing</b> of specific videos for the degree program.','<b>Ideia, apresentação e edição</b> de vídeos específicos para o curso.')],
+  [L('Relevancia','Why it matters','Relevância'),L('Es un proyecto académico donde aplico lo que estudio: entrevista, guion y montaje.','An academic project where I apply what I study: interviewing, scripting and editing.','Um projeto acadêmico onde aplico o que estudo: entrevista, roteiro e montagem.')],
+  [L('Cuenta','Account','Conta'),'@lic.comunicacionuap']]},
+
+/* 8 — HÁBITOS PARA VOS */
+{id:'habitos',cat:'pro',pal:'forest',av:'l-habitos',short:L('Hábitos para vos','Hábitos para vos','Hábitos para vos'),t:L('Hábitos para vos','Hábitos para vos','Hábitos para vos'),
+ sub:L('Presentador y guionista · 2025','Presenter & scriptwriter · 2025','Apresentador e roteirista · 2025'),when:L('Marzo — septiembre 2025','March — September 2025','Março — setembro 2025'),
+ role:L('Presentador y guionista con enfoque en storytelling','Presenter and scriptwriter focused on storytelling','Apresentador e roteirista com foco em storytelling'),
+ cap:L('Una cuenta para conectar con gente joven y llevarla a conocer a Jesús a través de hábitos. Escribí los guiones y los presenté.','An account to connect with young people and lead them to Jesus through habits. I wrote the scripts and presented them.','Uma conta para conectar com jovens e levá-los a conhecer Jesus por meio de hábitos. Escrevi os roteiros e os apresentei.'),
+ tags:['habitos','storytelling','fe'],
+ sl:[
+  {ty:'cover',logo:'l-habitos',k:L('Mar — sep 2025','Mar — Sep 2025','Mar — set 2025'),t:[L('Hábitos','Hábitos','Hábitos'),L('para vos','para vos','para vos')],sz:'xl',handle:'@habitosparavos'},
+  {ty:'video',v:'hab3',k:L('Reel','Reel','Reel'),cap:L('5 señales de que estás creciendo.','5 signs you are growing.','5 sinais de que você está crescendo.')},
+  {ty:'video',v:'hab1',k:L('Reel','Reel','Reel'),cap:L('Él siempre va a estar a tu lado.','He will always be by your side.','Ele sempre estará ao seu lado.')},
+  {ty:'video',v:'hab2',k:L('Lanzamiento','Launch','Lançamento'),cap:L('Ya casi: el anuncio de la cuenta.','Almost there: the account teaser.','Quase lá: o teaser da conta.')},
+  {ty:'steps',v:1,k:L('El propósito','The purpose','O propósito'),h:L('Una idea simple','A simple idea','Uma ideia simples'),st:[['01',L('Conectar','Connect','Conectar'),L('con gente joven','with young people','com jovens')],['02',L('Hábitos','Habits','Hábitos'),L('como puerta de entrada','as a way in','como porta de entrada')],['03','Jesús',L('llevarla a conocerlo','leading them to Him','levá-los a conhecê-lo')]]}],
+ det:[[L('Rol','Role','Função'),L('<b>Presentador y guionista</b> (marzo — septiembre 2025): desarrollé guiones y presenté contenido corto con enfoque en storytelling.','<b>Presenter and scriptwriter</b> (March — September 2025): I wrote scripts and presented short content focused on storytelling.','<b>Apresentador e roteirista</b> (março — setembro 2025): escrevi roteiros e apresentei conteúdo curto com foco em storytelling.')],
+  [L('Cuenta','Account','Conta'),'@habitosparavos']]},
+
+/* 9 — @RODHUAY */
+{id:'rodhuay',cat:'own',pal:'cherry',av:'me-bible',short:'@rodhuay',t:L('@rodhuay · Mi marca personal','@rodhuay · My personal brand','@rodhuay · Minha marca pessoal'),
+ sub:L('Creador · desde noviembre 2025','Creator · since November 2025','Criador · desde novembro 2025'),when:L('Nov 2025 — hoy','Nov 2025 — now','Nov 2025 — hoje'),
+ role:L('Creador, guionista, presentador y editor','Creator, scriptwriter, presenter and editor','Criador, roteirista, apresentador e editor'),
+ cap:L('Llegué a Cristo a los 15 años por un video en TikTok. Hoy ese video lo grabo yo: fe para la Generación Z, en español, inglés y portugués.','I came to Christ at 15 through a TikTok video. Today I\'m the one recording it: faith for Gen Z, in Spanish, English and Portuguese.','Cheguei a Cristo aos 15 anos por um vídeo no TikTok. Hoje sou eu quem grava: fé para a Geração Z, em espanhol, inglês e português.'),
+ tags:['rodhuay','fe','genz'],
+ sl:[
+  {ty:'photo',img:'me-bible',pos:'50% 35%',k:L('Marca personal','Personal brand','Marca pessoal'),h:'@rodhuay',p:L('Fe para la Generación Z.','Faith for Gen Z.','Fé para a Geração Z.')},
+  {ty:'video',v:'rodhuay',k:'Santiago 4:8',cap:L('Mi formato: gancho, cita y lectura en menos de 20 segundos.','My format: hook, quote and reading in under 20 seconds.','Meu formato: gancho, citação e leitura em menos de 20 segundos.')},
+  {ty:'stats',v:1,k:L('En números','In numbers','Em números'),st:[['300','K+',L('seguidores en total','total followers','seguidores no total')],['227','K+',L('en TikTok','on TikTok','no TikTok')],['14','M+',L('me gusta','likes','curtidas')],['4.8','M',L('vistas en mi video más visto','views on my top video','visualizações no vídeo mais visto')]]},
+  {ty:'shots',v:2,imgs:['rh-p1','rh-p2','rh-p3'],nums:['72','8.391','39,3K'],labels:[L('19 nov 2025','Nov 19, 2025','19 nov 2025'),L('15 dic 2025','Dec 15, 2025','15 dez 2025'),L('20 mar 2026','Mar 20, 2026','20 mar 2026')],k:L('Crecimiento en TikTok','TikTok growth','Crescimento no TikTok'),h:L('De 72 a 39,3 mil en 4 meses','From 72 to 39.3K in 4 months','De 72 a 39,3 mil em 4 meses')},
+  {ty:'chart',v:0,n:'03',k:L('Tres cuentas, una estrategia','Three accounts, one strategy','Três contas, uma estratégia'),h:L('2021 no despegó. 2025, con plan.','2021 didn\'t take off. 2025, with a plan.','2021 não decolou. 2025, com plano.'),val:'+300K',path:'M0 62 C30 60 55 58 70 52 C82 40 90 20 100 2',p:L('@rodrigohuaycho y @bibliahuay no tenían estrategia. @rodhuay nació con propósito, series definidas e identidad propia.','@rodrigohuaycho and @bibliahuay had no strategy. @rodhuay was born with a purpose, defined series and its own identity.','@rodrigohuaycho e @bibliahuay não tinham estratégia. @rodhuay nasceu com propósito, séries definidas e identidade própria.')},
+  {ty:'img',img:'rh-top20',frame:'paper',v:1,k:L('Identidad','Identity','Identidade'),h:L('Mis 20 videos más vistos se parecen','My 20 most-viewed videos look alike','Meus 20 vídeos mais vistos se parecem')},
+  {ty:'bars',v:2,k:L('Lo que se repite','What repeats','O que se repete'),h:L('Mi identidad visual','My visual identity','Minha identidade visual'),bars:[[L('Bordes negros','Black borders','Bordas pretas'),'20/20','100%'],[L('Cita en tarjeta','Quote card','Citação em cartão'),'18/20','90%'],[L('Subtítulo amarillo','Yellow subtitle','Legenda amarela'),'17/20','85%'],[L('Luz natural','Natural light','Luz natural'),'14/20','70%']]}],
+ det:[[L('Rol','Role','Função'),L('<b>Todo</b>: idea, guion, presentación, edición y estrategia. 20 videos al mes, con un mix de 5 versículos + 1 creativo.','<b>Everything</b>: idea, script, hosting, editing and strategy. 20 videos a month, with a 5 verses + 1 creative mix.','<b>Tudo</b>: ideia, roteiro, apresentação, edição e estratégia. 20 vídeos por mês, com um mix de 5 versículos + 1 criativo.')],
+  [L('Comunidad','Community','Comunidade'),L('Más de <b>300 mil seguidores</b> entre TikTok, Instagram, Facebook y YouTube. Tres videos superan los 2 millones de vistas.','<b>300K+ followers</b> across TikTok, Instagram, Facebook and YouTube. Three videos have passed 2 million views.','Mais de <b>300 mil seguidores</b> entre TikTok, Instagram, Facebook e YouTube. Três vídeos passam de 2 milhões de visualizações.')],
+  [L('Lo que aprendí','What I learned','O que aprendi'),L('La constancia es el punto de partida, pero un mensaje llega cuando se construye con <b>estrategia, identidad y planificación</b>.','Consistency is the starting point, but a message lands when it is built with <b>strategy, identity and planning</b>.','A constância é o ponto de partida, mas a mensagem chega quando é construída com <b>estratégia, identidade e planejamento</b>.')]]},
+
+/* 10 — CLASE MARCA PERSONAL */
+{id:'clase',cat:'aca',pal:'royal',inv:true,av:'cls-photo',short:L('Clase de marca personal','Personal branding class','Aula de marca pessoal'),t:L('Clase · Marca personal','Class · Personal branding','Aula · Marca pessoal'),
+ sub:L('Docente invitado · diplomado · 2026','Guest lecturer · diploma program · 2026','Professor convidado · diplomado · 2026'),when:L('Octubre 2026','October 2026','Outubro 2026'),
+ role:L('Docente invitado: diseñé y di la clase','Guest lecturer: I designed and taught the class','Professor convidado: criei e dei a aula'),
+ cap:L('Me invitaron a dar la clase de marca personal en un diplomado de creación de contenido para medios digitales (Norteamérica). Una hora, cuatro pilares y cuatro dinámicas.','I was invited to teach the personal branding class in a content creation diploma program for digital media (North America). One hour, four pillars and four activities.','Fui convidado a dar a aula de marca pessoal em um diplomado de criação de conteúdo para mídias digitais (América do Norte). Uma hora, quatro pilares e quatro dinâmicas.'),
+ tags:['marcapersonal','docencia','diplomado'],
+ sl:[
+  {ty:'img',img:'cls-s1',frame:'laptop',v:0,k:L('Diplomado · Norteamérica','Diploma program · North America','Diplomado · América do Norte'),h:L('Diseñé la presentación interactiva','I designed the interactive deck','Criei a apresentação interativa')},
+  {ty:'stats',v:1,k:L('La clase','The class','A aula'),st:[['1','h',L('de clase en vivo','live class','de aula ao vivo')],['4','',L('pilares','pillars','pilares')],['4','',L('dinámicas con los alumnos','student activities','dinâmicas com os alunos')],['23','',L('diapositivas','slides','slides')]]},
+  {ty:'steps',v:2,k:L('Los 4 pilares','The 4 pillars','Os 4 pilares'),st:[['01',L('Propósito y audiencia','Purpose & audience','Propósito e público'),L('ayudo a quién, a qué, mediante cómo','who I help, with what, how','quem ajudo, com o quê, como')],['02',L('Identidad','Identity','Identidade'),L('una estructura que se repite es una voz','a repeated structure is a voice','uma estrutura repetida é uma voz')],['03',L('Contenido','Content','Conteúdo'),L('sencillo no es descuidado','simple isn\'t sloppy','simples não é descuidado')],['04',L('Ética y confianza','Ethics & trust','Ética e confiança'),L('ser visible sin manipular','visible without manipulating','visível sem manipular')]]},
+  {ty:'img',img:'cls-s11',frame:'laptop',v:1,k:L('Mi caso como ejemplo','My case as an example','Meu caso como exemplo'),h:L('Datos reales de @rodhuay','Real @rodhuay data','Dados reais de @rodhuay')},
+  {ty:'quote',v:0,k:L('Cierre de la clase','Closing line','Encerramento'),q:L('Tu marca es lo que otros pueden contar de ti <em>cuando no estás.</em>','Your brand is what others can say about you <em>when you are not there.</em>','Sua marca é o que os outros podem contar de você <em>quando você não está.</em>')}],
+ det:[[L('Rol','Role','Função'),L('<b>Docente invitado</b> del módulo de redes sociales: diseñé el contenido, las dinámicas y la presentación.','<b>Guest lecturer</b> for the social media module: I designed the content, activities and deck.','<b>Professor convidado</b> do módulo de redes sociais: criei o conteúdo, as dinâmicas e a apresentação.')],
+  [L('Relevancia','Why it matters','Relevância'),L('Enseñar me obligó a ordenar lo que hago con @rodhuay en un método que otros pueden aplicar en 30 días.','Teaching made me turn what I do with @rodhuay into a method others can apply in 30 days.','Ensinar me fez transformar o que faço com @rodhuay num método que outros aplicam em 30 dias.')]]},
+
+/* 11 — REDIME */
+{id:'redime',cat:'own',pal:'forest',av:'l-redime',short:'Redime',t:L('Redime · App cristiana','Redime · Christian app','Redime · App cristão'),
+ sub:L('Fundador · 2026','Founder · 2026','Fundador · 2026'),when:L('2026 · en construcción','2026 · in progress','2026 · em construção'),
+ role:L('Fundador: producto, diseño y estrategia de lanzamiento','Founder: product, design and launch strategy','Fundador: produto, design e estratégia de lançamento'),
+ cap:L('Estoy construyendo Redime, una app cristiana. Antes de lanzarla, más de 400 personas ya pidieron ser de las primeras en tener acceso.','I\'m building Redime, a Christian app. Before launch, 400+ people have already asked to be among the first to get access.','Estou construindo o Redime, um app cristão. Antes do lançamento, mais de 400 pessoas já pediram para estar entre as primeiras a ter acesso.'),
+ tags:['redime','app','producto'],
+ sl:[
+  {ty:'cover',logo:'l-redime',k:L('App cristiana · 2026','Christian app · 2026','App cristão · 2026'),t:['Redime'],sz:'xl',s:L('Sé de los primeros en tener acceso.','Be among the first to get access.','Seja um dos primeiros a ter acesso.')},
+  {ty:'shots',v:1,imgs:['redime1','redime2'],k:L('El producto','The product','O produto'),h:L('Pantallas de la app','App screens','Telas do app')},
+  {ty:'stats',v:2,k:L('Antes del lanzamiento','Before launch','Antes do lançamento'),st:[['405','',L('personas esperando el acceso','people waiting for access','pessoas aguardando acesso')],['20','',L('llegaron por referidos','came through referrals','vieram por indicação')],['5','%',L('conversión de referidos','referral conversion','conversão de indicações')],['13','+',L('países','countries','países')]]},
+  {ty:'bars',v:0,k:L('De dónde son','Where they are from','De onde são'),h:L('Las ubicaciones que más se repiten','Most repeated locations','Locais que mais se repetem'),bars:[['Guatemala','12','100%'],['Colombia','9','75%'],[L('México','Mexico','México'),'9','75%'],['Argentina','8','67%'],[L('Lima, Perú','Lima, Peru','Lima, Peru'),'8','67%']]},
+  {ty:'text',v:1,k:L('Estrategia','Strategy','Estratégia'),h:L('7 videos para sumar a los primeros.','7 videos to win the first users.','7 vídeos para conquistar os primeiros.'),p:L('En @rodhuay pido comentar <mark>REDIME</mark> y envío el enlace por privado; en Facebook y YouTube, al enlace de la biografía.','On @rodhuay I ask people to comment <mark>REDIME</mark> and I DM the link; on Facebook and YouTube, I point to the bio link.','No @rodhuay peço para comentar <mark>REDIME</mark> e envio o link no privado; no Facebook e YouTube, aponto para o link da bio.')}],
+ det:[[L('Rol','Role','Função'),L('<b>Fundador</b>: defino el producto, el diseño y la estrategia para captar a los primeros usuarios.','<b>Founder</b>: I define the product, design and the strategy to win the first users.','<b>Fundador</b>: defino o produto, o design e a estratégia para conquistar os primeiros usuários.')],
+  [L('Resultados','Results','Resultados'),L('405 personas registradas, 20 por referidos (5% de conversión) y presencia en más de 13 países.','405 sign-ups, 20 from referrals (5% conversion) and reach in 13+ countries.','405 inscritos, 20 por indicação (5% de conversão) e presença em mais de 13 países.')]]},
+
+/* 12 — LIBROS */
+{id:'ebooks',cat:'own',pal:'wine',inv:true,av:'cover100',short:L('Mis libros','My books','Meus livros'),t:L('Mis libros','My books','Meus livros'),
+ sub:L('Autor · 2025 — 2026','Author · 2025 — 2026','Autor · 2025 — 2026'),when:L('Edición digital e impresa','Digital and print editions','Edição digital e impressa'),
+ role:L('Autor, diseño editorial y venta digital','Author, editorial design and digital sales','Autor, design editorial e venda digital'),
+ cap:L('Escribí «100 Respuestas» y «3 Claves». Los vendo como ebooks y ya tengo las versiones listas para imprenta.','I wrote “100 Respuestas” and “3 Claves”. I sell them as ebooks and the print-ready versions are done.','Escrevi “100 Respuestas” e “3 Claves”. Vendo como ebooks e as versões para gráfica já estão prontas.'),
+ tags:['libros','ebooks','autor'],
+ sl:[
+  {ty:'gallery',v:0,imgs:['cover100','cover3'],k:L('Autor','Author','Autor'),h:L('Dos libros, un propósito','Two books, one purpose','Dois livros, um propósito')},
+  {ty:'text',v:1,k:'100 Respuestas',h:L('Las dudas que todo joven se hace.','The questions every young person asks.','As dúvidas que todo jovem tem.'),p:L('…ahora con <mark>respuestas desde la Biblia</mark>.','…now with <mark>answers from the Bible</mark>.','…agora com <mark>respostas da Bíblia</mark>.')},
+  {ty:'text',v:2,k:'3 Claves',h:L('Tres claves, una fe simple, pero poderosa.','Three keys, a simple but powerful faith.','Três chaves, uma fé simples, mas poderosa.'),p:L('Oración, la Palabra y predicación: <mark>cómo vivir la vida cristiana sin complicarte</mark>.','Prayer, the Word and preaching: <mark>how to live the Christian life without overcomplicating it</mark>.','Oração, a Palavra e pregação: <mark>como viver a vida cristã sem complicar</mark>.')},
+  {ty:'cta',v:1,k:L('Oferta','Offer','Oferta'),h:L('Hoy, 2x1','Today, 2 for 1','Hoje, 2 por 1'),buy:1}],
+ det:[[L('Rol','Role','Função'),L('<b>Autor</b> de ambos libros, con diseño de tapa e interior para la versión impresa.','<b>Author</b> of both books, including cover and interior design for print.','<b>Autor</b> dos dois livros, com design de capa e miolo para a versão impressa.')],
+  [L('Cómo nació','How it started','Como nasceu'),L('Me considero un inventor: si tengo una idea, la construyo. Así nacieron mis libros.','I consider myself an inventor: if I have an idea, I build it. That\'s how my books were born.','Me considero um inventor: se tenho uma ideia, eu a construo. Assim nasceram meus livros.')]]},
+
+/* 13 — BIBLE SKATE */
+{id:'bibleskate',cat:'own',pal:'bone',av:'bs-grass',short:'Bible Skate',t:L('Bible Skate · Cuenta trilingüe','Bible Skate · Trilingual account','Bible Skate · Conta trilíngue'),
+ sub:L('Creador · octubre 2026','Creator · October 2026','Criador · outubro 2026'),when:L('Octubre 2026','October 2026','Outubro 2026'),
+ role:L('Concepto, identidad visual y producción','Concept, visual identity and production','Conceito, identidade visual e produção'),
+ cap:L('Una mini patineta, una escena que transmite un valor y un versículo escrito en papel sobre el pasto. En español, inglés y portugués.','A mini skateboard, a scene that conveys a value and a Bible verse on paper over the grass. In Spanish, English and Portuguese.','Um mini skate, uma cena que transmite um valor e um versículo escrito em papel sobre a grama. Em espanhol, inglês e português.'),
+ tags:['bibleskate','concepto','trilingue'],
+ sl:[
+  {ty:'photo',img:'bs-grass',pos:'50% 60%',k:L('Proyecto nuevo','New project','Projeto novo'),h:'Bible Skate',p:'@bibliaskate · @bibleskate · @bíbliaskate'},
+  {ty:'photo',img:'bs-table',pos:'50% 50%',k:L('El concepto','The concept','O conceito'),h:L('Una patineta que cuenta un valor','A skateboard that tells a value','Um skate que conta um valor')},
+  {ty:'img',img:'bs-papel',frame:'paper',v:2,k:L('Identidad','Identity','Identidade'),h:L('Versículos en 3 idiomas','Verses in 3 languages','Versículos em 3 idiomas')}],
+ det:[[L('Rol','Role','Função'),L('<b>Creador</b>: concepto, identidad visual (crema, rojo, negro y amarillo) y producción.','<b>Creator</b>: concept, visual identity (cream, red, black and yellow) and production.','<b>Criador</b>: conceito, identidade visual (creme, vermelho, preto e amarelo) e produção.')],
+  [L('Formato','Format','Formato'),L('Mini patineta movida con hilo transparente, una escena con un valor y el cierre con un versículo y «comenta amén».','A mini skateboard moved with clear thread, a scene with a value and an ending with a verse and “comment amen”.','Mini skate movido com fio transparente, uma cena com um valor e o fim com um versículo e “comente amém”.')]]},
+
+/* 14 — IADCOM */
+{id:'iadcom',cat:'aca',pal:'royal',av:'iad1',short:L('Logo IADCOM','IADCOM logo','Logo IADCOM'),t:L('Logo IADCOM · Concurso 2026','IADCOM logo · 2026 contest','Logo IADCOM · Concurso 2026'),
+ sub:L('Diseño de identidad · 2026','Identity design · 2026','Design de identidade · 2026'),when:L('Octubre 2026','October 2026','Outubro 2026'),
+ role:L('Diseñé el logotipo y su manual de uso','I designed the logo and its usage guide','Desenhei o logotipo e seu manual de uso'),
+ cap:L('Mi propuesta para el Concurso de Creación del Logotipo del IADCOM, el consorcio internacional de carreras adventistas de comunicación.','My entry for the IADCOM Logo Contest, the international consortium of Adventist communication programs.','Minha proposta para o Concurso de Criação do Logotipo do IADCOM, o consórcio internacional de cursos adventistas de comunicação.'),
+ tags:['diseño','identidad','iadcom'],
+ sl:[
+  {ty:'img',img:'iad1',frame:'paper',v:1,k:L('Concurso de logotipo','Logo contest','Concurso de logotipo'),h:'IADCOM'},
+  {ty:'quote',v:0,k:L('La idea','The idea','A ideia'),q:L('Seis letras, una rejilla y una sola idea: la O es un <em>globo de diálogo.</em>','Six letters, one grid and a single idea: the O is a <em>speech bubble.</em>','Seis letras, uma grade e uma só ideia: o O é um <em>balão de diálogo.</em>')},
+  {ty:'img',img:'iad2',frame:'paper',v:2,k:L('Manual de uso','Usage guide','Manual de uso'),h:L('Versiones horizontal y vertical','Horizontal and vertical versions','Versões horizontal e vertical')}],
+ det:[[L('Rol','Role','Função'),L('<b>Diseñador</b>: logotipo modular, paleta (negro, azul #1F4FFF y blanco) y manual breve de 8 páginas.','<b>Designer</b>: modular logo, palette (black, blue #1F4FFF and white) and an 8-page brief guide.','<b>Designer</b>: logotipo modular, paleta (preto, azul #1F4FFF e branco) e manual breve de 8 páginas.')],
+  [L('Concepto','Concept','Conceito'),L('I A D / C O M forman un bloque modular, como las instituciones que se unen en un consorcio. La O convierte la letra en una voz.','I A D / C O M form a modular block, like institutions joining a consortium. The O turns the letter into a voice.','I A D / C O M formam um bloco modular, como instituições que se unem num consórcio. O O transforma a letra numa voz.')]]},
+
+/* 15 — HERRAMIENTAS */
+{id:'herramientas',cat:'form',pal:'orange',inv:true,av:'t-pr',short:L('Herramientas','Tools','Ferramentas'),t:L('Herramientas que uso','Tools I use','Ferramentas que uso'),
+ sub:L('Software e IA · 2026','Software & AI · 2026','Software e IA · 2026'),when:'2026',
+ role:L('Del guion al montaje, del diseño a la IA','From script to edit, from design to AI','Do roteiro à edição, do design à IA'),
+ cap:L('Las herramientas con las que construyo cada pieza.','The tools I use to build every piece.','As ferramentas com que construo cada peça.'),tags:['herramientas','ia','adobe'],
+ sl:[
+  {ty:'cover',k:L('Herramientas · 2026','Tools · 2026','Ferramentas · 2026'),t:[L('Con qué','What I','Com o que'),L('construyo','build with','construo')],sz:'l'},
+  {ty:'logos',v:1,k:L('Video y diseño','Video & design','Vídeo e design'),imgs:['t-pr','t-ps','t-ai','t-id','t-firefly','t-canva','t-edits','t-notion'],names:['Premiere Pro','Photoshop','Illustrator','InDesign','Firefly','Canva','Edits','Notion']},
+  {ty:'logos',v:2,k:L('IA aplicada','Applied AI','IA aplicada'),imgs:['t-claude','t-chatgpt'],names:['Claude','ChatGPT'],chips:['Gemini','NotebookLM','Perplexity','After Effects','CapCut']}],
+ det:[[L('Video','Video','Vídeo'),'Adobe Premiere Pro · After Effects · CapCut · Edits'],[L('Diseño','Design','Design'),'Photoshop · Illustrator · InDesign · Firefly · Canva'],[L('IA','AI','IA'),L('Claude, ChatGPT, Gemini, NotebookLM y Perplexity para investigar, guionizar y producir más rápido.','Claude, ChatGPT, Gemini, NotebookLM and Perplexity to research, script and produce faster.','Claude, ChatGPT, Gemini, NotebookLM e Perplexity para pesquisar, roteirizar e produzir mais rápido.')],[L('Organización','Organization','Organização'),'Notion · Microsoft Office']]},
+
+/* 16 — FORMACIÓN */
+{id:'formacion',cat:'form',pal:'forest',av:'cert-ingles',short:L('Formación','Education','Formação'),t:L('Formación e idiomas','Education & languages','Formação e idiomas'),
+ sub:L('Siempre aprendiendo','Always learning','Sempre aprendendo'),when:'2023 — 2027',
+ role:L('Estudiante de Licenciatura en Comunicación (UAP)','Communication degree student (UAP)','Estudante de Comunicação (UAP)'),
+ cap:L('Licenciatura en Comunicación en curso (graduación: junio 2027), tres idiomas y cuatro certificados.','Communication degree in progress (graduation: June 2027), three languages and four certificates.','Graduação em Comunicação em andamento (formatura: junho 2027), três idiomas e quatro certificados.'),tags:['formacion','idiomas','certificados'],
+ sl:[
+  {ty:'cover',k:L('Formación','Education','Formação'),t:[L('Siempre','Always','Sempre'),L('aprendiendo','learning','aprendendo')],sz:'m',s:L('Lic. en Comunicación · UAP · graduación junio 2027','Communication degree · UAP · graduating June 2027','Lic. em Comunicação · UAP · formatura junho 2027')},
+  {ty:'bars',v:1,k:L('Idiomas','Languages','Idiomas'),h:L('Comunico en tres idiomas','I communicate in three languages','Comunico em três idiomas'),bars:[[L('Español','Spanish','Espanhol'),L('Nativo','Native','Nativo'),'100%'],[L('Inglés','English','Inglês'),'B2','75%'],[L('Portugués','Portuguese','Português'),'A1','20%']]},
+  {ty:'img',img:'cert-ingles',frame:'paper',v:2,k:L('Jun 2025 · Bolivia','Jun 2025 · Bolivia','Jun 2025 · Bolívia'),h:'Diploma of Proficiency in English'},
+  {ty:'img',img:'cert-harvard',frame:'paper',v:0,k:L('Oct 2024 · UAP','Oct 2024 · UAP','Out 2024 · UAP'),h:L('Negociación · Método Harvard','Negotiation · Harvard Method','Negociação · Método Harvard')},
+  {ty:'img',img:'cert-congreso',frame:'paper',v:1,k:L('Sep 2024 · AFIDE','Sep 2024 · AFIDE','Set 2024 · AFIDE'),h:L('XII Congreso de Emprendimiento e Innovación','12th Entrepreneurship & Innovation Congress','XII Congresso de Empreendedorismo e Inovação')},
+  {ty:'img',img:'cert-mision',frame:'paper',v:2,k:L('Sep — oct 2023','Sep — Oct 2023','Set — out 2023'),h:L('Escuela de Misiones «Send Me»','“Send Me” Mission School','Escola de Missões “Send Me”')}],
+ det:[[L('Licenciatura','Degree','Graduação'),L('Licenciatura en Comunicación, Universidad Adventista del Plata. Termino las materias en noviembre de 2026; la graduación es en junio de 2027.','Communication degree, Universidad Adventista del Plata. Coursework ends November 2026; graduation is June 2027.','Graduação em Comunicação, Universidad Adventista del Plata. Termino as disciplinas em novembro de 2026; a formatura é em junho de 2027.')],
+  [L('Junio 2025','June 2025','Junho 2025'),L('<b>Diploma of Proficiency in English</b> — Centro Boliviano Americano, La Paz.','<b>Diploma of Proficiency in English</b> — Centro Boliviano Americano, La Paz.','<b>Diploma of Proficiency in English</b> — Centro Boliviano Americano, La Paz.')],
+  [L('Octubre 2024','October 2024','Outubro 2024'),L('<b>Negociación y Resolución de Conflictos</b> — Método Harvard, UAP.','<b>Negotiation and Conflict Resolution</b> — Harvard Method, UAP.','<b>Negociação e Resolução de Conflitos</b> — Método Harvard, UAP.')],
+  [L('Septiembre 2024','September 2024','Setembro 2024'),L('<b>XII Congreso Internacional de Emprendimiento e Innovación</b> (AFIDE, Universidad de Salamanca y UAP).','<b>12th International Entrepreneurship & Innovation Congress</b> (AFIDE, University of Salamanca and UAP).','<b>XII Congresso Internacional de Empreendedorismo e Inovação</b> (AFIDE, Universidade de Salamanca e UAP).')],
+  [L('Sep — oct 2023','Sep — Oct 2023','Set — out 2023'),L('<b>Escuela de Misiones Transculturales Send Me</b> — Servicio Voluntario Adventista.','<b>Send Me Cross-cultural Mission School</b> — Adventist Volunteer Service.','<b>Escola de Missões Transculturais Send Me</b> — Serviço Voluntário Adventista.')]]},
+
+/* 17 — CONTACTO */
+{id:'contacto',cat:'con',pal:'bone',inv:true,av:'me-sunset',short:L('Contacto','Contact','Contato'),t:L('Creemos algo nuevo','Let\'s build something new','Vamos criar algo novo'),
+ sub:L('Contacto','Contact','Contato'),when:L('Respondo rápido','I reply fast','Respondo rápido'),
+ role:L('Disponible para proyectos y equipos','Available for projects and teams','Disponível para projetos e equipes'),
+ cap:L('Siempre estoy abierto a crear algo nuevo junto a otras personas.','I\'m always open to building something new with others.','Estou sempre aberto a criar algo novo com outras pessoas.'),tags:['contacto','colaboracion'],
+ sl:[
+  {ty:'cover',k:L('Contacto','Contact','Contato'),t:[L('Creemos','Let\'s','Vamos'),L('algo','build','criar'),L('nuevo.','together.','juntos.')],sz:'xl'},
+  {ty:'contact',v:1,k:L('Escríbeme','Get in touch','Fale comigo')},
+  {ty:'rows',v:2,k:L('Mis redes','My channels','Minhas redes'),rows:[['TikTok','@rodhuay'],['YouTube','@rodhuay'],['Facebook','@rodhuay'],['LinkedIn','Rodrigo Huaycho']]}],
+ det:[[L('Correo','Email','E-mail'),MAIL],[L('Teléfono','Phone','Telefone'),PHONE],['LinkedIn','linkedin.com/in/rodrigohuaycho'],[L('Ubicación','Location','Localização'),'Libertador San Martín, Entre Ríos, Argentina']]}
+];
+var REELS=[['rodhuay','rodhuay'],['iasd','iasd1'],['nestx','nestx'],['habitos','hab3'],['uap','uap4'],['iasd','iasd5'],['lic','lic'],['edicion','bts']];
+var ACTV=[
+ ['nestx',L('Presenté el <b>Foro de Emprendimiento e Innovación</b> de NestX.','I hosted NestX\'s <b>Entrepreneurship & Innovation Forum</b>.','Apresentei o <b>Fórum de Empreendedorismo e Inovação</b> da NestX.'),L('Noviembre 2026','November 2026','Novembro 2026'),0],
+ ['clase',L('Di la clase de <b>marca personal</b> en un diplomado de Norteamérica.','I taught the <b>personal branding</b> class in a North American diploma program.','Dei a aula de <b>marca pessoal</b> num diplomado da América do Norte.'),L('Octubre 2026','October 2026','Outubro 2026'),0],
+ ['redime',L('<b>405 personas</b> ya pidieron acceso anticipado a Redime.','<b>405 people</b> have requested early access to Redime.','<b>405 pessoas</b> já pediram acesso antecipado ao Redime.'),'2026',0],
+ ['nestx',L('Empecé como <b>presentador y PM de comunicación</b> en NestX.','Started as <b>presenter and communication PM</b> at NestX.','Comecei como <b>apresentador e PM de comunicação</b> na NestX.'),L('Septiembre 2026','September 2026','Setembro 2026'),0],
+ ['femusa',L('Presenté el <b>streaming en vivo</b> de FEMUSA para YouTube.','I hosted FEMUSA\'s <b>live YouTube stream</b>.','Apresentei a <b>transmissão ao vivo</b> do FEMUSA no YouTube.'),'2026',0],
+ ['iasd',L('Fui invitado al <b>Creator Summit</b> de la Conferencia General.','I was invited to the General Conference <b>Creator Summit</b>.','Fui convidado ao <b>Creator Summit</b> da Associação Geral.'),L('Julio 2026','July 2026','Julho 2026'),0],
+ ['edicion',L('Empecé a editar para <b>Nuevo Tiempo / Novo Tempo</b>.','Started editing for <b>Nuevo Tiempo / Novo Tempo</b>.','Comecei a editar para a <b>Nuevo Tiempo / Novo Tempo</b>.'),L('Mayo 2026','May 2026','Maio 2026'),0],
+ ['iasd',L('La <b>Iglesia Adventista Mundial</b> me contrató de forma oficial.','The <b>World Adventist Church</b> officially hired me.','A <b>Igreja Adventista Mundial</b> me contratou oficialmente.'),L('Febrero 2026','February 2026','Fevereiro 2026'),0],
+ ['rodhuay',L('<b>@rodhuay</b> superó los 300 mil seguidores.','<b>@rodhuay</b> passed 300K followers.','<b>@rodhuay</b> passou de 300 mil seguidores.'),'2026',0],
+ ['formacion',L('Recibí el <b>Diploma of Proficiency in English</b>.','Received the <b>Diploma of Proficiency in English</b>.','Recebi o <b>Diploma of Proficiency in English</b>.'),L('Junio 2025','June 2025','Junho 2025'),1],
+ ['habitos',L('Empecé como presentador y guionista de <b>Hábitos para vos</b>.','Started as presenter and scriptwriter at <b>Hábitos para vos</b>.','Comecei como apresentador e roteirista do <b>Hábitos para vos</b>.'),L('Marzo 2025','March 2025','Março 2025'),1],
+ ['femusa',L('Presenté <b>FEMUSA</b> por primera vez.','Hosted <b>FEMUSA</b> for the first time.','Apresentei o <b>FEMUSA</b> pela primeira vez.'),'2024',1],
+ ['uap',L('Empecé como presentador de la <b>UAP</b>.','Started as a presenter at <b>UAP</b>.','Comecei como apresentador da <b>UAP</b>.'),L('Agosto 2023','August 2023','Agosto 2023'),1]
+];
+/* ---------- UI STRINGS ---------- */
+var UI={
+ home:L('Inicio','Home','Início'),explore:L('Explorar','Explore','Explorar'),reels:L('Reels','Reels','Reels'),dm:L('Mensajes','Messages','Mensagens'),profile:L('Perfil','Profile','Perfil'),activity:L('Actividad','Activity','Atividade'),
+ present:L('Presentar','Present','Apresentar'),presMode:L('Modo presentación','Presentation mode','Modo apresentação'),
+ mute:L('Silenciar','Mute','Silenciar'),unmute:L('Activar sonido','Sound on','Ativar som'),dark:L('Modo oscuro','Dark mode','Modo escuro'),light:L('Modo claro','Light mode','Modo claro'),
+ follow:L('Seguir','Follow','Seguir'),following:L('Siguiendo','Following','Seguindo'),more:L('más','more','mais'),
+ viewCm:L('Ver los {n} comentarios','View all {n} comments','Ver os {n} comentários'),
+ liked:L('<b>Te gusta</b> esta publicación','<b>You like</b> this post','<b>Você curtiu</b> esta publicação'),
+ likeHint:L('Dale doble toque a la imagen para dar me gusta','Double-tap the image to like it','Toque duas vezes na imagem para curtir'),
+ role:L('Mi rol','My role','Minha função'),
+ search:L('Buscar en mi trabajo','Search my work','Buscar no meu trabalho'),all:L('Todo','All','Tudo'),
+ noRes:L('Sin resultados','No results','Sem resultados'),noResP:L('Prueba con «video», «NestX» o «libros».','Try “video”, “NestX” or “books”.','Tente “vídeo”, “NestX” ou “livros”.'),
+ thisYear:L('Este año','This year','Este ano'),before:L('Antes','Earlier','Antes'),see:L('Ver','View','Ver'),
+ posts:L('publicaciones','posts','publicações'),followers:L('seguidores','followers','seguidores'),likesL:L('me gusta','likes','curtidas'),
+ bio1:L('Comunicador audiovisual','Audiovisual communicator','Comunicador audiovisual'),
+ bio2:L('Presentador · Guionista · Editor de video','Presenter · Scriptwriter · Video editor','Apresentador · Roteirista · Editor de vídeo'),
+ bio3:L('Hago que la Biblia llegue a la Generación Z.','I bring the Bible to Gen Z.','Levo a Bíblia até a Geração Z.'),
+ bio4:L('Lic. en Comunicación · UAP, Argentina','Communication degree · UAP, Argentina','Lic. em Comunicação · UAP, Argentina'),
+ message:L('Mensaje','Message','Mensagem'),share:L('Compartir','Share','Compartilhar'),contact:L('Contacto','Contact','Contato'),
+ tPosts:L('Publicaciones','Posts','Publicações'),tSaved:L('Guardados','Saved','Salvos'),
+ noSaved:L('Aún no guardas nada','Nothing saved yet','Nada salvo ainda'),noSavedP:L('Toca el marcador en cualquier publicación para guardarla aquí.','Tap the bookmark on any post to save it here.','Toque no marcador de qualquer publicação para salvá-la aqui.'),
+ active:L('Rodrigo Huaycho · activo ahora','Rodrigo Huaycho · active now','Rodrigo Huaycho · ativo agora'),
+ dm1:L('Hola, soy Rodrigo. Qué bueno que estés aquí.','Hi, I\'m Rodrigo. Glad you\'re here.','Olá, sou o Rodrigo. Que bom que você está aqui.'),
+ dm2:L('¿Qué te gustaría crear juntos?','What would you like to build together?','O que você gostaria de criar juntos?'),
+ qr:[L('Quiero que presentes mi proyecto','I want you to host my project','Quero que você apresente meu projeto'),L('Necesito guion y estrategia','I need script and strategy','Preciso de roteiro e estratégia'),L('Busco edición de video','I need video editing','Procuro edição de vídeo'),L('Tengo otra idea','I have another idea','Tenho outra ideia')],
+ dmPh:L('Escribe un mensaje…','Write a message…','Escreva uma mensagem…'),send:L('Enviar','Send','Enviar'),
+ dmReply:L('Gracias por escribirme. Para que el mensaje me llegue, envíalo a mi correo:','Thanks for writing. So your message reaches me, send it to my email:','Obrigado por escrever. Para que a mensagem chegue, envie para meu e-mail:'),
+ openMail:L('Abrir mi correo','Open my email','Abrir meu e-mail'),copyMail:L('Copiar correo','Copy email','Copiar e-mail'),
+ mailSubj:L('Hola Rodrigo, vi tu portafolio','Hi Rodrigo, I saw your portfolio','Olá Rodrigo, vi seu portfólio'),
+ nowPlaying:L('Ahora suena','Now playing','Tocando agora'),music:L('Música','Music','Música'),sug:L('Sugerencias para ti','Suggested for you','Sugestões para você'),seeAll:L('Ver todo','See all','Ver tudo'),
+ foot:L('Portafolio de Rodrigo Huaycho · 2026<br>Música: «Journey To The Stars», Savfk Music (libre de derechos)<br>Teclas: J / K publicaciones · L me gusta · M sonido · P presentar','Rodrigo Huaycho\'s portfolio · 2026<br>Music: “Journey To The Stars”, Savfk Music (copyright-free)<br>Keys: J / K posts · L like · M sound · P present','Portfólio de Rodrigo Huaycho · 2026<br>Música: “Journey To The Stars”, Savfk Music (livre de direitos)<br>Teclas: J / K publicações · L curtir · M som · P apresentar'),
+ part:L('Parte','Part','Parte'),
+ addCm:L('Agrega un comentario…','Add a comment…','Adicione um comentário…'),publish:L('Publicar','Post','Publicar'),now:L('Ahora','Now','Agora'),you:L('tú','you','você'),
+ storyMsg:L('Enviar mensaje a rodhuay','Message rodhuay','Enviar mensagem a rodhuay'),
+ copyLink:L('Copiar enlace','Copy link','Copiar link'),copyText:L('Copiar texto','Copy text','Copiar texto'),writeAbout:L('Escribirme sobre esto','Message me about this','Fale comigo sobre isso'),
+ toPay:L('Ir al pago','Go to checkout','Ir ao pagamento'),payP:L('Se abrirá la página de pago de Hotmart en una pestaña nueva.','Hotmart\'s checkout page will open in a new tab.','A página de pagamento da Hotmart abrirá em uma nova aba.'),payGo:L('Continuar al pago','Continue to checkout','Continuar para o pagamento'),notNow:L('Ahora no','Not now','Agora não'),
+ buyBtn:L('Los quiero (2x1)','I want them (2 for 1)','Quero (2 por 1)'),
+ tCopied:L('Copiado','Copied','Copiado'),tMail:L('Correo copiado','Email copied','E-mail copiado'),tPhone:L('Teléfono copiado','Phone copied','Telefone copiado'),tLink:L('Enlace copiado','Link copied','Link copiado'),tText:L('Texto copiado','Text copied','Texto copiado'),tContact:L('Contacto copiado','Contact copied','Contato copiado'),
+ tSaved1:L('Guardado en tu perfil','Saved to your profile','Salvo no seu perfil'),tSaved0:L('Quitado de guardados','Removed from saved','Removido dos salvos'),
+ tFollow:L('Ahora sigues a @rodhuay','You now follow @rodhuay','Agora você segue @rodhuay'),tSndOn:L('Sonido activado','Sound on','Som ativado'),tSndOff:L('Sonido desactivado','Sound off','Som desativado'),
+ tMailed:L('Si no se abre tu correo, escribe a ','If your email app doesn\'t open, write to ','Se o e-mail não abrir, escreva para '),
+ withSound:L('Con sonido','Sound on','Com som'),noSound:L('Sin sonido','Muted','Sem som'),
+ copy:L('COPIAR','COPY','COPIAR'),writeMe:L('Escribirme','Message me','Fale comigo'),copyContact:L('Copiar contacto','Copy contact','Copiar contato'),
+ lang:L('Idioma','Language','Idioma'),
+ /* cover */
+ cvK:L('Portafolio digital · 2026','Digital portfolio · 2026','Portfólio digital · 2026'),
+ cvSub:L('Comunicador audiovisual. Presentador, guionista y editor de video.','Audiovisual communicator. Presenter, scriptwriter and video editor.','Comunicador audiovisual. Apresentador, roteirista e editor de vídeo.'),
+ cvLang:L('Elige tu idioma','Choose your language','Escolha seu idioma'),
+ cvIn:L('Entrar con música','Enter with music','Entrar com música'),cvOut:L('Entrar sin música','Enter without music','Entrar sem música'),
+ cvFt:L('Cada publicación tiene su propia música · «Journey To The Stars», Savfk Music, libre de derechos','Each post has its own music · “Journey To The Stars”, Savfk Music, copyright-free','Cada publicação tem sua própria música · “Journey To The Stars”, Savfk Music, livre de direitos'),
+ pres1:L('Usa ← → o toca los lados para avanzar','Use ← → or tap the sides to move','Use ← → ou toque nas laterais para avançar')
+};
+var LANGS=[['es','Hola','Español'],['en','Hello','English'],['pt','Olá','Português']];
+/* ---------- I18N ---------- */
+var LANG=store.get('lang','es');
+function t(x){if(x&&typeof x==='object'&&!Array.isArray(x))return x[LANG]||x.es;return x}
+function U(k,n){var s=t(UI[k]);return n!=null?s.replace('{n}',n):s}
+
+/* ---------- ICONS ---------- */
+var IC={
+ home:'<path d="M3.5 10.8 12 3.5l8.5 7.3V20a1 1 0 0 1-1 1H15v-6.5H9V21H4.5a1 1 0 0 1-1-1z"/>',
+ explore:'<circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4.5 4.5"/>',
+ reels:'<rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/><path d="m10.2 13 4 2.3-4 2.3z" fill="currentColor"/>',
+ dm:'<path d="M21.5 3 2.8 10.2l7.2 3 3 7.3z"/><path d="m10 13.2 11.5-10.2"/>',
+ heart:'<path d="M12 20.7S3.6 15.8 3.6 9.6a4.6 4.6 0 0 1 8.4-2.6 4.6 4.6 0 0 1 8.4 2.6c0 6.2-8.4 11.1-8.4 11.1z"/>',
+ comment:'<path d="M20.6 17.4A9.5 9.5 0 1 0 12 21.5c1.5 0 2.9-.3 4.2-1l4.3 1.1z"/>',
+ save:'<path d="M6 3.5h12V21l-6-4.7L6 21z"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+ profile:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+ grid:'<rect x="3.5" y="3.5" width="7" height="7"/><rect x="13.5" y="3.5" width="7" height="7"/><rect x="3.5" y="13.5" width="7" height="7"/><rect x="13.5" y="13.5" width="7" height="7"/>',
+ sndon:'<path d="M4 9.5v5h3.5l5 4v-13l-5 4z"/><path d="M16 9a4 4 0 0 1 0 6M18.6 6.5a7.5 7.5 0 0 1 0 11"/>',
+ sndoff:'<path d="M4 9.5v5h3.5l5 4v-13l-5 4z"/><path d="m16.5 9.5 5 5M21.5 9.5l-5 5"/>',
+ close:'<path d="M5 5l14 14M19 5 5 19"/>',
+ left:'<path d="m15 5-7 7 7 7"/>',right:'<path d="m9 5 7 7-7 7"/>',
+ note:'<path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+ moon:'<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>',
+ sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>',
+ link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+ copy:'<rect x="8" y="8" width="13" height="13" rx="3"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>',
+ mail:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/>',
+ phone:'<path d="M5 3.5h3.5l1.8 4.6-2.3 1.4a11 11 0 0 0 6.5 6.5l1.4-2.3 4.6 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/>',
+ star:'<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+ multi:'<rect x="7" y="3" width="14" height="14" rx="3" fill="currentColor" stroke="none"/><path d="M3 7v11a3 3 0 0 0 3 3h11" stroke-width="2"/>',
+ play:'<path d="M7 4.5v15l13-7.5z" fill="currentColor"/>',
+ globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+ pres:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="m10.5 8 4 2-4 2z" fill="currentColor"/>'
+};
+function ic(n,c){return '<svg class="ic '+(c||'')+'" viewBox="0 0 24 24" aria-hidden="true">'+IC[n]+'</svg>'}
+var SOCI={
+ tiktok:'<svg viewBox="0 0 24 24" class="si" aria-hidden="true"><path fill="currentColor" d="M16.6 2.5c.4 2.3 1.9 3.9 4.1 4.2v3.2c-1.5 0-2.9-.4-4.1-1.2v6.5a5.8 5.8 0 1 1-5.8-5.8c.3 0 .6 0 .9.1v3.3a2.6 2.6 0 1 0 1.7 2.4V2.5z"/></svg>',
+ youtube:'<svg viewBox="0 0 24 24" class="si" aria-hidden="true"><path fill="currentColor" d="M22.2 8a3 3 0 0 0-2.1-2.1C18.2 5.4 12 5.4 12 5.4s-6.2 0-8.1.5A3 3 0 0 0 1.8 8 31 31 0 0 0 1.4 12a31 31 0 0 0 .4 4 3 3 0 0 0 2.1 2.1c1.9.5 8.1.5 8.1.5s6.2 0 8.1-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4 31 31 0 0 0-.4-4zM9.9 15.2V8.8l5.4 3.2z"/></svg>',
+ facebook:'<svg viewBox="0 0 24 24" class="si" aria-hidden="true"><path fill="currentColor" d="M13.6 21.5v-8.1h2.7l.4-3.2h-3.1V8.2c0-.9.3-1.6 1.6-1.6h1.7V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.6v3.2h2.7v8.1z"/></svg>',
+ linkedin:'<svg viewBox="0 0 24 24" class="si" aria-hidden="true"><path fill="currentColor" d="M4.5 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM3 9h3v12H3zm6 0h2.9v1.7c.4-.8 1.4-1.9 3.4-1.9 3.1 0 3.7 2 3.7 4.7V21h-3v-6.6c0-1.6 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4V21H9z"/></svg>'
+};
+var VER='<svg class="vf" viewBox="0 0 24 24" aria-label="✓"><path d="M12 1.8l2.5 1.7 3-.1 1 2.9 2.5 1.8-.8 2.9.8 2.9-2.5 1.8-1 2.9-3-.1L12 22.2l-2.5-1.7-3 .1-1-2.9L3 15.9l.8-2.9L3 10.1l2.5-1.8 1-2.9 3 .1z"/><path d="m8 12.2 2.6 2.6L16 9.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var BIGH='<svg viewBox="0 0 24 24"><path d="M12 21.2S3.2 16 3.2 9.5a4.9 4.9 0 0 1 8.8-2.9 4.9 4.9 0 0 1 8.8 2.9C20.8 16 12 21.2 12 21.2z"/></svg>';
+function IMG(n){return 'assets/img/'+n+'.jpg'}
+
+/* ---------- COLOR ---------- */
+function lum(h){var n=parseInt(h.slice(1),16),r=n>>16&255,g=n>>8&255,b=n&255;return [r,g,b].map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)}).reduce(function(a,v,i){return a+v*[.2126,.7152,.0722][i]},0)}
+function cr(a,b){var x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+function best(bg,c){return c.slice().sort(function(a,b){return cr(bg,b)-cr(bg,a)})[0]}
+function colors(po,v){
+  var p=P[po.pal],dk=p[0],lt=p[1],ac=ACC[po.pal],b=po.inv?[lt,dk]:[dk,lt];
+  if(v===1){var bg=b[1];return [bg,b[0],cr(bg,ac)>=2.6?ac:best(bg,[ac,'#EC5E27',b[0]])]}
+  if(v===2){var fg=best(ac,[dk,lt,'#14090b']);return [ac,fg,cr(ac,b[0])>=2.4?b[0]:best(ac,[dk,lt])]}
+  return [b[0],b[1],cr(b[0],ac)>=2.4?ac:best(b[0],[ac,'#EC5E27',b[1]])];
+}
+
+/* ---------- SLIDES ---------- */
+function lyr(q){var i=0,em=false;return q.split(/(<em>|<\/em>|\s+)/).filter(Boolean).map(function(x){if(x==='<em>'){em=true;return ''}if(x==='</em>'){em=false;return ''}if(/^\s+$/.test(x))return ' ';return '<span class="w'+(em?' lh':'')+'" style="--i:'+(i++)+'">'+x+'</span>'}).join('')}
+function A(d){return ' style="--d:'+d+'"'}
+function lines(arr,d){return arr.map(function(l,j){return '<span class="ln" style="--d:'+d+';--j:'+j+'"><span>'+t(l)+'</span></span>'}).join('')}
+function cu(n,suf){var s=String(n),dec=(s.split('.')[1]||'').length;return '<span class="cu" data-n="'+s+'" data-dec="'+dec+'">'+(RM?s:'0')+'</span>'+(suf?'<sup>'+suf+'</sup>':'')}
+var FULL={photo:1,video:1};
+function slideHTML(po,sl,idx,on){
+  var c=colors(po,sl.v||0),h='',k=sl.k?'<div class="a k"'+A(0)+'>'+t(sl.k)+'</div>':'';
+  switch(sl.ty){
+  case 'photo':
+    h='<img class="fimg" src="'+IMG(sl.img)+'" alt="" loading="lazy" style="object-position:'+(sl.pos||'50% 50%')+'"><i class="fgrad"></i><div class="in ov">'+k+(sl.h?'<h2 class="a h2 big"'+A(1)+'>'+t(sl.h)+'</h2>':'')+(sl.p?'<p class="a p"'+A(2)+'>'+t(sl.p)+'</p>':'')+(sl.chips?'<div class="a chips w"'+A(3)+'>'+sl.chips.map(function(x){return '<span>'+t(x)+'</span>'}).join('')+'</div>':'')+'</div>';break;
+  case 'video':
+    h='<video class="vd" data-src="assets/vid/'+sl.v+'.mp4" poster="assets/vid/'+sl.v+'.jpg" muted playsinline loop preload="none"></video><i class="fgrad"></i><div class="in ov vcap">'+(sl.k?'<div class="k">'+t(sl.k)+'</div>':'')+(sl.cap?'<p class="p">'+t(sl.cap)+'</p>':'')+'</div><button class="vsnd" data-act="vsound" aria-label="'+U('withSound')+'">'+ic('sndoff')+'<span>'+U('withSound')+'</span></button><span class="vplay">'+ic('play')+'</span>';break;
+  case 'cover':
+    h=(sl.logo?'<span class="a lgw"'+A(0)+'><img src="'+IMG(sl.logo)+'" alt=""></span>':'')+k+'<h2 class="h1 '+(sl.sz||'')+'">'+lines(sl.t,1)+'</h2>'+(sl.s?'<p class="a p"'+A(4)+'>'+t(sl.s)+'</p>':'')+(sl.handle?'<div class="a handle"'+A(5)+'>'+sl.handle+'</div>':'');break;
+  case 'text':
+    h=k+'<h2 class="a h2"'+A(1)+'>'+t(sl.h)+'</h2><p class="a p"'+A(2)+'>'+t(sl.p)+'</p>';break;
+  case 'stats':
+    h=k+'<div class="sg">'+sl.st.map(function(s,i){return '<div class="a"'+A(1+i)+'><b>'+cu(s[0],s[1])+'</b><small>'+t(s[2])+'</small></div>'}).join('')+'</div>';break;
+  case 'steps':
+    h=k+(sl.h?'<h2 class="a h2"'+A(1)+'>'+t(sl.h)+'</h2>':'')+'<div class="stp">'+sl.st.map(function(s,i){return '<div class="a"'+A(2+i)+'><i>'+s[0]+'</i><span><b>'+t(s[1])+'</b><small>'+t(s[2])+'</small></span></div>'}).join('')+'</div>';break;
+  case 'rows':
+    h=k+'<div class="rows">'+sl.rows.map(function(r,i){return '<div class="a"'+A(1+i)+'><b>'+t(r[0])+'</b><span>'+t(r[1])+'</span></div>'}).join('')+'</div>';break;
+  case 'bars':
+    h=k+'<h2 class="a h2"'+A(1)+'>'+t(sl.h)+'</h2><div class="bars a'+(sl.bars.length>4?' many':'')+'"'+A(2)+'>'+sl.bars.map(function(b){return '<div><b>'+t(b[0])+'<em>'+t(b[1])+'</em></b><div class="tr"><i style="--w:'+b[2]+'"></i></div></div>'}).join('')+'</div>';break;
+  case 'chart':
+    h='<span class="mx" aria-hidden="true">'+sl.n+'</span>'+k+'<h2 class="a h3"'+A(1)+'>'+t(sl.h)+'</h2><div class="a chart"'+A(2)+'><svg viewBox="0 0 100 64" preserveAspectRatio="none"><path class="ar2" d="'+sl.path+' L100 64 L0 64Z"/><path class="ln2" pathLength="1" d="'+sl.path+'"/></svg></div><div class="a cn"'+A(3)+'>'+sl.val+'</div><p class="a p"'+A(4)+'>'+t(sl.p)+'</p>';break;
+  case 'tl':
+    h=k+'<h2 class="a h2"'+A(1)+'>'+t(sl.h)+'</h2><div class="a tl"'+A(2)+'><div class="row"><b>V2</b><div class="lane"><span class="clip al" style="left:6%;width:24%;--d:0">Texto</span><span class="clip al" style="left:46%;width:32%;--d:1">Subs</span></div></div><div class="row"><b>V1</b><div class="lane"><span class="clip" style="left:0;width:34%;--d:2">A-cam</span><span class="clip" style="left:35%;width:24%;--d:3">B-roll</span><span class="clip" style="left:60%;width:40%;--d:4">A-cam</span></div></div><div class="row"><b>A1</b><div class="lane"><div class="wv">'+Array.apply(0,Array(34)).map(function(_,i){return '<i style="--h:'+(.2+.8*Math.abs(Math.sin(i*1.7)*Math.cos(i*.6))).toFixed(2)+'"></i>'}).join('')+'</div><span class="ph2"></span></div></div></div>';break;
+  case 'img':
+    h=k+(sl.h?'<h2 class="a h3"'+A(1)+'>'+t(sl.h)+'</h2>':'')+'<div class="a frm '+(sl.frame||'plain')+'"'+A(2)+'><img src="'+IMG(sl.img)+'" alt="" loading="lazy"></div>';break;
+  case 'gallery':
+    h=k+(sl.h?'<h2 class="a h3"'+A(1)+'>'+t(sl.h)+'</h2>':'')+'<div class="gal n'+sl.imgs.length+'">'+sl.imgs.map(function(m,i){return '<img class="a" style="--d:'+(2+i)+'" src="'+IMG(m)+'" alt="" loading="lazy">'}).join('')+'</div>';break;
+  case 'shots':
+    h=k+(sl.h?'<h2 class="a h3"'+A(1)+'>'+t(sl.h)+'</h2>':'')+'<div class="shots n'+sl.imgs.length+'">'+sl.imgs.map(function(m,i){return '<figure class="a" style="--d:'+(2+i)+'"><img src="'+IMG(m)+'" alt="" loading="lazy">'+(sl.nums?'<figcaption><b>'+sl.nums[i]+'</b><small>'+t(sl.labels[i])+'</small></figcaption>':'')+'</figure>'}).join('')+'</div>';break;
+  case 'logos':
+    h=k+'<div class="lgs">'+sl.imgs.map(function(m,i){return '<figure class="a" style="--d:'+(1+i)+'"><img src="'+IMG(m)+'" alt="" loading="lazy"><figcaption>'+sl.names[i]+'</figcaption></figure>'}).join('')+'</div>'+(sl.chips?'<div class="chips o a"'+A(sl.imgs.length+1)+'>'+sl.chips.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>':'');break;
+  case 'cta':
+    h=k+'<h2 class="a h1 m"'+A(1)+'>'+t(sl.h)+'</h2>'+(sl.buy?'<div class="btns a"'+A(3)+'><button class="btn" data-act="buy">'+U('buyBtn')+ic('right')+'</button></div>':'<div class="btns a"'+A(3)+'>'+sl.btns.map(function(b){return '<button class="btn'+(b[3]?' o':'')+'" data-act="'+b[1]+'" data-arg="'+b[2]+'">'+t(b[0])+'</button>'}).join('')+'</div>');break;
+  case 'quote':
+    h=k+'<p class="lyr">'+lyr(t(sl.q))+'</p>';break;
+  case 'contact':
+    h=k+'<button class="a mail" data-act="copymail"'+A(1)+'><span>'+MAIL+'</span><i>'+U('copy')+'</i></button><button class="a mail ph" data-act="copyphone"'+A(2)+'><span>'+PHONE+'</span><i>'+U('copy')+'</i></button><div class="btns a"'+A(3)+'><a class="btn" href="'+LINKEDIN+'" target="_blank" rel="noopener">'+SOCI.linkedin+'LinkedIn</a><button class="btn w" data-act="go" data-arg="dm">'+U('writeMe')+'</button><button class="btn o" data-act="vcard">'+U('copyContact')+'</button></div>';break;
+  }
+  var full=FULL[sl.ty];
+  return '<section class="sl t-'+sl.ty+' d'+(idx%3)+(on?' on':'')+(full?' full':'')+'" data-si="'+idx+'" style="--bg:'+c[0]+';--fg:'+c[1]+';--ac:'+c[2]+';--tn:color-mix(in srgb,'+c[2]+' 20%,'+c[0]+')">'+(full?h:'<i class="deco"></i>'+(sl.ty==='cover'&&!sl.logo?'<span class="gh" aria-hidden="true">'+(po.gl||'')+'</span>':'')+'<div class="in">'+h+'</div>')+'</section>';
+}
+
+/* ---------- STATE ---------- */
+var likes=store.get('likes',{}),saves=store.get('saves',{}),seen=store.get('seen',{}),follow=store.get('follow',false),ucm=store.get('ucm',{});
+var view='home',activePost=0,ctxPost=0,modalI=-1,reelIdx=0,ptab='posts',muted=false,entered=false,hidden=false,vidSl=null;
+var DESK=function(){return matchMedia('(min-width:900px)').matches};
+var VIEWTRK={explore:'t15',dm:'t17',activity:'t10',profile:'t01'};
+var NAV=['home','explore','reels','dm','profile'];
+POSTS.forEach(function(po,i){po.track='t'+('0'+(i+1)).slice(-2)});
+function TRK(id){return {t:'Journey To The Stars · '+U('part')+' '+(+id.slice(1)),a:'Savfk Music'}}
+function pidOf(el){var n=el.closest('[data-p]');return n?+n.dataset.p:-1}
+function cl(po){return colors(po,0)}
+function idxOf(id){for(var i=0;i<POSTS.length;i++)if(POSTS[i].id===id)return i;return 0}
+
+/* ---------- AUDIO ---------- */
+var VOL=.55,audios={},curTrack=null,fades={};
+function trk(id){if(!audios[id]){var a=new Audio('assets/audio/'+id+'.mp3');a.loop=true;a.preload='auto';a.volume=0;audios[id]=a}return audios[id]}
+function fade(a,to,ms,done){var id=a.src;cancelAnimationFrame(fades[id]);var from=a.volume,t0=performance.now();(function st(now){var p=Math.min(1,(now-t0)/ms);try{a.volume=clamp(from+(to-from)*p,0,1)}catch(e){}if(p<1)fades[id]=requestAnimationFrame(st);else if(done)done()})(t0)}
+function playTrack(id){
+  if(!entered)return;
+  if(curTrack&&curTrack!==id&&audios[curTrack]){var old=audios[curTrack];fade(old,0,800,function(){old.pause()})}
+  curTrack=id;if(!id||muted||hidden||vidSl||view==='reels'&&!sv.open&&modalI<0){if(id&&audios[id]&&!audios[id].paused){var a0=audios[id];fade(a0,0,400,function(){a0.pause()})}return}
+  var a=trk(id),pr=a.play();if(pr&&pr.catch)pr.catch(function(){});fade(a,VOL,1000);
+}
+function pauseAudio(){Object.keys(audios).forEach(function(k){var a=audios[k];fade(a,0,300,function(){a.pause()})})}
+var SFX={},SFXV={whoosh:.35,impact:.6,swipe:.35,tap:.4,click:.35,pop:.55,ding:.45,sparkle:.4,open:.35,close:.3};
+function sfx(n){if(muted||!entered)return;if(!SFX[n]){SFX[n]=[0,1,2].map(function(){var a=new Audio('assets/audio/sfx-'+n+'.mp3');a.preload='auto';return a});SFX[n].k=0}
+  var a=SFX[n][SFX[n].k++%3];try{a.currentTime=0;a.volume=SFXV[n]||.4}catch(e){}var p=a.play();if(p&&p.catch)p.catch(function(){})}
+function isPlaying(){return !!(entered&&!muted&&!hidden&&curTrack&&audios[curTrack]&&!audios[curTrack].paused)}
+function level(){if(!isPlaying())return 0;var e=ENV[curTrack];if(!e)return 0;var k=Math.floor(audios[curTrack].currentTime*20);return (e.charCodeAt(Math.min(k,e.length-1))-97)/25}
+function envAt(id,x){var e=ENV[id];if(!e)return .3;var k=Math.floor(x*20)%e.length;if(k<0)k+=e.length;return (e.charCodeAt(k)-97)/25}
+function setMuted(m){muted=m;if(m){pauseAudio();if(vidSl)vidOff(vidSl)}else refreshMusic(true);syncReels();syncSnd()}
+function syncSnd(){$$('.snd,#sndT,#sndS').forEach(function(b){var s=b.querySelector('svg');if(s)s.outerHTML=ic(muted?'sndoff':'sndon');var l=b.querySelector('span');if(l)l.textContent=muted?U('unmute'):U('mute')});$$('.post,.reel,.np').forEach(function(p){p.classList.toggle('playing',isPlaying()&&(p.dataset.p==ctxPost||p.classList.contains('np')))})}
+/* video sound inside carousels */
+function vidOn(sl){if(vidSl&&vidSl!==sl)vidOff(vidSl);var v=sl.querySelector('video');if(!v)return;vidSl=sl;v.muted=false;pauseAudio();setVBtn(sl,true);if(muted){muted=false;syncSnd()}}
+function vidOff(sl){var v=sl.querySelector('video');if(v)v.muted=true;setVBtn(sl,false);if(vidSl===sl){vidSl=null;refreshMusic(true)}}
+function setVBtn(sl,on){var b=sl.querySelector('.vsnd');if(b){b.innerHTML=ic(on?'sndon':'sndoff')+'<span>'+(on?U('withSound'):U('withSound'))+'</span>';b.classList.toggle('on',on)}}
+
+/* ---------- MUSIC CONTEXT ---------- */
+function wantPost(){if(sv.open)return sv.list[sv.pi];if(modalI>-1)return modalI;if(view==='reels')return idxOf(REELS[reelIdx][0]);if(view==='home')return activePost;return ctxPost}
+function refreshMusic(force){
+  var i=wantPost(),po=POSTS[i];ctxPost=i;
+  var id=(view!=='home'&&view!=='reels'&&!sv.open&&modalI<0)?VIEWTRK[view]:po.track;
+  if(id!==curTrack||force)playTrack(id);
+  updateNP(po,id);syncSnd();
+}
+
+/* ---------- RENDER PIECES ---------- */
+function avatar(po,seenCls,extra){return '<span class="av'+(seenCls?' seen':'')+'" '+(extra||'')+'><i style="--c1:'+cl(po)[0]+'"><img src="'+IMG(po.av)+'" alt=""></i></span>'}
+function likeLine(i){return likes[i]?U('liked'):U('likeHint')}
+function phHTML(po,i,modal){return '<div class="ph"><button data-act="story" data-arg="'+i+'" aria-label="'+t(po.short)+'">'+avatar(po,seen[i])+'</button><div class="who"><b>'+t(po.short)+' '+VER+'</b><small>'+t(po.sub)+'</small></div>'+(modal?'':'<span class="badge">'+t(CATS[po.cat])+'</span>')+'</div>'}
+function carHTML(po,i){var tr=TRK(po.track);
+  return '<div class="car" data-p="'+i+'"><div class="trk">'+po.sl.map(function(s,k){return slideHTML(po,s,k)}).join('')+'</div><span class="cnt">1/'+po.sl.length+'</span><span class="mus"><span class="eq"><i></i><i></i><i></i><i></i></span><span>'+tr.t+' · '+tr.a+'</span></span><button class="snd" data-act="mute" aria-label="'+U('mute')+'">'+ic(muted?'sndoff':'sndon')+'</button><button class="ar l" data-act="prev" aria-label="←">'+ic('left')+'</button><button class="ar r" data-act="next" aria-label="→">'+ic('right')+'</button><div class="bh">'+BIGH+'</div></div>'}
+function actsHTML(po,i){return '<div class="acts"><div class="l"><button class="like'+(likes[i]?' on':'')+'" data-act="like" data-p="'+i+'" aria-pressed="'+!!likes[i]+'" aria-label="like">'+ic('heart')+'</button><button data-act="comments" data-p="'+i+'" aria-label="comments">'+ic('comment')+'</button><button data-act="share" data-p="'+i+'" aria-label="'+U('share')+'">'+ic('dm')+'</button></div><div class="dots">'+po.sl.map(function(_,k){return '<i'+(k?'':' class="on"')+'></i>'}).join('')+'</div><button class="save'+(saves[i]?' on':'')+'" data-act="save" data-p="'+i+'" aria-pressed="'+!!saves[i]+'" aria-label="save">'+ic('save')+'</button></div>'}
+function tagsHTML(po){return po.tags.map(function(x){return '<span class="tg">#'+x+'</span>'}).join(' ')}
+function postHTML(po,i){
+  return '<article class="post" id="p-'+po.id+'" data-p="'+i+'">'+phHTML(po,i)+carHTML(po,i)+actsHTML(po,i)+'<div class="meta"><div class="lk" data-p="'+i+'">'+likeLine(i)+'</div><p class="rl"><b>'+U('role')+':</b> '+t(po.role)+'</p><p class="cap cl"><b>rodhuay</b> '+t(po.cap)+' '+tagsHTML(po)+'</p><button class="more" data-act="more">'+U('more')+'</button><button class="vc" data-act="comments" data-p="'+i+'">'+U('viewCm',po.det.length)+'</button><span class="when">'+t(po.when)+'</span></div></article>'}
+function tileHTML(po,i,s,play){var sl=po.sl[s||0];
+  var inner=sl.ty==='video'?'<img class="timg" src="assets/vid/'+sl.v+'.jpg" alt="" loading="lazy">':slideHTML(po,sl,s||0,true);
+  return '<div class="tile" tabindex="0" role="button" aria-label="'+t(po.t)+'" data-act="open" data-arg="'+i+'" data-p="'+i+'">'+inner+'<span class="ov">'+t(po.t)+'</span>'+ic(play?'play':'multi','mi')+'</div>'}
+
+/* ---------- BUILD VIEWS ---------- */
+function buildStories(){$('#stories').innerHTML=POSTS.map(function(po,i){var c=cl(po);return '<button class="st'+(seen[i]?' seen':'')+'" data-act="story" data-arg="'+i+'" data-p="'+i+'"><span class="rg"><span class="gl" style="background:'+c[0]+'"><img src="'+IMG(po.av)+'" alt=""></span></span><b>'+t(po.short)+'</b></button>'}).join('')}
+function buildFeed(){$('#feed').innerHTML=POSTS.map(postHTML).join('')}
+var excat='all',exq='';
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+function buildExplore(){
+  $('#v-explore').innerHTML='<div class="wrap"><div class="sbar"><label class="sin">'+ic('explore')+'<input id="exin" type="search" placeholder="'+U('search')+'" autocomplete="off" aria-label="'+U('search')+'"></label><div class="cats" id="cats">'+[['all',U('all')]].concat(Object.keys(CATS).map(function(k){return [k,t(CATS[k])]})).map(function(c){return '<button data-act="cat" data-arg="'+c[0]+'" class="'+(c[0]===excat?'on':'')+'">'+c[1]+'</button>'}).join('')+'</div></div><div class="mos" id="mos"></div></div>';
+  var inp=$('#exin');inp.value=exq;renderMos();
+}
+function hay(po){var s=[];['t','sub','cap','role','short'].forEach(function(f){var v=po[f];if(v)s.push(v.es,v.en,v.pt,typeof v==='string'?v:'')});s.push(po.tags.join(' '));po.det.forEach(function(d){[d[0],d[1]].forEach(function(v){if(typeof v==='string')s.push(v);else s.push(v.es,v.en,v.pt)})});return norm(s.join(' ').replace(/<[^>]+>/g,''))}
+function renderMos(){
+  var q=norm(exq),h='';
+  POSTS.forEach(function(po,i){if(excat!=='all'&&po.cat!==excat)return;if(q&&hay(po).indexOf(q)<0)return;h+=tileHTML(po,i,0)});
+  $('#mos').innerHTML=h||'<div class="empty" style="grid-column:1/-1"><b>'+U('noRes')+'</b>'+U('noResP')+'</div>';
+}
+function reelHTML(r,n){
+  var i=idxOf(r[0]),po=POSTS[i];
+  return '<div class="reel" data-p="'+i+'" data-r="'+n+'"><div class="rw"><div class="rbox" data-p="'+i+'"><video class="rv" data-src="assets/vid/'+r[1]+'.mp4" poster="assets/vid/'+r[1]+'.jpg" playsinline loop preload="none" muted></video><div class="rgd"></div><div class="rcap"><div class="h">'+avatar(po,false,'style="width:2.4rem;height:2.4rem;padding:2px"')+'<b>'+t(po.short)+'</b><button class="fb'+(follow?' on':'')+'" data-act="follow">'+(follow?U('following'):U('follow'))+'</button></div><p>'+t(po.cap)+'</p><div class="m"><span class="eq"><i></i><i></i><i></i><i></i></span>'+t(po.role)+'</div></div><div class="bh">'+BIGH+'</div></div><div class="rail"><button class="like'+(likes[i]?' on':'')+'" data-act="like" data-p="'+i+'">'+ic('heart')+'<span>like</span></button><button data-act="comments" data-p="'+i+'">'+ic('comment')+'<span>'+po.det.length+'</span></button><button data-act="share" data-p="'+i+'">'+ic('dm')+'<span>'+U('share')+'</span></button><button class="save'+(saves[i]?' on':'')+'" data-act="save" data-p="'+i+'">'+ic('save')+'<span>save</span></button><button class="snd" style="position:static;background:none;backdrop-filter:none;width:auto;height:auto;color:inherit" data-act="mute">'+ic(muted?'sndoff':'sndon')+'</button></div></div></div>'}
+function buildReels(){$('#v-reels').innerHTML=REELS.map(reelHTML).join('');$$('.reel').forEach(function(r){reelIO.observe(r)})}
+function syncReels(){$$('.reel video').forEach(function(v){var r=v.closest('.reel'),act=view==='reels'&&+r.dataset.r===reelIdx&&!sv.open&&modalI<0;if(act){if(!v.src)v.src=v.dataset.src;v.muted=muted;var p=v.play();if(p&&p.catch)p.catch(function(){v.muted=true;v.play()})}else if(!v.paused)v.pause()})}
+function buildActivity(){
+  var seenA=store.get('actSeen',0);
+  function row(a){var i=idxOf(a[0]),po=POSTS[i];return '<button class="act" data-act="goPost" data-arg="'+i+'">'+avatar(po,false,'style="width:3.1rem;height:3.1rem"')+'<p>'+t(a[1])+'<small>'+t(a[2])+'</small></p><span class="go">'+U('see')+'</span></button>'}
+  $('#v-activity').innerHTML='<div class="wrap"><h2 class="vh">'+U('activity')+'</h2><h3 class="vs">'+U('thisYear')+'</h3>'+ACTV.filter(function(a){return !a[3]}).map(row).join('')+'<h3 class="vs">'+U('before')+'</h3>'+ACTV.filter(function(a){return a[3]}).map(row).join('')+'<div style="height:2rem"></div></div>';
+  $$('.dotn').forEach(function(d){d.style.display=seenA?'none':'block'});
+}
+function buildDM(){
+  var po=POSTS[0];
+  $('#v-dm').innerHTML='<div class="dm"><div class="dh">'+avatar(po,false)+'<div><b>rodhuay '+VER+'</b><small>'+U('active')+'</small></div></div><div class="th" id="th"></div><div class="qr" id="qr">'+UI.qr.map(function(q){return '<button data-act="dmq" data-arg="'+t(q)+'">'+t(q)+'</button>'}).join('')+'</div><form class="cmp" id="dmf"><input id="dmi" placeholder="'+U('dmPh')+'" autocomplete="off" aria-label="'+U('dmPh')+'"><button type="submit" id="dms" disabled>'+U('send')+'</button></form></div>';
+  addMsg('in',U('dm1'));addMsg('in',U('dm2'));
+}
+function addMsg(w,x,extra){var th=$('#th');if(!th)return;var d=document.createElement('div');d.className='msg '+w;d.innerHTML=x+(extra||'');th.appendChild(d);th.scrollTop=th.scrollHeight}
+function sendDM(txt){
+  if(!txt.trim())return;sfx('swipe');addMsg('out',txt.replace(/</g,'&lt;'));
+  setTimeout(function(){sfx('ding');addMsg('in',U('dmReply')+' <b>'+MAIL+'</b>','<br><a class="cb" href="mailto:'+MAIL+'?subject='+encodeURIComponent(U('mailSubj'))+'&body='+encodeURIComponent(txt)+'" data-act="mailed">'+U('openMail')+'</a> <button class="cb" data-act="copymail">'+U('copyMail')+'</button>')},700);
+}
+function buildProfile(){
+  $('#v-profile').innerHTML='<div class="wrap"><div class="pf"><div class="pt"><button class="pav" data-act="story" data-arg="0" aria-label="stories"><i><img src="'+IMG('me-blue')+'" alt="Rodrigo Huaycho"></i></button><div class="pst"><div><b>'+POSTS.length+'</b><small>'+U('posts')+'</small></div><div><b>300K+</b><small>'+U('followers')+'</small></div><div><b>14M+</b><small>'+U('likesL')+'</small></div></div></div><div class="bio"><b>Rodrigo Huaycho '+VER+'</b><br><span class="g">'+U('bio1')+'</span><br>'+U('bio2')+'<br>'+U('bio3')+'<br><span class="g">'+U('bio4')+'</span><br><a class="bl" href="mailto:'+MAIL+'">'+MAIL+'</a></div><div class="pb"><button class="pr" id="pfol" data-act="follow">'+(follow?U('following'):U('follow'))+'</button><button data-act="go" data-arg="dm">'+U('message')+'</button><button data-act="present">'+U('present')+'</button></div><div class="hl">'+Object.keys(CATS).map(function(k){var f=POSTS.filter(function(p){return p.cat===k})[0],c=cl(f);return '<button data-act="hl" data-arg="'+k+'"><span class="c"><i style="--c1:'+c[0]+';--c2:'+c[1]+'">'+ic(HLI[k])+'</i></span><b>'+t(CATS[k])+'</b></button>'}).join('')+'</div></div><div class="ptabs">'+[['posts','grid',U('tPosts')],['reels','reels','Reels'],['saved','save',U('tSaved')]].map(function(x){return '<button data-act="ptab" data-arg="'+x[0]+'" class="'+(x[0]===ptab?'on':'')+'" aria-label="'+x[2]+'">'+ic(x[1])+'</button>'}).join('')+'</div><div class="mos" id="pg"></div></div>';
+  renderPG();
+}
+function renderPG(){
+  var h='';
+  if(ptab==='posts')POSTS.forEach(function(po,i){h+=tileHTML(po,i,0)});
+  else if(ptab==='reels')REELS.forEach(function(r){var i=idxOf(r[0]),po=POSTS[i],s=0;po.sl.forEach(function(x,k){if(x.v===r[1])s=k});h+=tileHTML(po,i,s,true)});
+  else{POSTS.forEach(function(po,i){if(saves[i])h+=tileHTML(po,i,0)});if(!h)h='<div class="empty" style="grid-column:1/-1"><b>'+U('noSaved')+'</b>'+U('noSavedP')+'</div>'}
+  var g=$('#pg');if(g)g.innerHTML=h;
+  $$('.ptabs button').forEach(function(b){b.classList.toggle('on',b.dataset.arg===ptab)});
+}
+function langPill(id){return '<div class="lp" id="'+id+'" role="group" aria-label="'+U('lang')+'">'+LANGS.map(function(l){return '<button data-act="lang" data-arg="'+l[0]+'" class="'+(l[0]===LANG?'on':'')+'">'+l[0].toUpperCase()+'</button>'}).join('')+'</div>'}
+function buildChrome(){
+  var logo='<span class="logo">rodrigo<b>huaycho</b></span>';
+  function navBtn(n){return '<button data-act="nav" data-arg="'+n+'" data-v="'+n+'">'+ic(n)+'<span>'+U(n)+'</span></button>'}
+  $('#side').innerHTML=logo+'<span class="lg">RH</span>'+NAV.slice(0,4).map(navBtn).join('')+'<button data-act="nav" data-arg="activity" data-v="activity">'+ic('heart')+'<span>'+U('activity')+'</span><i class="dotn"></i></button>'+navBtn('profile')+'<button data-act="present" class="presb">'+ic('pres')+'<span>'+U('present')+'</span></button><i class="sp"></i>'+langPill('lpS')+'<button id="sndS" data-act="mute">'+ic(muted?'sndoff':'sndon')+'<span>'+(muted?U('unmute'):U('mute'))+'</span></button><button data-act="theme" id="thS">'+ic('moon')+'<span>'+U('dark')+'</span></button>';
+  $('#tab').innerHTML=NAV.map(function(n){return '<button data-act="nav" data-arg="'+n+'" data-v="'+n+'" aria-label="'+U(n)+'">'+ic(n)+'</button>'}).join('');
+  $('#top').innerHTML=logo+'<div class="r">'+langPill('lpT')+'<button id="sndT" data-act="mute" aria-label="'+U('mute')+'">'+ic(muted?'sndoff':'sndon')+'</button><button data-act="nav" data-arg="activity" data-v="activity" aria-label="'+U('activity')+'">'+ic('heart')+'<i class="dotn"></i></button></div>';
+}
+function buildRight(){
+  var sug=['iasd','nestx','edicion','redime','contacto'].map(function(id){var i=idxOf(id),po=POSTS[i];return '<button data-act="goPost" data-arg="'+i+'">'+avatar(po,false)+'<span style="text-align:left"><b>'+t(po.short)+'</b><small>'+t(po.sub)+'</small></span><em>'+U('see')+'</em></button>'}).join('');
+  $('#right').innerHTML='<div class="rt"><div class="me"><button data-act="story" data-arg="0">'+avatar(POSTS[0],false)+'</button><span><b>rodhuay</b><small>Rodrigo Huaycho</small></span><button data-act="follow" class="fbtn2">'+(follow?U('following'):U('follow'))+'</button></div></div><button class="presc" data-act="present">'+ic('pres')+'<span><b>'+U('present')+'</b><small>'+U('pres1')+'</small></span></button><div class="rt"><h4><span>'+U('nowPlaying')+'</span></h4><div class="np" id="np"></div></div><div class="rt"><h4><span>'+U('sug')+'</span><button data-act="nav" data-arg="explore" style="color:var(--fg);font-weight:700">'+U('seeAll')+'</button></h4><div class="sg2">'+sug+'</div></div><div class="soc">'+['tiktok','youtube','facebook'].map(function(s){return '<a href="'+SOC[s]+'" target="_blank" rel="noopener" aria-label="'+s+'">'+SOCI[s]+'</a>'}).join('')+'<a href="'+LINKEDIN+'" target="_blank" rel="noopener" aria-label="LinkedIn">'+SOCI.linkedin+'</a></div><p class="ft">'+U('foot')+'</p>';
+}
+function updateNP(po,id){
+  var np=$('#np');if(!np||!id)return;var c=po.pal==='bone'?['#0D0D0D','#F1EBE1','#EC5E27']:colors(po,0),p=P[po.pal],tr=TRK(id);
+  np.style.cssText='--c1:'+c[0]+';--c2:'+c[1]+';--c3:'+c[2];
+  np.innerHTML='<div class="nk"><span class="eq"><i></i><i></i><i></i><i></i></span>'+U('music')+' · '+(id===po.track?t(po.short):'—')+'</div><b>'+tr.t+'</b><small>'+tr.a+'</small><div class="eq" id="npq">'+'<i></i>'.repeat(14)+'</div><div class="sw"><span>'+(po.inv?p[3]:p[2])+'</span><span>'+(po.inv?p[2]:p[3])+'</span></div>';
+  np.classList.toggle('playing',isPlaying());
+}
+
+/* ---------- SLIDE ON / OBSERVERS ---------- */
+function runCounters(sl){$$('.cu',sl).forEach(function(e){if(e._r)return;var n=+e.dataset.n,dec=+e.dataset.dec,t0=performance.now();if(RM){e.textContent=n.toFixed(dec);return}e._r=1;(function f(x){var p=Math.min(1,(x-t0)/1400);e.textContent=(n*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f);else e._r=0})(t0)})}
+function setOn(el,on){
+  if(el.classList.contains('on')===on)return;el.classList.toggle('on',on);
+  var v=el.querySelector('video.vd');
+  if(v){if(on){if(!v.getAttribute('src'))v.src=v.dataset.src;v.muted=vidSl!==el;var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause();if(vidSl===el)vidOff(el)}}
+  if(on)runCounters(el);else $$('.cu',el).forEach(function(e){if(!RM&&!e._r)e.textContent='0'});
+}
+var slideIO=new IntersectionObserver(function(es){es.forEach(function(e){setOn(e.target,e.isIntersecting&&e.intersectionRatio>=.55)})},{threshold:[0,.55,.8]});
+function watchSlides(root){$$('.sl',root).forEach(function(s){if(!s.closest('.tile')&&!s.closest('.sbx'))slideIO.observe(s)})}
+var carIO=new IntersectionObserver(function(es){es.forEach(function(e){e.target._r=e.intersectionRatio});var b=-1,m=.45;$$('#feed .car').forEach(function(c){if((c._r||0)>m){m=c._r;b=pidOf(c)}});if(b>-1&&b!==activePost){activePost=b;if(view==='home')refreshMusic()}},{root:null,threshold:[0,.2,.4,.5,.6,.8,1]});
+function watchFeed(){$$('#feed .car').forEach(function(c){carIO.observe(c)})}
+var reelIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=.6){reelIdx=+e.target.dataset.r;if(view==='reels'){refreshMusic();syncReels()}}})},{threshold:[.6]});
+
+/* ---------- HELPERS ---------- */
+var tT;function toast(x){var el=$('#toast');el.textContent=x;el.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){el.classList.remove('show')},1900)}
+function copy(x,msg){function ok(){toast(msg||U('tCopied'));sfx('ding')}
+  function fb(){var a=document.createElement('textarea');a.value=x;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){toast(x)}a.remove()}
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(x).then(ok,fb);else fb()}
+function vcard(){copy('Rodrigo Huaycho\n'+U('bio1')+' · '+U('bio2')+'\n'+MAIL+'\n'+PHONE+'\nLinkedIn: linkedin.com/in/rodrigohuaycho\n@rodhuay (TikTok, YouTube, Facebook)',U('tContact'))}
+
+/* ---------- LIKE / SAVE / FOLLOW ---------- */
+function setLike(i,v){likes[i]=v;store.set('likes',likes);$$('.like[data-p="'+i+'"]').forEach(function(b){b.classList.toggle('on',v);b.setAttribute('aria-pressed',v)});$$('.lk[data-p="'+i+'"]').forEach(function(l){l.innerHTML=likeLine(i)});sfx(v?'pop':'click')}
+function setSave(i,v){saves[i]=v;store.set('saves',saves);$$('.save[data-p="'+i+'"]').forEach(function(b){b.classList.toggle('on',v);b.setAttribute('aria-pressed',v)});sfx(v?'sparkle':'click');toast(v?U('tSaved1'):U('tSaved0'));if(view==='profile'&&ptab==='saved')renderPG()}
+function setFollow(v){follow=v;store.set('follow',v);$$('.fb,.fbtn2,#pfol').forEach(function(b){b.textContent=v?U('following'):U('follow');b.classList.toggle('on',v)});sfx(v?'sparkle':'click');if(v)toast(U('tFollow'))}
+function burst(el){var b=el.querySelector('.bh');if(!b)return;b.classList.remove('go');void b.offsetWidth;b.classList.add('go')}
+
+/* ---------- NAV ---------- */
+function nav(v,quiet){
+  if(sv.open)closeStories(true);if(modalI>-1)closeModal(true);closeSheet(true);
+  if(v===view&&!quiet){var el=$('#v-'+v);if(el)el.scrollTo({top:0,behavior:'smooth'});sfx('tap');return}
+  if(!quiet)sfx(v==='home'?'tap':'whoosh');
+  if(vidSl)vidOff(vidSl);
+  view=v;document.body.dataset.v=v;
+  $$('.view').forEach(function(x){x.classList.toggle('on',x.id==='v-'+v)});
+  $$('[data-v]').forEach(function(b){b.classList.toggle('on',b.dataset.v===v)});
+  if(v==='activity'){store.set('actSeen',1);$$('.dotn').forEach(function(d){d.style.display='none'})}
+  if(v==='profile')renderPG();
+  if(v==='reels'){var r=$$('.reel')[reelIdx];if(r)r.scrollIntoView()}
+  refreshMusic();syncReels();
+}
+function goPost(i){
+  if(view!=='home')nav('home',true);
+  var el=$('#p-'+POSTS[i].id),sc=$('#v-home');
+  sc.scrollTo({top:el.offsetTop-(DESK()?8:0),behavior:'smooth'});activePost=i;refreshMusic();sfx('whoosh');
+}
+
+/* ---------- MODAL ---------- */
+function openPost(i){
+  var po=POSTS[i];modalI=i;if(vidSl)vidOff(vidSl);syncReels();
+  var cm=['<div class="cm">'+avatar(po,false)+'<p><b>rodhuay</b> '+t(po.cap)+' '+tagsHTML(po)+'<small>'+t(po.when)+'</small></p></div>','<div class="cm role">'+avatar(po,false)+'<p><b>'+U('role')+'</b> '+t(po.role)+'</p></div>'].concat(po.det.map(function(d){return '<div class="cm">'+avatar(po,false)+'<p><b>'+t(d[0])+'</b> '+t(d[1])+'</p></div>'})).concat((ucm[i]||[]).map(userCm));
+  $('#modal').innerHTML='<button class="mclose" data-act="closem" aria-label="×">'+ic('close')+'</button><div class="mbox" data-p="'+i+'"><div class="mmedia">'+carHTML(po,i)+'</div><div class="mside">'+phHTML(po,i,true)+'<div class="cmts" id="cmts">'+cm.join('')+'</div>'+actsHTML(po,i)+'<div class="meta"><div class="lk" data-p="'+i+'">'+likeLine(i)+'</div><span class="when">'+t(po.when)+'</span></div><form class="cmp" id="cmf"><input id="cmi" placeholder="'+U('addCm')+'" aria-label="'+U('addCm')+'" autocomplete="off"><button type="submit">'+U('publish')+'</button></form></div></div>';
+  $('#modal').classList.add('on');watchSlides($('#modal'));sfx('open');refreshMusic();
+}
+function userCm(x){return '<div class="cm"><span class="av seen"><i style="--c1:#8e8e8e;color:#fff;font-weight:800;font-size:.8rem">'+U('you')+'</i></span><p><b>'+U('you')+'</b> '+x.replace(/</g,'&lt;')+'<small>'+U('now')+'</small></p></div>'}
+function closeModal(quiet){if(vidSl&&vidSl.closest('#modal')){vidSl=null}modalI=-1;var m=$('#modal');$$('video',m).forEach(function(v){v.pause()});m.classList.remove('on');m.innerHTML='';if(!quiet){sfx('close');refreshMusic(true);syncReels()}}
+
+/* ---------- SHEET ---------- */
+var shareLink='',shareText='';
+function openSheet(h){var s=$('#sheet');s.innerHTML='<div class="sh"><div class="gr"></div>'+h+'</div>';s.classList.add('on');sfx('open')}
+function closeSheet(quiet){var s=$('#sheet');if(!s.classList.contains('on'))return;s.classList.remove('on');s.innerHTML='';if(!quiet)sfx('close')}
+function openShare(i){
+  var po=i>-1?POSTS[i]:null;shareLink=(window.SHARE_BASE||location.href.split('#')[0])+(po?'#'+po.id:'');
+  shareText=(po?t(po.t)+' — '+t(po.cap):'Rodrigo Huaycho · '+U('bio1'))+' '+shareLink;
+  openSheet('<h3>'+U('share')+'</h3><button class="o" data-act="sharelink">'+ic('link')+U('copyLink')+'</button><button class="o" data-act="sharetext">'+ic('copy')+U('copyText')+'</button><button class="o" data-act="go" data-arg="dm">'+ic('mail')+U('writeAbout')+'</button>');
+}
+function openBuy(){openSheet('<h3>'+U('toPay')+'</h3><p style="text-align:center;font-size:1.08rem;line-height:1.4;margin-bottom:.9rem;color:var(--mut)">'+U('payP')+'</p><button class="o" data-act="buyok" style="justify-content:center;background:var(--fg);color:var(--bg);font-weight:800">'+U('payGo')+'</button><button class="o" data-act="closes" style="justify-content:center">'+U('notNow')+'</button>')}
+
+/* ---------- STORIES / PRESENTATION ---------- */
+var sv={open:false,list:[],pi:0,si:0,el:0,dur:5200,hold:false,dn:0,raf:0,pres:false};
+function openStories(list,start,pres){if(vidSl)vidOff(vidSl);sv.list=list;sv.pi=start;sv.si=0;sv.open=true;sv.pres=!!pres;$('#sv').classList.add('on');$('#sv').classList.toggle('pres',sv.pres);drawStory();sfx('open');refreshMusic();syncReels();loop()}
+function drawStory(){
+  var i=sv.list[sv.pi],po=POSTS[i],n=po.sl.length,sl=po.sl[sv.si];seen[i]=1;store.set('seen',seen);sv.el=0;sv.dur=sl.ty==='video'?10000:5200;
+  var bars='';for(var k=0;k<n;k++)bars+='<i><b style="transform:scaleX('+(k<sv.si||sv.pres&&k===sv.si?1:0)+')"></b></i>';
+  $('#sv').innerHTML='<button class="sx l" data-act="sprev" aria-label="←">'+ic('left')+'</button><div class="sbx" data-p="'+i+'">'+slideHTML(po,sl,sv.si,true)+'<div class="spg">'+bars+'</div><div class="shd">'+avatar(po,false)+'<b>'+t(po.short)+'</b><small>'+(sv.pres?U('presMode')+' · '+(sv.pi+1)+'/'+sv.list.length:t(po.sub))+'</small><span class="sp"></span><button data-act="mute" class="snd" style="position:static;background:none;backdrop-filter:none;width:auto;height:auto" aria-label="'+U('mute')+'">'+ic(muted?'sndoff':'sndon')+'</button><button data-act="sclose" aria-label="×">'+ic('close')+'</button></div><div class="sft"><button class="pill" data-act="go" data-arg="dm">'+U('storyMsg')+'</button><button class="ic2 like'+(likes[i]?' on':'')+'" data-act="like" data-p="'+i+'" aria-label="like">'+ic('heart')+'</button><button class="ic2" data-act="share" data-p="'+i+'" aria-label="'+U('share')+'">'+ic('dm')+'</button></div></div><button class="sx r" data-act="snext" aria-label="→">'+ic('right')+'</button>';
+  var s=$('#sv .sl');runCounters(s);var v=s.querySelector('video');if(v){v.src=v.dataset.src;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}
+}
+function loop(){cancelAnimationFrame(sv.raf);var last=performance.now();(function f(x){if(!sv.open)return;var dt=Math.min(100,x-last);last=x;if(!sv.pres&&!sv.hold&&!document.hidden&&!$('#sheet').classList.contains('on')){sv.el+=dt;var b=$('#sv .spg i:nth-child('+(sv.si+1)+') b');if(b)b.style.transform='scaleX('+Math.min(1,sv.el/sv.dur)+')';if(sv.el>=sv.dur)snext()}sv.raf=requestAnimationFrame(f)})(last)}
+function snext(){var po=POSTS[sv.list[sv.pi]];sfx('swipe');if(sv.si<po.sl.length-1){sv.si++;drawStory()}else if(sv.pi<sv.list.length-1){sv.pi++;sv.si=0;drawStory();refreshMusic()}else closeStories()}
+function sprev(){sfx('swipe');if(sv.si>0){sv.si--;drawStory()}else if(sv.pi>0){sv.pi--;sv.si=POSTS[sv.list[sv.pi]].sl.length-1;if(!sv.pres)sv.si=0;drawStory();refreshMusic()}else{sv.el=0;drawStory()}}
+function closeStories(quiet){sv.open=false;cancelAnimationFrame(sv.raf);var s=$('#sv');$$('video',s).forEach(function(v){v.pause()});s.classList.remove('on');s.innerHTML='';markSeen();if(!quiet){sfx('close');refreshMusic();syncReels()}}
+function markSeen(){$$('.st').forEach(function(b){b.classList.toggle('seen',!!seen[b.dataset.p])});$$('.post .ph .av').forEach(function(a){a.classList.toggle('seen',!!seen[pidOf(a)])})}
+function present(){openStories(POSTS.map(function(_,k){return k}),0,true);toast(U('pres1'))}
+
+/* ---------- LANGUAGE ---------- */
+function setLang(l,quiet){
+  LANG=l;store.set('lang',l);document.documentElement.lang=l;
+  var y=$('#v-home').scrollTop;
+  buildAll();$('#v-home').scrollTop=y;
+  $$('.view').forEach(function(x){x.classList.toggle('on',x.id==='v-'+view)});
+  $$('[data-v]').forEach(function(b){b.classList.toggle('on',b.dataset.v===view)});
+  refreshMusic(false);if(!quiet)sfx('click');
+}
+function buildAll(){
+  slideIO.disconnect();carIO.disconnect();reelIO.disconnect();vidSl=null;
+  buildChrome();buildStories();buildFeed();buildExplore();buildReels();buildActivity();buildDM();buildProfile();buildRight();
+  applyTheme(document.documentElement.dataset.theme||'light');
+  watchSlides(document);watchFeed();syncSnd();
+  var c=$('#cover');if(c)paintCover();
+}
+
+/* ---------- CLICK DELEGATION ---------- */
+document.addEventListener('click',function(e){
+  var x=e.target.closest('[data-act]'),m=e.target.closest('.car,.rbox');
+  if(m&&!e.target.closest('button,a,.mail')){var now=Date.now();if(m._t&&now-m._t<360){m._t=0;var i0=pidOf(m);if(!likes[i0])setLike(i0,true);else sfx('pop');burst(m)}else m._t=now}
+  if(!x){if(e.target===$('#modal'))closeModal();if(e.target===$('#sheet'))closeSheet();return}
+  var a=x.dataset.act,arg=x.dataset.arg,i=pidOf(x);
+  switch(a){
+   case 'enter':enter(arg==='1');break;
+   case 'cvlang':LANG=arg;store.set('lang',arg);document.documentElement.lang=arg;paintCover();sfx('click');break;
+   case 'lang':setLang(arg);break;
+   case 'nav':nav(arg);break;
+   case 'like':setLike(i,!likes[i]);break;
+   case 'save':setSave(i,!saves[i]);break;
+   case 'comments':openPost(i);break;
+   case 'open':openPost(+arg);break;
+   case 'share':openShare(i);break;
+   case 'follow':setFollow(!follow);break;
+   case 'mute':setMuted(!muted);toast(muted?U('tSndOff'):U('tSndOn'));break;
+   case 'vsound':{var sl=x.closest('.sl');if(vidSl===sl)vidOff(sl);else vidOn(sl);sfx('click');break}
+   case 'prev':case 'next':{var tr=x.closest('.car').querySelector('.trk');tr.scrollBy({left:(a==='next'?1:-1)*tr.clientWidth,behavior:'smooth'});sfx('swipe');break}
+   case 'more':x.previousElementSibling.classList.remove('cl');x.remove();break;
+   case 'story':openStories(POSTS.map(function(_,k){return k}),+arg);break;
+   case 'present':present();break;
+   case 'hl':{var l=[];POSTS.forEach(function(p,k){if(p.cat===arg)l.push(k)});openStories(l,0);break}
+   case 'go':nav(arg);break;
+   case 'goPost':if(modalI>-1)closeModal(true);goPost(+arg);break;
+   case 'cat':excat=arg;$$('#cats button').forEach(function(b){b.classList.toggle('on',b===x)});renderMos();sfx('click');break;
+   case 'ptab':ptab=arg;renderPG();sfx('click');break;
+   case 'sscroll':{var st=$('#stories');st.scrollBy({left:+arg*st.clientWidth*.8,behavior:'smooth'});sfx('swipe');break}
+   case 'copymail':copy(MAIL,U('tMail'));break;
+   case 'copyphone':copy(PHONE,U('tPhone'));break;
+   case 'vcard':vcard();break;
+   case 'buy':openBuy();break;
+   case 'buyok':closeSheet(true);window.open(BUY,'_blank','noopener');break;
+   case 'closes':closeSheet();break;
+   case 'sharelink':closeSheet(true);copy(shareLink,U('tLink'));break;
+   case 'sharetext':closeSheet(true);copy(shareText,U('tText'));break;
+   case 'theme':applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');sfx('click');break;
+   case 'closem':closeModal();break;
+   case 'sclose':closeStories();break;
+   case 'snext':snext();break;
+   case 'sprev':sprev();break;
+   case 'dmq':sendDM(arg);break;
+   case 'mailed':toast(U('tMailed')+MAIL);sfx('ding');break;
+  }
+});
+document.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(e.target.id==='dmf'){var inp=$('#dmi');sendDM(inp.value);inp.value='';$('#dms').disabled=true}
+  if(e.target.id==='cmf'){var c=$('#cmi'),v=c.value.trim();if(!v)return;var i=modalI;(ucm[i]=ucm[i]||[]).push(v);store.set('ucm',ucm);var d=document.createElement('div');d.innerHTML=userCm(v);var box=$('#cmts');box.appendChild(d.firstChild);box.scrollTop=box.scrollHeight;c.value='';sfx('swipe')}
+});
+document.addEventListener('input',function(e){if(e.target.id==='exin'){exq=e.target.value;renderMos()}if(e.target.id==='dmi')$('#dms').disabled=!e.target.value.trim()});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('tile')){e.preventDefault();e.target.click()}});
+var svEl=$('#sv');
+svEl.addEventListener('pointerdown',function(e){if(!e.target.closest('.sbx')||e.target.closest('button,a'))return;sv.hold=true;sv.dn=performance.now()});
+addEventListener('pointerup',function(e){if(!sv.hold)return;sv.hold=false;if(performance.now()-sv.dn<280){var r=$('#sv .sbx').getBoundingClientRect();if(e.clientX-r.left<r.width*.33)sprev();else snext()}});
+addEventListener('pointercancel',function(){sv.hold=false});
+document.addEventListener('scroll',function(e){
+  var x=e.target;if(!x.classList||!x.classList.contains('trk'))return;
+  var n=Math.round(x.scrollLeft/x.clientWidth),car=x.closest('.car'),c=car.querySelector('.cnt');if(c)c.textContent=(n+1)+'/'+x.children.length;
+  var sc=car.closest('.post,.mbox');if(sc)$$('.dots i',sc).forEach(function(d,k){d.classList.toggle('on',k===n)});
+},true);
+
+/* ---------- KEYBOARD ---------- */
+addEventListener('keydown',function(e){
+  if(!entered||e.metaKey||e.ctrlKey||e.altKey)return;
+  if(e.key==='Escape'){if($('#sheet').classList.contains('on'))closeSheet();else if(sv.open)closeStories();else if(modalI>-1)closeModal();return}
+  if(e.target.matches&&e.target.matches('input,textarea'))return;
+  if(sv.open){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();snext()}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();sprev()}return}
+  if(modalI>-1)return;
+  var k=e.key.toLowerCase();
+  if(k==='m'){setMuted(!muted);toast(muted?U('tSndOff'):U('tSndOn'));return}
+  if(k==='p'){present();return}
+  if(view==='home'){
+    if(k==='j'||k==='k'){goPost(clamp(activePost+(k==='j'?1:-1),0,POSTS.length-1))}
+    else if(k==='l')setLike(activePost,!likes[activePost]);
+    else if(k==='s')setSave(activePost,!saves[activePost]);
+  }else if(view==='reels'){
+    var sc=$('#v-reels');
+    if(k==='j'||e.key==='ArrowDown'){e.preventDefault();sc.scrollBy({top:sc.clientHeight,behavior:'smooth'})}
+    else if(k==='k'||e.key==='ArrowUp'){e.preventDefault();sc.scrollBy({top:-sc.clientHeight,behavior:'smooth'})}
+    else if(k==='l'){var ri=idxOf(REELS[reelIdx][0]);setLike(ri,!likes[ri])}
+  }
+});
+
+/* ---------- THEME / COVER / INIT ---------- */
+function applyTheme(x){
+  document.documentElement.dataset.theme=x;store.set('theme',x);
+  var m=document.querySelector('meta[name=theme-color]');if(m)m.content=x==='dark'?'#000000':'#F3EEE6';
+  var b=$('#thS');if(b)b.innerHTML=ic(x==='dark'?'sun':'moon')+'<span>'+(x==='dark'?U('light'):U('dark'))+'</span>';
+}
+function paintCover(){
+  $('#cvK').textContent=U('cvK');$('#cvSub').textContent=U('cvSub');$('#cvLangL').textContent=U('cvLang');
+  $('#cvIn').lastChild.textContent=U('cvIn');$('#cvOut').textContent=U('cvOut');$('#cvFt').textContent=U('cvFt');
+  $$('#cvLang button').forEach(function(b){b.classList.toggle('on',b.dataset.arg===LANG);b.setAttribute('aria-pressed',b.dataset.arg===LANG)});
+}
+function enter(snd){
+  entered=true;muted=!snd;
+  setLang(LANG,true);
+  var c=$('#cover');c.classList.add('out');setTimeout(function(){c.style.display='none'},700);
+  refreshMusic(true);if(snd)sfx('sparkle');syncSnd();
+}
+document.addEventListener('visibilitychange',function(){hidden=document.hidden;if(hidden){pauseAudio();$$('video').forEach(function(v){if(!v.paused){v._wp=1;v.pause()}})}else if(entered){refreshMusic(true);syncReels();$$('video').forEach(function(v){if(v._wp){v._wp=0;var p=v.play();if(p&&p.catch)p.catch(function(){})}})}});
+
+var lastPl=null;
+setInterval(function(){
+  var lv=level();document.documentElement.style.setProperty('--lv',lv.toFixed(2));
+  var pl=isPlaying();if(pl!==lastPl){lastPl=pl;syncSnd();var np=$('#np');if(np)np.classList.toggle('playing',pl)}
+  var q=$('#npq');if(q&&curTrack&&pl){var x=audios[curTrack].currentTime;$$('i',q).forEach(function(b,j){b.style.height=(14+envAt(curTrack,x+j*.28)*86)+'%'})}
+},60);
+
+function init(){
+  applyTheme(store.get('theme','light'));
+  document.documentElement.lang=LANG;
+  $('#cvLang').innerHTML=LANGS.map(function(l){return '<button data-act="cvlang" data-arg="'+l[0]+'"><b>'+l[1]+'</b><small>'+l[2]+'</small></button>'}).join('');
+  $('#cvSoc').innerHTML=['tiktok','youtube','facebook'].map(function(s){return '<a href="'+SOC[s]+'" target="_blank" rel="noopener" aria-label="'+s+'">'+SOCI[s]+'</a>'}).join('');
+  paintCover();
+  buildAll();nav('home',true);updateNP(POSTS[0],POSTS[0].track);
+}
+init();
+window.__rh=function(){return {lang:LANG,track:curTrack,playing:isPlaying(),view:view,active:activePost,reel:reelIdx,modal:modalI,story:sv.open?[sv.pi,sv.si,sv.pres]:null,muted:muted,vid:!!vidSl,likes:Object.keys(likes).filter(function(k){return likes[k]}),saves:Object.keys(saves).filter(function(k){return saves[k]})}};
+
+})();
+</script>
+</body>
+</html>
